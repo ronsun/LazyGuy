@@ -330,7 +330,7 @@ ASALocalRun/
 .mfractor/
 
 # axoCover output folder
-.axoCover
+*.axoCover
 
 # StyleCop setting file
-.StyleCop
+*.StyleCop
