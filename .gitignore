@@ -331,3 +331,6 @@ ASALocalRun/
 
 # axoCover output folder
 .axoCover
+
+# StyleCop setting file
+.StyleCop
