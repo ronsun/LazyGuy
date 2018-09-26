@@ -62,7 +62,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InitTests.cs" />
+    <Compile Include="Extensions\DictionaryExtensionsTests_Positive.cs" />
+    <Compile Include="Extensions\DictionaryExtensionsTests_Negative.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
