@@ -26,5 +26,25 @@ namespace LazyGuy.Extensions
 
             self.Add(key, value);
         }
+
+        public static void AddOrIgnore<TKey, TValue>(this IDictionary<TKey, TValue> self, TKey key, TValue value)
+        {
+            if (self == null)
+            {
+                throw new ArgumentNullException(ExceptionMessages.ArgumentNullMessage + nameof(self));
+            }
+
+            if (key == null)
+            {
+                throw new ArgumentNullException(ExceptionMessages.ArgumentNullMessage + nameof(key));
+            }
+
+            if (self.ContainsKey(key))
+            {
+                return;
+            }
+
+            self.Add(key, value);
+        }
     }
 }
