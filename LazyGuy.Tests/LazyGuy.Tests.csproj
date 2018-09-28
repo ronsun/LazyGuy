@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Extensions\DictionaryExtensionsTests_Positive.cs" />
     <Compile Include="Extensions\DictionaryExtensionsTests_Negative.cs" />
+    <Compile Include="Extensions\EnumExtensionsTests_Positive.cs" />
     <Compile Include="Extensions\EnumExtensionsTests_Negative.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
