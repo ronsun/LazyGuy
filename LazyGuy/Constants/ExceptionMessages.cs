@@ -2,6 +2,6 @@
 {
     internal class ExceptionMessages
     {
-        public const string ArgumentNullMessage = "Argument should not be null: ";
+        public const string ArgumentNullMessage = "Argument '{0}' should not be null. ";
     }
 }

@@ -1,6 +1,7 @@
 ﻿using LazyGuy.Constants;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LazyGuy.Extensions
 {
@@ -20,12 +21,14 @@ namespace LazyGuy.Extensions
         {
             if (self == null)
             {
-                throw new ArgumentNullException(ExceptionMessages.ArgumentNullMessage + nameof(self));
+                string msg = string.Format(ExceptionMessages.ArgumentNullMessage, nameof(key));
+                throw new ArgumentNullException(msg);
             }
 
             if (key == null)
             {
-                throw new ArgumentNullException(ExceptionMessages.ArgumentNullMessage + nameof(key));
+                string msg = string.Format(ExceptionMessages.ArgumentNullMessage, nameof(value));
+                throw new ArgumentNullException(msg);
             }
 
             if (self.ContainsKey(key))
@@ -38,6 +41,20 @@ namespace LazyGuy.Extensions
             }
 
             self.Add(key, value);
+        }
+
+        public static string ToQueryString(this IDictionary<string, string> target)
+        {
+            if (target == null)
+            {
+                string msg = string.Format(ExceptionMessages.ArgumentNullMessage, nameof(target));
+                throw new ArgumentNullException(msg);
+            }
+
+            var result = target.Select(r => $"{r.Key}={r.Value}")
+                               .Aggregate((left, right) => $"{left}&{right}");
+
+            return result;
         }
     }
 }
