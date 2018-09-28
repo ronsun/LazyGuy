@@ -94,5 +94,23 @@ namespace LazyGuy.Extensions.Tests
         }
 
         #endregion
+
+        #region ToQueryString
+
+        [Test()]
+        public void ToQueryStringTest_EmptyTarget_GetEmptyString()
+        {
+            //arrange
+            var target = new Dictionary<string, string>(); ;
+            string expected = string.Empty;
+
+            //act
+            string actual = target.ToQueryString();
+
+            //assert
+            actual.Should().Be(string.Empty);
+        }
+
+        #endregion
     }
 }
