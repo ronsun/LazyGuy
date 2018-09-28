@@ -51,6 +51,11 @@ namespace LazyGuy.Extensions
                 throw new ArgumentNullException(msg);
             }
 
+            if (target.Count == 0)
+            {
+                return string.Empty;
+            }
+
             var result = target.Select(r => $"{r.Key}={r.Value}")
                                .Aggregate((left, right) => $"{left}&{right}");
 
