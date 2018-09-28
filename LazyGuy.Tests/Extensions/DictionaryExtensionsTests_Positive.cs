@@ -11,7 +11,7 @@ namespace LazyGuy.Extensions.Tests
 
         [Test()]
         [TestCaseSource(nameof(AddOrUpdate_SuccessCases))]
-        public void AddOrUpdateTest_AddToEmpty_ExpectedResultAndCount(
+        public void AddOrUpdateTest_AddToTarget_ExpectedResultAndCount(
             Dictionary<string, string> target,
             string stubKey,
             string stubValue,
@@ -55,7 +55,7 @@ namespace LazyGuy.Extensions.Tests
 
         [Test()]
         [TestCaseSource(nameof(AddOrIgnore_SuccessCases))]
-        public void AddOrIgnoreTest_AddToEmpty_ExpectedResultAndCount(
+        public void AddOrIgnoreTest_AddToTarget_ExpectedResultAndCount(
             Dictionary<string, string> target,
             string stubKey,
             string stubValue,
@@ -98,17 +98,38 @@ namespace LazyGuy.Extensions.Tests
         #region ToQueryString
 
         [Test()]
-        public void ToQueryStringTest_EmptyTarget_GetEmptyString()
+        [TestCaseSource(nameof(ToQueryString_SuccessCases))]
+        public void ToQueryStringTest_ValidTarget_GetExpectedString(Dictionary<string, string> target, string expected)
         {
             //arrange
-            var target = new Dictionary<string, string>(); ;
-            string expected = string.Empty;
 
             //act
             string actual = target.ToQueryString();
 
             //assert
-            actual.Should().Be(string.Empty);
+            actual.Should().Be(expected);
+        }
+
+        private static List<object[]> ToQueryString_SuccessCases()
+        {
+            string stubKey1 = "k1";
+            string stubKey2 = "k2";
+
+            string stubValue1 = "v1";
+            string stubValue2 = "v2";
+
+            var cases = new List<object[]>()
+            {
+                // empty to query string
+                new object[]{ new Dictionary<string, string>(), string.Empty },
+
+                // dictionary with single item to query string
+                new object[]{ new Dictionary<string, string>() { [stubKey1] = stubValue1 }, $"{stubKey1}={stubValue1}" },
+
+                // dictionary with multiple item to query string 
+                new object[]{ new Dictionary<string, string>() { [stubKey1] = stubValue1, [stubKey2] = stubValue2 }, $"{stubKey1}={stubValue1}&{stubKey2}={stubValue2}" },
+            };
+            return cases;
         }
 
         #endregion
