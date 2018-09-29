@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using LazyGuy.Constants;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace LazyGuy.Extensions.Tests
 
         [Test()]
         [TestCaseSource(nameof(In_ArrayTypeMismatchExceptionCases))]
-        public void InTest_InvalidInput_ThrowArrayTypeMismatchException(Enum target, Enum[] parameters)
+        public void InTest_InvalidInput_ThrowArrayTypeMismatchExceptionContainsMessage(Enum target, Enum[] parameters, string containedErrorMessage)
         {
             // Arrange
 
@@ -38,7 +39,7 @@ namespace LazyGuy.Extensions.Tests
             Action act = () => { target.In(parameters); };
 
             // Assert
-            act.Should().Throw<ArrayTypeMismatchException>();
+            act.Should().Throw<ArrayTypeMismatchException>().Where(e => e.Message.Contains(containedErrorMessage));
         }
 
         private static List<object[]> In_ArrayTypeMismatchExceptionCases()
@@ -46,10 +47,10 @@ namespace LazyGuy.Extensions.Tests
             var cases = new List<object[]>()
             {
                 // type of target different
-                new object[] { FakeEnum_In_A.A1, new Enum[] { FakeEnum_In_B.B1 }  },
+                new object[] { FakeEnum_In_A.A1, new Enum[] { FakeEnum_In_B.B1 }, ExceptionMessages.InvalidArrayTypeForParams },
 
                 // one of types different in enum list
-                new object[] { FakeEnum_In_B.B1, new Enum[] { FakeEnum_In_A.A1, FakeEnum_In_B.B1 }  },
+                new object[] { FakeEnum_In_B.B1, new Enum[] { FakeEnum_In_A.A1, FakeEnum_In_B.B1 }, ExceptionMessages.InvalidArrayTypeForParams },
             };
             return cases;
         }

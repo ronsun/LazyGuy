@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using LazyGuy.Constants;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace LazyGuy.Extensions.Tests
             Action act = () => { target.AddOrUpdate(stubKey, stubValue); };
 
             //assert
-            act.Should().Throw<ArgumentNullException>();
+            act.Should().Throw<ArgumentNullException>().Where(e => e.Message.Contains(ExceptionMessages.ArgumentNull));
         }
 
         [Test()]
@@ -37,7 +38,7 @@ namespace LazyGuy.Extensions.Tests
             Action act = () => { target.AddOrUpdate(stubKey, stubValue); };
 
             //assert
-            act.Should().Throw<ArgumentNullException>();
+            act.Should().Throw<ArgumentNullException>().Where(e => e.Message.Contains(ExceptionMessages.ArgumentNull));
         }
 
         #endregion
@@ -54,7 +55,7 @@ namespace LazyGuy.Extensions.Tests
             Action act = () => { target.ToQueryString(); };
 
             //assert
-            act.Should().Throw<ArgumentNullException>();
+            act.Should().Throw<ArgumentNullException>().Where(e => e.Message.Contains(ExceptionMessages.ArgumentNull));
         }
 
         #endregion

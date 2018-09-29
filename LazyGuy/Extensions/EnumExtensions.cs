@@ -14,14 +14,14 @@ namespace LazyGuy.Extensions
             bool anyInvalidType = list.Any(r => r.GetType() != target.GetType());
             if (anyInvalidType)
             {
-                throw new ArrayTypeMismatchException(ExceptionMessages.ArgumentNullMessage);
+                throw new ArrayTypeMismatchException(ExceptionMessages.InvalidArrayTypeForParams);
             }
 
             var isTargetOutOfRange = !Enum.IsDefined(target.GetType(), target);
             var anyItemInListOutOfRange = list.Any(r => !Enum.IsDefined(r.GetType(), r));
             if (isTargetOutOfRange || anyItemInListOutOfRange)
             {
-                throw new ArgumentOutOfRangeException(ExceptionMessages.ValueNotDefinedInEnum);
+                throw new ArgumentOutOfRangeException(ExceptionMessages.ValueNotInEnum);
             }
 
             return list.Contains(target);
