@@ -21,13 +21,13 @@ namespace LazyGuy.Extensions
         {
             if (self == null)
             {
-                string msg = string.Format(ExceptionMessages.ArgumentNull, nameof(key));
+                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(key));
                 throw new ArgumentNullException(msg);
             }
 
             if (key == null)
             {
-                string msg = string.Format(ExceptionMessages.ArgumentNull, nameof(value));
+                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(value));
                 throw new ArgumentNullException(msg);
             }
 
@@ -47,7 +47,7 @@ namespace LazyGuy.Extensions
         {
             if (target == null)
             {
-                string msg = string.Format(ExceptionMessages.ArgumentNull, nameof(target));
+                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(target));
                 throw new ArgumentNullException(msg);
             }
 

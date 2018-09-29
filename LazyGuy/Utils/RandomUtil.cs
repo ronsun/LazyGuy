@@ -5,7 +5,6 @@ using System.Security.Cryptography;
 namespace LazyGuy.Utils
 {
     public class RandomUtil
-
     {
         private RandomNumberGenerator _rng;
 
@@ -23,7 +22,8 @@ namespace LazyGuy.Utils
         {
             if (string.IsNullOrEmpty(dictionary))
             {
-                throw new ArgumentException(ExceptionMessages.ArgumentEmpty);
+                string msg = string.Format(MessageTemplates.ArgumentEmpty, nameof(dictionary));
+                throw new ArgumentException(msg);
             }
 
             var charArray = new char[length];
@@ -40,7 +40,8 @@ namespace LazyGuy.Utils
         {
             if (max < min)
             {
-                throw new ArgumentOutOfRangeException(ExceptionMessages.ArgumentOutOfRange);
+                string msg = string.Format(MessageTemplates.NumberMustGreatherThanAnother, nameof(max), nameof(min));
+                throw new ArgumentOutOfRangeException(msg);
             }
 
             //use Int32 (4 bytes) bacause keyword 'int' is default as Int32
