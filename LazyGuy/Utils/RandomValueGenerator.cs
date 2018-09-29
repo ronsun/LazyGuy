@@ -4,11 +4,11 @@ using System.Security.Cryptography;
 
 namespace LazyGuy.Utils
 {
-    public class RandomUtil
+    public class RandomValueGenerator
     {
         private RandomNumberGenerator _rng;
 
-        public RandomUtil(RandomNumberGenerator rng = null)
+        public RandomValueGenerator(RandomNumberGenerator rng = null)
         {
             if (rng == null)
             {
@@ -18,7 +18,7 @@ namespace LazyGuy.Utils
             _rng = rng;
         }
 
-        public string Next(int length, string dictionary = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+        public virtual string GetString(int length, string dictionary = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
         {
             if (string.IsNullOrEmpty(dictionary))
             {
@@ -29,14 +29,16 @@ namespace LazyGuy.Utils
             var charArray = new char[length];
             for (int i = 0; i < length; i++)
             {
-                var index = Next(0, dictionary.Length);
+                var index = GetInt(0, dictionary.Length);
                 charArray[i] = dictionary[index];
             }
 
             return new string(charArray);
         }
 
-        public int Next(int min = 0, int max = int.MaxValue)
+        // 1. all possible numbers randomed in same rate
+        // 2. edge values
+        public virtual int GetInt(int min = 0, int max = int.MaxValue)
         {
             if (max < min)
             {
@@ -49,9 +51,14 @@ namespace LazyGuy.Utils
             _rng.GetBytes(nextBytes);
 
             var range = (long)max - min;
-            var shift = Math.Abs(BitConverter.ToInt32(nextBytes, 0) % range);
+            var shift = BitConverter.ToInt32(nextBytes, 0) % range;
 
             //shift always between int.MinValue and int.MaxValue, so it's safe convert to int directly
+            if (shift < 0)
+            {
+                return max + (int)shift;
+            }
+
             return min + (int)shift;
         }
     }
