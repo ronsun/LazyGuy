@@ -12,7 +12,7 @@ namespace LazyGuy.Extensions.Tests
         #region AddOrUpdate
 
         [Test()]
-        public void AddOrUpdateTest_AddToNull_ThrowArgumentNullException()
+        public void AddOrUpdateTest_AddToNull_ThrowArgumentNullExceptionWithMessage()
         {
             //arrange
             Dictionary<string, string> target = null;
@@ -27,7 +27,7 @@ namespace LazyGuy.Extensions.Tests
         }
 
         [Test()]
-        public void AddOrUpdateTest_AddNullKey_ThrowArgumentNullException()
+        public void AddOrUpdateTest_AddNullKey_ThrowArgumentNullExceptionWithMessage()
         {
             //arrange
             var target = new Dictionary<string, string>();
@@ -46,7 +46,7 @@ namespace LazyGuy.Extensions.Tests
         #region ToQueryString
 
         [Test()]
-        public void ToQueryStringTest_NullTarget_ThrowArgumentNullException()
+        public void ToQueryStringTest_NullTarget_ThrowArgumentNullExceptionWithMessage()
         {
             //arrange
             Dictionary<string, string> target = null;

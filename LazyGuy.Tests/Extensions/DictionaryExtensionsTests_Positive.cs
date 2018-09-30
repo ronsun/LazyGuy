@@ -10,7 +10,7 @@ namespace LazyGuy.Extensions.Tests
         #region AddOrUpdate
 
         [Test()]
-        [TestCaseSource(nameof(AddOrUpdate_SuccessCases))]
+        [TestCaseSource(nameof(TestCases_AddOrUpdateTest_AddToTarget))]
         public void AddOrUpdateTest_AddToTarget_ExpectedResultAndCount(
             Dictionary<string, string> target,
             string stubKey,
@@ -27,7 +27,7 @@ namespace LazyGuy.Extensions.Tests
             target.Should().Equal(expected);
         }
 
-        private static List<object[]> AddOrUpdate_SuccessCases()
+        private static List<object[]> TestCases_AddOrUpdateTest_AddToTarget()
         {
             string stubKey1 = "k1";
             string stubKey2 = "k2";
@@ -54,7 +54,7 @@ namespace LazyGuy.Extensions.Tests
         #region AddOrIgnore
 
         [Test()]
-        [TestCaseSource(nameof(AddOrIgnore_SuccessCases))]
+        [TestCaseSource(nameof(TestCases_AddOrIgnoreTest_AddToTarget))]
         public void AddOrIgnoreTest_AddToTarget_ExpectedResultAndCount(
             Dictionary<string, string> target,
             string stubKey,
@@ -71,7 +71,7 @@ namespace LazyGuy.Extensions.Tests
             target.Should().Equal(expected);
         }
 
-        private static List<object[]> AddOrIgnore_SuccessCases()
+        private static List<object[]> TestCases_AddOrIgnoreTest_AddToTarget()
         {
             string stubKey1 = "k1";
             string stubKey2 = "k2";
@@ -98,7 +98,7 @@ namespace LazyGuy.Extensions.Tests
         #region ToQueryString
 
         [Test()]
-        [TestCaseSource(nameof(ToQueryString_SuccessCases))]
+        [TestCaseSource(nameof(TestCases_ToQueryStringTest_ValidTarget))]
         public void ToQueryStringTest_ValidTarget_GetExpectedString(Dictionary<string, string> target, string expected)
         {
             //arrange
@@ -110,7 +110,7 @@ namespace LazyGuy.Extensions.Tests
             actual.Should().Be(expected);
         }
 
-        private static List<object[]> ToQueryString_SuccessCases()
+        private static List<object[]> TestCases_ToQueryStringTest_ValidTarget()
         {
             string stubKey1 = "k1";
             string stubKey2 = "k2";

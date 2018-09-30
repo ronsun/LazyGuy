@@ -68,6 +68,8 @@
     <Compile Include="Extensions\EnumExtensionsTests_Positive.cs" />
     <Compile Include="Extensions\EnumExtensionsTests_Negative.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\RandomValueGeneratorTests_Positive.cs" />
+    <Compile Include="Utils\RandomValueGeneratorTests_Nagative.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

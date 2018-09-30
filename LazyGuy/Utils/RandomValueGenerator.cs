@@ -36,14 +36,17 @@ namespace LazyGuy.Utils
             return new string(charArray);
         }
 
-        // 1. all possible numbers randomed in same rate
-        // 2. edge values
         public virtual int GetInt(int min = 0, int max = int.MaxValue)
         {
             if (max < min)
             {
                 string msg = string.Format(MessageTemplates.NumberMustGreatherThanAnother, nameof(max), nameof(min));
                 throw new ArgumentOutOfRangeException(msg);
+            }
+
+            if (min == max)
+            {
+                return min;
             }
 
             //use Int32 (4 bytes) bacause keyword 'int' is default as Int32

@@ -30,8 +30,8 @@ namespace LazyGuy.Extensions.Tests
         }
 
         [Test()]
-        [TestCaseSource(nameof(In_ArrayTypeMismatchExceptionCases))]
-        public void InTest_InvalidInput_ThrowArrayTypeMismatchExceptionContainsMessage(Enum target, Enum[] parameters, string expectedMessage)
+        [TestCaseSource(nameof(TestCases_InTest_InvalidEnumType))]
+        public void InTest_InvalidEnumType_ThrowArrayTypeMismatchExceptionWithMessage(Enum target, Enum[] parameters, string expectedMessage)
         {
             // Arrange
 
@@ -42,7 +42,7 @@ namespace LazyGuy.Extensions.Tests
             act.Should().Throw<ArrayTypeMismatchException>().WithMessage(expectedMessage);
         }
 
-        private static List<object[]> In_ArrayTypeMismatchExceptionCases()
+        private static List<object[]> TestCases_InTest_InvalidEnumType()
         {
             var cases = new List<object[]>()
             {
@@ -56,8 +56,8 @@ namespace LazyGuy.Extensions.Tests
         }
 
         [Test()]
-        [TestCaseSource(nameof(In_ArgumentOutOfRangeExceptionCases))]
-        public void InTest_InvalidInput_ThrowArgumentOutOfRangeException(Enum target, Enum[] parameters, string expectedMessage)
+        [TestCaseSource(nameof(TestCases_InTest_InvalidEnumValue))]
+        public void InTest_InvalidEnumValue_ThrowArgumentOutOfRangeExceptionWithMessage(Enum target, Enum[] parameters, string expectedMessage)
         {
             // Arrange
 
@@ -68,7 +68,7 @@ namespace LazyGuy.Extensions.Tests
             act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(expectedMessage);
         }
 
-        private static List<object[]> In_ArgumentOutOfRangeExceptionCases()
+        private static List<object[]> TestCases_InTest_InvalidEnumValue()
         {
             var cases = new List<object[]>()
             {
