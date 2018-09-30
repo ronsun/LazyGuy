@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Threading;
 
 namespace LazyGuy.Utils.Tests
 {
@@ -75,28 +76,28 @@ namespace LazyGuy.Utils.Tests
             var cases = new List<object[]>()
             {
                 // random 0, reutrn min
-                new object[] { 1, 4, new byte[] { 0, 0, 0, 0 }, 1 },
+                new object[] { 1, 4, BitConverter.GetBytes(0), 1 },
                 
                 // random 1, return min + 1
-                new object[] { 1, 4, new byte[] { 1, 0, 0, 0 }, 2 },
+                new object[] { 1, 4, BitConverter.GetBytes(1), 2 },
                 
                 // random 2, return min + 2
-                new object[] { 1, 4, new byte[] { 2, 0, 0, 0 }, 3 },
+                new object[] { 1, 4, BitConverter.GetBytes(2), 3 },
                 
                 // random 3, return min
-                new object[] { 1, 4, new byte[] { 3, 0, 0, 0 }, 1 },
+                new object[] { 1, 4, BitConverter.GetBytes(3), 1 },
 
                 // random -1, return max - 1
-                new object[] { 1, 4, new byte[] { 255, 255, 255, 255 }, 3 },
+                new object[] { 1, 4, BitConverter.GetBytes(-1), 3 },
                 
                 // random -2, return max - 2
-                new object[] { 1, 4, new byte[] { 254, 255, 255, 255 }, 2 },
+                new object[] { 1, 4, BitConverter.GetBytes(-2), 2 },
                 
                 // random -3, return max - 3
-                new object[] { 1, 4, new byte[] { 253, 255, 255, 255 }, 1 },
+                new object[] { 1, 4, BitConverter.GetBytes(-3), 1 },
                 
-                // random -4, return min
-                new object[] { 1, 4, new byte[] { 253, 255, 255, 255 }, 1 },
+                // random -4, return max - 1
+                new object[] { 1, 4, BitConverter.GetBytes(-4), 3 },
 
                 // as above, result include min but exclude max
             };
@@ -143,6 +144,31 @@ namespace LazyGuy.Utils.Tests
             // assert
             actualDic.Should().HaveCount(expectedCountOfInt);
             actualDic.All(r => r.Value == expectedHitTimes).Should().BeTrue();
+        }
+
+        [Test()]
+        public void GetIntTest_ThreadSafe()
+        {
+            //arrage
+            int? firstThreadResult = null;
+            var firstThread = new Thread(new ThreadStart(() =>
+            {
+                firstThreadResult = new RandomValueGenerator().GetInt();
+            }));
+            int? secondThreadResult = null;
+            var secondThread = new Thread(new ThreadStart(() =>
+            {
+                secondThreadResult = new RandomValueGenerator().GetInt();
+            }));
+
+            //act
+            firstThread.Start();
+            secondThread.Start();
+            firstThread.Join();
+            secondThread.Join();
+
+            //assert
+            firstThreadResult.Should().NotBe(secondThreadResult);
         }
 
         #endregion
