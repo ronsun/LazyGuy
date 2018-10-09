@@ -15,7 +15,7 @@ namespace LazyGuy.Utils.Tests
         #region GetInt
 
         [Test()]
-        public void GetIntTest_MixEqualsToMax_ReturnExpectedValue()
+        public void GetIntTest_MinEqualsToMax_ReturnExpectedValue()
         {
             // arrange
             int stubMin = 0;
@@ -169,6 +169,59 @@ namespace LazyGuy.Utils.Tests
 
             //assert
             firstThreadResult.Should().NotBe(secondThreadResult);
+        }
+
+        #endregion
+
+        #region GetString
+
+        [Test()]
+        public void GetStringTest_DefaultDictionary_ShouldBeExpected()
+        {
+            // arrange
+            var stubRandomNumberGenerator = Substitute.For<RandomNumberGenerator>();
+            var mockedRandomValueGenerator = Substitute.For<RandomValueGenerator>(stubRandomNumberGenerator);
+
+            int stubLength = 1;
+            var actualDictionary = string.Empty;
+            mockedRandomValueGenerator
+                .When(r => r.GetString(Arg.Any<int>(), Arg.Any<string>()))
+                .Do(calledMethod =>
+                {
+                    actualDictionary = calledMethod.ArgAt<string>(1);
+                });
+
+            var expectedDefaultDictionary = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+            // act
+            mockedRandomValueGenerator.GetString(stubLength);
+
+            // assert
+            actualDictionary.Should().Be(expectedDefaultDictionary);
+        }
+
+        [Test()]
+        [TestCase(1, 0, "ab", "a")]
+        [TestCase(2, 0, "ab", "aa")]
+        [TestCase(1, 1, "ab", "b")]
+        [TestCase(2, 1, "ab", "bb")]
+        public void GetStringTest_CorrectArguments_ReturnExpectedString(
+            int stubLength,
+            int stubIndex,
+            string stubDictionary,
+            string expectedRandomString)
+        {
+            // arrange
+            var stubRandomNumberGenerator = Substitute.For<RandomNumberGenerator>();
+            var mockedRandomValueGenerator = Substitute.ForPartsOf<RandomValueGenerator>(stubRandomNumberGenerator);
+
+            mockedRandomValueGenerator.GetInt(Arg.Any<int>(), Arg.Any<int>()).Returns(stubIndex);
+
+            // act
+            string actual = mockedRandomValueGenerator.GetString(stubLength, stubDictionary);
+
+            // assert
+            actual.Should().Be(expectedRandomString);
         }
 
         #endregion

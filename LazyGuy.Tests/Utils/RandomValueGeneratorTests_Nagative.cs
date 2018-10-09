@@ -27,6 +27,25 @@ namespace LazyGuy.Utils.Tests
 
         #endregion
 
+        #region GetString
+
+        [Test()]
+        [TestCase(null)]
+        [TestCase("")]
+        public void GetStringTest_DictionaryNullOrEmpty_ThrowArgumentOutOfRangeExceptionWithMessage(string stubDictionary)
+        {
+            // Arragne
+            var target = new RandomValueGenerator();
+            int stubLength = 1;
+
+            // Act
+            Action act = () => { target.GetString(stubLength, stubDictionary); };
+
+            // Assert
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(FakeMessageTemplates.ArgumentEmpty);
+        }
+
+        #endregion
 
     }
 }

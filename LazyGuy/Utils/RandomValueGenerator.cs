@@ -23,7 +23,7 @@ namespace LazyGuy.Utils
             if (string.IsNullOrEmpty(dictionary))
             {
                 string msg = string.Format(MessageTemplates.ArgumentEmpty, nameof(dictionary));
-                throw new ArgumentException(msg);
+                throw new ArgumentOutOfRangeException(msg);
             }
 
             var charArray = new char[length];
