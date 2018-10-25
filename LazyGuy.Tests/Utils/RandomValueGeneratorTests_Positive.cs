@@ -32,7 +32,7 @@ namespace LazyGuy.Utils.Tests
         }
 
         [Test()]
-        public void GetIntTest_InputExtremum_ReturnExpectedValue()
+        public void GetIntTest_EdgeCase_ReturnExpectedValue()
         {
             // arrange
             int stubMin = int.MinValue;
