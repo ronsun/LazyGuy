@@ -1,5 +1,8 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using System.Xml;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace LazyGuy.Utils
@@ -14,27 +17,27 @@ namespace LazyGuy.Utils
             _serializer = serializer;
         }
 
-        public virtual string Serialize<T>(T obj, Encoding encoding = null, XmlSerializerNamespaces namespaces = null)
+        public virtual string Serialize<T>(T obj,
+            XmlWriterSettings xmlWriterSettings = null,
+            XmlSerializerNamespaces ns = null)
         {
-            if (encoding == null)
-            {
-                encoding = Encoding.UTF8;
-            }
-
             InitSerializer<T>();
 
-            using (var ms = new MemoryStream())
+            if (xmlWriterSettings == null)
             {
-                if (namespaces == null)
-                {
-                    _serializer.Serialize(ms, obj);
-                }
-                else
-                {
-                    _serializer.Serialize(ms, obj, namespaces);
-                }
+                xmlWriterSettings = new XmlWriterSettings();
+            }
 
-                return encoding.GetString(ms.ToArray());
+            if (ns == null)
+            {
+                ns = new XmlSerializerNamespaces(new[] { XmlQualifiedName.Empty });
+            }
+
+            using (var ms = new MemoryStream())
+            using (var xmlWriter = XmlWriter.Create(ms, xmlWriterSettings))
+            {
+                _serializer.Serialize(xmlWriter, obj, ns);
+                return xmlWriterSettings.Encoding.GetString(ms.ToArray());
             }
         }
 
