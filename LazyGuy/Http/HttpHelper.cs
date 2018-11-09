@@ -15,7 +15,7 @@ namespace LazyGuy.Http
         {
             if (options == null)
             {
-                options = RequestOptions.Create();
+                options = new RequestOptions();
             }
 
             InitRequest(url, WebRequestMethods.Http.Get, options);
@@ -27,7 +27,7 @@ namespace LazyGuy.Http
         {
             if (options == null)
             {
-                options = RequestOptions.Create();
+                options = new RequestOptions();
             }
 
             InitRequest(url, WebRequestMethods.Http.Post, options);
