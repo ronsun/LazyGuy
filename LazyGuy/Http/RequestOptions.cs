@@ -13,7 +13,7 @@ namespace LazyGuy.Http
 
         public string ContentType { get; set; } = "application/x-www-form-urlencoded";
 
-        public IWebProxy Proxy { get; private set; } = null;
+        public IWebProxy Proxy { get; set; } = null;
 
         public void SetDefaultProxy()
         {

@@ -11,6 +11,8 @@ namespace LazyGuy.Http.Tests
     [TestFixture()]
     public class HttpHelperTests
     {
+        #region Get
+
         [Test()]
         public void GetTest_DefaultOptions_ParametersOfRequestMatchExpected()
         {
@@ -29,43 +31,15 @@ namespace LazyGuy.Http.Tests
 
             // act
             target.Get(stubUrl);
+            var actual = target.CurrentRequest;
 
             // assert
-            mockRequest.Timeout.Should().Be(expectedTimeout);
-            mockRequest.ReadWriteTimeout.Should().Be(expectedReadWriteTimeout);
-            mockRequest.ContentType.Should().Be(expectedContentType);
-            mockRequest.Method.Should().Be(expectedMethod);
-            mockRequest.Proxy.Should().BeEquivalentTo(expectedProxy);
+            actual.Timeout.Should().Be(expectedTimeout);
+            actual.ReadWriteTimeout.Should().Be(expectedReadWriteTimeout);
+            actual.ContentType.Should().Be(expectedContentType);
+            actual.Method.Should().Be(expectedMethod);
+            actual.Proxy.Should().BeEquivalentTo(expectedProxy);
         }
-
-        //[Test()]
-        //public void GetTest_SetupOptions_ParametersOfRequestMatchExpected()
-        //{
-        //    // arrange
-        //    var stubResponseString = "response";
-        //    var stubUrl = "http://url";
-        //    var stubOptions = Substitute.For<RequestOptions>();
-        //    stubOption
-        //    var mockRequest = SetupFakeRequest(stubResponseString, stubUrl);
-
-        //    var target = new HttpHelper();
-
-        //    string expectedMethod = "GET";
-        //    int expectedTimeout = 100000;
-        //    int expectedReadWriteTimeout = 300000;
-        //    string expectedContentType = "application/x-www-form-urlencoded";
-        //    IWebProxy expectedProxy = mockRequest.Proxy;
-
-        //    // act
-        //    target.Get(stubUrl);
-
-        //    // assert
-        //    mockRequest.Timeout.Should().Be(expectedTimeout);
-        //    mockRequest.ReadWriteTimeout.Should().Be(expectedReadWriteTimeout);
-        //    mockRequest.ContentType.Should().Be(expectedContentType);
-        //    mockRequest.Method.Should().Be(expectedMethod);
-        //    mockRequest.Proxy.Should().BeEquivalentTo(expectedProxy);
-        //}
 
         [Test()]
         public void GetTest_DefaultOptions_ResponseMatchExpected()
@@ -85,6 +59,81 @@ namespace LazyGuy.Http.Tests
             // assert
             actual.Should().Be(expected);
         }
+
+        [Test()]
+        public void GetTest_SetupOptionsWithoutProxy_ParametersOfRequestMatchExpected()
+        {
+            // arrange
+            var stubResponseString = "response";
+            var stubUrl = $"http://{nameof(GetTest_SetupOptionsWithoutProxy_ParametersOfRequestMatchExpected)}";
+            var stubOptions = new RequestOptions()
+            {
+                Encoding = Encoding.Default,
+                Timeout = 1,
+                ReadWriteTimeout = 2,
+                ContentType = "contentType"
+            };
+
+            var mockRequest = SetupFakeRequest(stubResponseString, stubUrl);
+
+            var target = new HttpHelper();
+
+            string expectedMethod = "GET";
+            int expectedTimeout = stubOptions.Timeout;
+            int expectedReadWriteTimeout = stubOptions.ReadWriteTimeout;
+            string expectedContentType = stubOptions.ContentType;
+
+            // act
+            target.Get(stubUrl, stubOptions);
+            var actual = target.CurrentRequest;
+
+            // assert
+            actual.Timeout.Should().Be(expectedTimeout);
+            actual.ReadWriteTimeout.Should().Be(expectedReadWriteTimeout);
+            actual.ContentType.Should().Be(expectedContentType);
+            actual.Method.Should().Be(expectedMethod);
+        }
+
+        /// <summary>
+        /// In one sentence, I expected system throw an excpetion in this cas.
+        /// 
+        /// More detail: 
+        /// I mock HttpWebRequest by mock framework instead of static method "Create()" 
+        /// provided by WebRequest, so the value of some properties inside the mocked 
+        /// HttpWebRequest instance are missing (in this case, missing "Address").
+        /// 
+        /// Therefore, system throw an exception when try to assign RequestOptions.proxy 
+        /// to the in instance of HttpWebRequest and the behavior is match expected because 
+        /// this unit test created only for verify if RequestOptions.Proxy assign to the 
+        /// HttpWebRequest instance and do not care the value correct or not.
+        /// 
+        /// Go https://referencesource.microsoft.com/#System/net/System/Net/ServicePointManager.cs,33499ed90fd01409 
+        /// to check method "internal static ServicePoint FindServicePoint(Uri address, IWebProxy proxy, out ProxyChain chain, ref HttpAbortDelegate abortDelegate, ref int abortState)"
+        /// for detail (line 624 to line 626) if there are any concern.
+        /// </summary>
+        [Test()]
+        public void GetTest_SetupProxyOnly_ThrowExpectedException()
+        {
+            // arrange
+            var stubResponseString = "response";
+            var stubUrl = $"http://{nameof(GetTest_SetupProxyOnly_ThrowExpectedException)}";
+            var stubOptions = new RequestOptions();
+            stubOptions.SetDefaultProxy();
+
+            var mockRequest = SetupFakeRequest(stubResponseString, stubUrl);
+
+            var target = new HttpHelper();
+
+            // act
+            Action targetAction = () => target.Get(stubUrl, stubOptions);
+
+            // assert
+            targetAction.Should()
+                        .Throw<ArgumentNullException>()
+                        .WithMessage("Value cannot be null.*Parameter name: address");
+        }
+
+        #endregion
 
         /// <summary>
         /// 
