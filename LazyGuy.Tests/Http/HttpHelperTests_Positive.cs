@@ -98,10 +98,9 @@ namespace LazyGuy.Http.Tests
             stubOptions.SetDefaultProxy();
 
             var mockRequest = InitFakeRequest(stubUrl);
-            IWebProxy actualProxy = null;
+            IWebProxy argumentProxy = null;
             mockRequest.When(r => r.Proxy = stubOptions.Proxy)
-                       .Do(calledMethod => actualProxy = calledMethod.ArgAt<IWebProxy>(0));
-
+                       .Do(calledMethod => argumentProxy = calledMethod.ArgAt<IWebProxy>(0));
 
             var target = new HttpHelper();
 
@@ -121,6 +120,7 @@ namespace LazyGuy.Http.Tests
                 target.Post(stubUrl, stubPostConent, stubOptions);
             }
             var actual = target.CurrentRequest;
+            var actualProxy = argumentProxy;
 
             // assert
             actual.Timeout.Should().Be(expectedTimeout);
