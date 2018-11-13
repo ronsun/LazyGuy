@@ -21,7 +21,7 @@ namespace LazyGuy.Http.Tests
             // arrange
             var stubPostConent = string.Empty;
             var stubUrl = $"http://{nameof(GeneralTest_DefaultOptions_RequestOptionsIsDefault)}/{httpVerb}";
-            var mockRequest = SetupFakeRequest(stubUrl);
+            var mockRequest = InitFakeRequest(stubUrl);
 
             var target = new HttpHelper();
 
@@ -58,7 +58,7 @@ namespace LazyGuy.Http.Tests
             var stubUrl = $"http://{nameof(GeneralTest_DefaultOptions_ResponseMatchExpected)}/{httpVerb}";
             var stubResponseString = "response";
 
-            SetupFakeRequest(stubUrl, stubResponseString);
+            InitFakeRequest(stubUrl, stubResponseString);
 
             var target = new HttpHelper();
 
@@ -83,11 +83,11 @@ namespace LazyGuy.Http.Tests
         [Test()]
         [TestCase(WebRequestMethods.Http.Get)]
         [TestCase(WebRequestMethods.Http.Post)]
-        public void GeneralTest_SetupOptionsWithoutProxy_ParametersOfRequestMatchExpected(string httpVerb)
+        public void GeneralTest_SetupOptions_ParametersOfRequestMatchExpected(string httpVerb)
         {
             // arrange
             var stubPostConent = string.Empty;
-            var stubUrl = $"http://{nameof(GeneralTest_SetupOptionsWithoutProxy_ParametersOfRequestMatchExpected)}/{httpVerb}";
+            var stubUrl = $"http://{nameof(GeneralTest_SetupOptions_ParametersOfRequestMatchExpected)}/{httpVerb}";
             var stubOptions = new RequestOptions()
             {
                 Encoding = Encoding.Default,
@@ -95,8 +95,13 @@ namespace LazyGuy.Http.Tests
                 ReadWriteTimeout = 2,
                 ContentType = "contentType"
             };
+            stubOptions.SetDefaultProxy();
 
-            var mockRequest = SetupFakeRequest(stubUrl);
+            var mockRequest = InitFakeRequest(stubUrl);
+            IWebProxy actualProxy = null;
+            mockRequest.When(r => r.Proxy = stubOptions.Proxy)
+                       .Do(calledMethod => actualProxy = calledMethod.ArgAt<IWebProxy>(0));
+
 
             var target = new HttpHelper();
 
@@ -104,6 +109,7 @@ namespace LazyGuy.Http.Tests
             int expectedTimeout = stubOptions.Timeout;
             int expectedReadWriteTimeout = stubOptions.ReadWriteTimeout;
             string expectedContentType = stubOptions.ContentType;
+            var expectedProxy = stubOptions.Proxy;
 
             // act
             if (httpVerb == WebRequestMethods.Http.Get)
@@ -121,56 +127,7 @@ namespace LazyGuy.Http.Tests
             actual.ReadWriteTimeout.Should().Be(expectedReadWriteTimeout);
             actual.ContentType.Should().Be(expectedContentType);
             actual.Method.Should().Be(expectedMethod);
-        }
-
-        /// <summary>
-        /// In one sentence, I expected system throw an excpetion in this cas.
-        /// 
-        /// More detail: 
-        /// I mock HttpWebRequest by mock framework instead of static method "Create()" 
-        /// provided by WebRequest, so the value of some properties inside the mocked 
-        /// HttpWebRequest instance are missing (in this case, missing "Address").
-        /// 
-        /// Therefore, system throw an exception when try to assign RequestOptions.proxy 
-        /// to the in instance of HttpWebRequest and the behavior is match expected because 
-        /// this unit test created only for verify if RequestOptions.Proxy assign to the 
-        /// HttpWebRequest instance and do not care the value correct or not.
-        /// 
-        /// Go https://referencesource.microsoft.com/#System/net/System/Net/ServicePointManager.cs,33499ed90fd01409 
-        /// to check method "internal static ServicePoint FindServicePoint(Uri address, IWebProxy proxy, out ProxyChain chain, ref HttpAbortDelegate abortDelegate, ref int abortState)"
-        /// for detail (line 624 to line 626) if there are any concern.
-        /// </summary>
-        [Test()]
-        [TestCase(WebRequestMethods.Http.Get)]
-        [TestCase(WebRequestMethods.Http.Post)]
-        public void GeneralTest_SetupProxyOnly_ThrowExpectedException(string httpVerb)
-        {
-            // arrange
-            var stubPostConent = string.Empty;
-            var stubUrl = $"http://{nameof(GeneralTest_SetupProxyOnly_ThrowExpectedException)}/{httpVerb}";
-            var stubOptions = new RequestOptions();
-            stubOptions.SetDefaultProxy();
-
-            var mockRequest = SetupFakeRequest(stubUrl);
-
-            var target = new HttpHelper();
-
-            // act
-            Action targetAction = null;
-            if (httpVerb == WebRequestMethods.Http.Get)
-            {
-                targetAction = () => target.Get(stubUrl, stubOptions);
-            }
-            else if (httpVerb == WebRequestMethods.Http.Post)
-            {
-                targetAction = () => target.Post(stubUrl, stubPostConent, stubOptions);
-            }
-
-            // assert
-            targetAction.Should().NotBeNull();
-            targetAction.Should()
-                        .Throw<ArgumentNullException>()
-                        .WithMessage("Value cannot be null.*Parameter name: address");
+            actualProxy.Should().Be(expectedProxy);
         }
 
         #endregion
@@ -181,7 +138,7 @@ namespace LazyGuy.Http.Tests
         /// <param name="stubResponseString"></param>
         /// <param name="stubUrl">Must be defference everytime.</param>
         /// <returns></returns>
-        private HttpWebRequest SetupFakeRequest(string stubUrl, string stubResponseString = "response")
+        private HttpWebRequest InitFakeRequest(string stubUrl, string stubResponseString = "response")
         {
             var stubResponseStream = new MemoryStream(Encoding.UTF8.GetBytes(stubResponseString));
             var stubResponse = Substitute.For<HttpWebResponse>();
@@ -192,6 +149,7 @@ namespace LazyGuy.Http.Tests
             mockRequest.GetResponse().Returns(stubResponse);
             mockRequest.When(r => r.GetRequestStream()).DoNotCallBase();
             mockRequest.GetRequestStream().Returns(new MemoryStream());
+            mockRequest.When(r => r.Proxy = Arg.Any<IWebProxy>()).DoNotCallBase();
             mockRequest.Headers = new WebHeaderCollection();
 
             var stubRequestCreater = Substitute.For<IWebRequestCreate>();
