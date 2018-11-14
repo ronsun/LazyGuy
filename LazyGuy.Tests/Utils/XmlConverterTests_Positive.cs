@@ -1,15 +1,7 @@
-﻿using NUnit.Framework;
-using LazyGuy.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NSubstitute;
-using System.Xml.Serialization;
-using System.IO;
-using FluentAssertions;
+﻿using System.Text;
 using System.Xml;
+using FluentAssertions;
+using NUnit.Framework;
 
 namespace LazyGuy.Utils.Tests
 {

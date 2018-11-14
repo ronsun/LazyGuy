@@ -1,10 +1,10 @@
-﻿using FluentAssertions;
-using NSubstitute;
-using NUnit.Framework;
-using System;
+﻿using System;
 using System.IO;
 using System.Net;
 using System.Text;
+using FluentAssertions;
+using NSubstitute;
+using NUnit.Framework;
 
 namespace LazyGuy.Http.Tests
 {

@@ -1,9 +1,9 @@
-﻿using FluentAssertions;
-using LazyGuy.Http;
-using NUnit.Framework;
-using System;
+﻿using System;
 using System.Net;
 using System.Text;
+using FluentAssertions;
+using LazyGuy.Http;
+using NUnit.Framework;
 
 namespace LazyGuy.Tests.Http
 {

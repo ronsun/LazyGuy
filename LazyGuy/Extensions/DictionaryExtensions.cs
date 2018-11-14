@@ -1,7 +1,7 @@
-﻿using LazyGuy.Constants;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using LazyGuy.Constants;
 
 namespace LazyGuy.Extensions
 {

@@ -1,7 +1,7 @@
-﻿using FluentAssertions;
+﻿using System;
+using FluentAssertions;
 using LazyGuy.Tests.Constants;
 using NUnit.Framework;
-using System;
 
 namespace LazyGuy.Utils.Tests
 {
