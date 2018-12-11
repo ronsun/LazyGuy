@@ -14,7 +14,8 @@ namespace LazyGuy.Utils.Tests
             public string FakeString { get; set; } = "A";
         }
 
-        private readonly string _urf8BOM = Encoding.UTF8.GetString(Encoding.UTF8.GetPreamble());
+        private static readonly string _utf8BOM = Encoding.UTF8.GetString(Encoding.UTF8.GetPreamble());
+        private static readonly string _utf32BOM = Encoding.UTF32.GetString(Encoding.UTF32.GetPreamble());
 
         #region Serialize
 
@@ -24,7 +25,7 @@ namespace LazyGuy.Utils.Tests
             // arrange
             var stubClass = new FakeClass();
             var target = new XmlConverter();
-            var expected = $"{_urf8BOM}<?xml version=\"1.0\" encoding=\"utf-8\"?><FakeClass><FakeString>A</FakeString></FakeClass>";
+            var expected = "<?xml version=\"1.0\" encoding=\"utf-8\"?><FakeClass><FakeString>A</FakeString></FakeClass>";
             // act
             var actual = target.Serialize(stubClass);
 
@@ -39,7 +40,7 @@ namespace LazyGuy.Utils.Tests
             var stubClass = new FakeClass();
             var stubXmlWriterSettings = new XmlWriterSettings() { OmitXmlDeclaration = true };
             var target = new XmlConverter();
-            var expected = $"{_urf8BOM}<FakeClass><FakeString>A</FakeString></FakeClass>";
+            var expected = $"{_utf8BOM}<FakeClass><FakeString>A</FakeString></FakeClass>";
 
             // act
             var actual = target.Serialize(stubClass, stubXmlWriterSettings);
@@ -49,13 +50,13 @@ namespace LazyGuy.Utils.Tests
         }
 
         [Test()]
-        public void SerializeTest_NoBOM_ReturnCleanXml()
+        public void SerializeTest_IncludeBOM_ReturnCleanXml()
         {
             // arrange
             var stubClass = new FakeClass();
-            var stubXmlWriterSettings = new XmlWriterSettings() { Encoding = new UTF8Encoding() };
+            var stubXmlWriterSettings = new XmlWriterSettings() { Encoding = Encoding.UTF8 };
             var target = new XmlConverter();
-            var expected = $"<?xml version=\"1.0\" encoding=\"utf-8\"?><FakeClass><FakeString>A</FakeString></FakeClass>";
+            var expected = $"{_utf8BOM}<?xml version=\"1.0\" encoding=\"utf-8\"?><FakeClass><FakeString>A</FakeString></FakeClass>";
 
             // act
             var actual = target.Serialize(stubClass, stubXmlWriterSettings);
@@ -92,13 +93,12 @@ namespace LazyGuy.Utils.Tests
             var expectedFakeString = "繁简A";
             var xml = $"<FakeClass><FakeString>{expectedFakeString}</FakeString></FakeClass>";
             var xmlWithDeclaration = $"<?xml version=\"1.0\" ?><FakeClass><FakeString>{expectedFakeString}</FakeString></FakeClass>";
-            var utf8BOM = Encoding.UTF8.GetString(Encoding.UTF8.GetPreamble());
 
             var cases = new List<object[]>()
             {
                 new object[] { xml, expectedFakeString },
                 new object[] { xmlWithDeclaration, expectedFakeString },
-                new object[] { utf8BOM + xmlWithDeclaration, expectedFakeString },
+                new object[] { _utf8BOM + xmlWithDeclaration, expectedFakeString },
             };
 
             return cases;
@@ -128,8 +128,6 @@ namespace LazyGuy.Utils.Tests
             var expectedFakeString = "繁简A";
             var xml = $"<FakeClass><FakeString>{expectedFakeString}</FakeString></FakeClass>";
             var xmlWithDeclaration = $"<?xml version=\"1.0\" ?><FakeClass><FakeString>{expectedFakeString}</FakeString></FakeClass>";
-            var utf8BOM = Encoding.UTF8.GetString(Encoding.UTF8.GetPreamble());
-            var utf32BOM = Encoding.UTF32.GetString(Encoding.UTF32.GetPreamble());
 
             var cases = new List<object[]>()
             {
@@ -138,11 +136,11 @@ namespace LazyGuy.Utils.Tests
 
                 new object[] { xml, expectedFakeString, Encoding.UTF8 },
                 new object[] { xmlWithDeclaration, expectedFakeString, Encoding.UTF8 },
-                new object[] { utf8BOM + xml, expectedFakeString, Encoding.UTF8 },
+                new object[] { _utf8BOM + xml, expectedFakeString, Encoding.UTF8 },
 
                 new object[] { xml, expectedFakeString, Encoding.UTF32 },
                 new object[] { xmlWithDeclaration, expectedFakeString, Encoding.UTF32 },
-                new object[] { utf32BOM + xml, expectedFakeString, Encoding.UTF32 },
+                new object[] { _utf32BOM + xml, expectedFakeString, Encoding.UTF32 },
             };
 
             return cases;

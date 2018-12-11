@@ -23,7 +23,7 @@ namespace LazyGuy.Utils
 
             if (xmlWriterSettings == null)
             {
-                xmlWriterSettings = new XmlWriterSettings();
+                xmlWriterSettings = new XmlWriterSettings() { Encoding = new UTF8Encoding() };
             }
 
             if (ns == null)
