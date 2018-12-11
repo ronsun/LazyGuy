@@ -71,7 +71,7 @@ namespace LazyGuy.Utils.Tests
             actual.Should().Be(expected);
         }
 
-        static List<object[]> TestCase_GetIntTest_FixedMinAndMaxButDynamicBytes_ReturnExpectedValue()
+        private static List<object[]> TestCase_GetIntTest_FixedMinAndMaxButDynamicBytes_ReturnExpectedValue()
         {
             var cases = new List<object[]>()
             {
