@@ -58,11 +58,13 @@ namespace LazyGuy.Http
         private string SendRequest(Encoding encoding)
         {
             using (HttpWebResponse resopnse = (HttpWebResponse)CurrentRequest.GetResponse())
-            using (Stream s = resopnse.GetResponseStream())
-            using (StreamReader sr = new StreamReader(s, encoding))
             {
-                CurrentResponse = resopnse;
-                return sr.ReadToEnd();
+                Stream s = resopnse.GetResponseStream();
+                using (StreamReader sr = new StreamReader(s, encoding))
+                {
+                    CurrentResponse = resopnse;
+                    return sr.ReadToEnd();
+                }
             }
         }
     }
