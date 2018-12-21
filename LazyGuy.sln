@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyGuy", "LazyGuy\LazyGuy.csproj", "{38336691-3917-4806-A940-A580C00D7B99}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyGuy", "src\LazyGuy\LazyGuy.csproj", "{38336691-3917-4806-A940-A580C00D7B99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyGuy.Tests", "LazyGuy.Tests\LazyGuy.Tests.csproj", "{07B084C0-69F6-497B-8B09-56D56730112A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyGuy.Tests", "src\LazyGuy.Tests\LazyGuy.Tests.csproj", "{07B084C0-69F6-497B-8B09-56D56730112A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
