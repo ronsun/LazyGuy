@@ -334,3 +334,7 @@ ASALocalRun/
 
 # StyleCop setting file
 *.StyleCop
+
+# DocFX
+**/LazyGuy.DocFX/_site/
+**/LazyGuy.DocFX/log.txt
