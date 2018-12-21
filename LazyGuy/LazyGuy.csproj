@@ -43,6 +43,7 @@
     <Compile Include="Constants\MessageTemplates.cs" />
     <Compile Include="Extensions\DictionaryExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Extensions\HashAlgorithmExtensions.cs" />
     <Compile Include="Http\HttpHelper.cs" />
     <Compile Include="Http\RequestOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
