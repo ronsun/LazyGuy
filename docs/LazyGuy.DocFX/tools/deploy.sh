@@ -32,14 +32,9 @@ localDirPath=$localDir/Project.DocFX
 } || onException
 
 {
-  echo "=====> Add and commit generated files to github"
+  echo "=====> Add, commit and push generated files to github"
   git add .
   git commit -m 'generated documents'
-  git push
-} || onException
-
-{
-  echo "=====> Push generated files to github"
   git push
 } || onException
 
