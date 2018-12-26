@@ -7,33 +7,33 @@ using NUnit.Framework;
 namespace LazyGuy.Extensions.Tests
 {
     [TestFixture()]
-    public class HashAlgorithmExtensionsTests_Negative
+    public class SymmetricAlgorithmExtensionsTests_Negative
     {
-        #region ComputeHashToString with string input
+        #region Encrypt with string input
 
         [TestCase(null)]
         [TestCase("")]
-        public void ComputeHashToStringTest_InputEmptyString_ReturnArgumentOutOfRangeException(string mockedPlaintext)
+        public void EncryptTest_InputEmptyString_ReturnArgumentOutOfRangeException(string mockedPlaintext)
         {
             // arrange
-            var target = new MD5CryptoServiceProvider();
+            var target = new AesCryptoServiceProvider();
 
             //act
-            Action act = () => { target.ComputeHashToString(mockedPlaintext); };
+            Action act = () => { target.Encrypt(mockedPlaintext); };
 
             //assert
             act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(FakeMessageTemplates.ArgumentEmpty);
         }
 
         [Test()]
-        public void ComputeHashToStringTest_InputNullHashAlgorithmWithString_ReturnArgumentNullException()
+        public void EncryptTest_InputNullSymmetricAlgorithmWithString_ReturnArgumentNullException()
         {
             // arrange
             string mockedPlaintext = "a";
-            HashAlgorithm target = null;
+            SymmetricAlgorithm target = null;
 
             //act
-            Action act = () => { target.ComputeHashToString(mockedPlaintext); };
+            Action act = () => { target.Encrypt(mockedPlaintext); };
 
             //assert
             act.Should().Throw<ArgumentNullException>().WithMessage(FakeMessageTemplates.ArgumentNull);
@@ -41,35 +41,37 @@ namespace LazyGuy.Extensions.Tests
 
         #endregion
 
-        #region ComputeHashToString with bytes input
+        #region Encrypt with bytes input
 
         [TestCase(null)]
         [TestCase(new byte[0])]
-        public void ComputeHashToStringTest_InputEmptyBytes_ArgumentOutOfRangeException(byte[] mockedPlaintextBytes)
+        public void EncryptTest_InputNullBytes_ReturnArgumentOutOfRangeException(byte[] mockedPlaintextBytes)
         {
             // arrange
-            var target = new MD5CryptoServiceProvider();
+            var target = new AesCryptoServiceProvider();
 
             //act
-            Action act = () => { target.ComputeHashToString(mockedPlaintextBytes); };
+            Action act = () => { target.Encrypt(mockedPlaintextBytes); };
 
             //assert
             act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(FakeMessageTemplates.ArgumentEmpty);
         }
 
+
         [Test()]
-        public void ComputeHashToStringTest_InputNullHashAlgorithmWithBytes_ReturnArgumentNullException()
+        public void ComputeHashToStringTest_InputNullSymmetricAlgorithmWithBytes_ReturnArgumentNullException()
         {
             // arrange
             byte[] mockedPlaintextBytes = new byte[] { 0x31 };
-            HashAlgorithm target = null;
+            SymmetricAlgorithm target = null;
 
             //act
-            Action act = () => { target.ComputeHashToString(mockedPlaintextBytes); };
+            Action act = () => { target.Encrypt(mockedPlaintextBytes); };
 
             //assert
             act.Should().Throw<ArgumentNullException>().WithMessage(FakeMessageTemplates.ArgumentNull);
         }
+
         #endregion
     }
 }

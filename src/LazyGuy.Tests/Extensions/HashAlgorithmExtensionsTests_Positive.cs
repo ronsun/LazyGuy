@@ -32,7 +32,7 @@ namespace LazyGuy.Extensions.Tests
 
         #endregion
 
-        #region ComputeHashToString with string input
+        #region ComputeHashToString with bytes input
 
         [Test()]
         [TestCaseSource(nameof(TestCase_ComputeHashToStringTest_ReturnWithoutHyphen))]

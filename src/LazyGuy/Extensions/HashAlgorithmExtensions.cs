@@ -18,10 +18,16 @@ namespace LazyGuy.Extensions
         /// <returns></returns>
         public static string ComputeHashToString(this HashAlgorithm hash, string plaintext)
         {
-            if (plaintext == null)
+            if (hash == null)
             {
-                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(plaintext));
+                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(hash));
                 throw new ArgumentNullException(msg);
+            }
+
+            if (string.IsNullOrEmpty(plaintext))
+            {
+                string msg = string.Format(MessageTemplates.ArgumentEmpty, nameof(plaintext));
+                throw new ArgumentOutOfRangeException(msg);
             }
 
             return ComputeHashToString(hash, Encoding.UTF8.GetBytes(plaintext));
@@ -35,10 +41,16 @@ namespace LazyGuy.Extensions
         /// <returns></returns>
         public static string ComputeHashToString(this HashAlgorithm hash, byte[] plaintextBytes)
         {
-            if (plaintextBytes == null)
+            if (hash == null)
             {
-                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(plaintextBytes));
+                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(hash));
                 throw new ArgumentNullException(msg);
+            }
+
+            if (plaintextBytes == null || plaintextBytes.Length == 0)
+            {
+                string msg = string.Format(MessageTemplates.ArgumentEmpty, nameof(plaintextBytes));
+                throw new ArgumentOutOfRangeException(msg);
             }
 
             byte[] ciphertextBytes = hash.ComputeHash(plaintextBytes);

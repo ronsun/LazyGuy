@@ -69,6 +69,7 @@
     <Compile Include="Extensions\EnumExtensionsTests_Negative.cs" />
     <Compile Include="Extensions\HashAlgorithmExtensionsTests_Negative.cs" />
     <Compile Include="Extensions\HashAlgorithmExtensionsTests_Positive.cs" />
+    <Compile Include="Extensions\SymmetricAlgorithmExtensionsTests_Negative.cs" />
     <Compile Include="Http\HttpHelperTests_Positive.cs" />
     <Compile Include="Http\RequestOptionsTests_Positive.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
