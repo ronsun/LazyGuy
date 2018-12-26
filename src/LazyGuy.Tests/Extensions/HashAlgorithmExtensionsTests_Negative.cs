@@ -13,13 +13,13 @@ namespace LazyGuy.Extensions.Tests
 
         [TestCase(null)]
         [TestCase("")]
-        public void ComputeHashToStringTest_InputEmptyString_ReturnArgumentOutOfRangeException(string mockedPlaintext)
+        public void ComputeHashToStringTest_InputEmptyString_ReturnArgumentOutOfRangeException(string stubPlaintext)
         {
             // arrange
             var target = new MD5CryptoServiceProvider();
 
             //act
-            Action act = () => { target.ComputeHashToString(mockedPlaintext); };
+            Action act = () => { target.ComputeHashToString(stubPlaintext); };
 
             //assert
             act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(FakeMessageTemplates.ArgumentEmpty);
@@ -29,11 +29,11 @@ namespace LazyGuy.Extensions.Tests
         public void ComputeHashToStringTest_InputNullHashAlgorithmWithString_ReturnArgumentNullException()
         {
             // arrange
-            string mockedPlaintext = "a";
+            string stubPlaintext = "a";
             HashAlgorithm target = null;
 
             //act
-            Action act = () => { target.ComputeHashToString(mockedPlaintext); };
+            Action act = () => { target.ComputeHashToString(stubPlaintext); };
 
             //assert
             act.Should().Throw<ArgumentNullException>().WithMessage(FakeMessageTemplates.ArgumentNull);
@@ -45,13 +45,13 @@ namespace LazyGuy.Extensions.Tests
 
         [TestCase(null)]
         [TestCase(new byte[0])]
-        public void ComputeHashToStringTest_InputEmptyBytes_ArgumentOutOfRangeException(byte[] mockedPlaintextBytes)
+        public void ComputeHashToStringTest_InputEmptyBytes_ArgumentOutOfRangeException(byte[] stubPlaintextBytes)
         {
             // arrange
             var target = new MD5CryptoServiceProvider();
 
             //act
-            Action act = () => { target.ComputeHashToString(mockedPlaintextBytes); };
+            Action act = () => { target.ComputeHashToString(stubPlaintextBytes); };
 
             //assert
             act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(FakeMessageTemplates.ArgumentEmpty);
@@ -61,11 +61,11 @@ namespace LazyGuy.Extensions.Tests
         public void ComputeHashToStringTest_InputNullHashAlgorithmWithBytes_ReturnArgumentNullException()
         {
             // arrange
-            byte[] mockedPlaintextBytes = new byte[] { 0x31 };
+            byte[] stubPlaintextBytes = new byte[] { 0x31 };
             HashAlgorithm target = null;
 
             //act
-            Action act = () => { target.ComputeHashToString(mockedPlaintextBytes); };
+            Action act = () => { target.ComputeHashToString(stubPlaintextBytes); };
 
             //assert
             act.Should().Throw<ArgumentNullException>().WithMessage(FakeMessageTemplates.ArgumentNull);

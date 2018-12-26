@@ -13,13 +13,13 @@ namespace LazyGuy.Extensions.Tests
 
         [TestCase(null)]
         [TestCase("")]
-        public void EncryptTest_InputEmptyString_ReturnArgumentOutOfRangeException(string mockedPlaintext)
+        public void EncryptTest_InputEmptyString_ReturnArgumentOutOfRangeException(string stubPlaintext)
         {
             // arrange
             var target = new AesCryptoServiceProvider();
 
             //act
-            Action act = () => { target.Encrypt(mockedPlaintext); };
+            Action act = () => { target.Encrypt(stubPlaintext); };
 
             //assert
             act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(FakeMessageTemplates.ArgumentEmpty);
@@ -29,11 +29,11 @@ namespace LazyGuy.Extensions.Tests
         public void EncryptTest_InputNullSymmetricAlgorithmWithString_ReturnArgumentNullException()
         {
             // arrange
-            string mockedPlaintext = "a";
+            string stubPlaintext = "a";
             SymmetricAlgorithm target = null;
 
             //act
-            Action act = () => { target.Encrypt(mockedPlaintext); };
+            Action act = () => { target.Encrypt(stubPlaintext); };
 
             //assert
             act.Should().Throw<ArgumentNullException>().WithMessage(FakeMessageTemplates.ArgumentNull);
@@ -45,13 +45,13 @@ namespace LazyGuy.Extensions.Tests
 
         [TestCase(null)]
         [TestCase(new byte[0])]
-        public void EncryptTest_InputNullBytes_ReturnArgumentOutOfRangeException(byte[] mockedPlaintextBytes)
+        public void EncryptTest_InputEmptyBytes_ReturnArgumentOutOfRangeException(byte[] stubPlaintextBytes)
         {
             // arrange
             var target = new AesCryptoServiceProvider();
 
             //act
-            Action act = () => { target.Encrypt(mockedPlaintextBytes); };
+            Action act = () => { target.Encrypt(stubPlaintextBytes); };
 
             //assert
             act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(FakeMessageTemplates.ArgumentEmpty);
@@ -62,11 +62,43 @@ namespace LazyGuy.Extensions.Tests
         public void ComputeHashToStringTest_InputNullSymmetricAlgorithmWithBytes_ReturnArgumentNullException()
         {
             // arrange
-            byte[] mockedPlaintextBytes = new byte[] { 0x31 };
+            byte[] stubPlaintextBytes = new byte[] { 0x31 };
             SymmetricAlgorithm target = null;
 
             //act
-            Action act = () => { target.Encrypt(mockedPlaintextBytes); };
+            Action act = () => { target.Encrypt(stubPlaintextBytes); };
+
+            //assert
+            act.Should().Throw<ArgumentNullException>().WithMessage(FakeMessageTemplates.ArgumentNull);
+        }
+
+        #endregion
+
+        #region Decrypt
+
+        [TestCase(null)]
+        [TestCase("")]
+        public void DecryptTest_InputEmptyString_ReturnArgumentOutOfRangeException(string stubCiphertext)
+        {
+            // arrange
+            var target = new AesCryptoServiceProvider();
+
+            //act
+            Action act = () => { target.Decrypt(stubCiphertext); };
+
+            //assert
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(FakeMessageTemplates.ArgumentEmpty);
+        }
+
+        [Test()]
+        public void DecryptTest_InputNullSymmetricAlgorithmWithString_ReturnArgumentNullException()
+        {
+            // arrange
+            string stubCiphertext = "a";
+            SymmetricAlgorithm target = null;
+
+            //act
+            Action act = () => { target.Decrypt(stubCiphertext); };
 
             //assert
             act.Should().Throw<ArgumentNullException>().WithMessage(FakeMessageTemplates.ArgumentNull);
