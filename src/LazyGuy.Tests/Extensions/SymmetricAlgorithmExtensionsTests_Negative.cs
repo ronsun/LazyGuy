@@ -59,7 +59,7 @@ namespace LazyGuy.Extensions.Tests
 
 
         [Test()]
-        public void ComputeHashToStringTest_InputNullSymmetricAlgorithmWithBytes_ReturnArgumentNullException()
+        public void EncryptTest_InputNullSymmetricAlgorithmWithBytes_ReturnArgumentNullException()
         {
             // arrange
             byte[] stubPlaintextBytes = new byte[] { 0x31 };

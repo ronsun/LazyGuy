@@ -17,7 +17,7 @@ namespace LazyGuy.Extensions
         /// <param name="symmetric">The instance of SymmetricAlgorithm. </param>
         /// <param name="plaintext">The plaintext string. </param>
         /// <returns></returns>
-        public static string Encrypt(this SymmetricAlgorithm symmetric, string plaintext)
+        public static string Encrypt(this SymmetricAlgorithm symmetric, string plaintext, Encoding encoding = null)
         {
             if (symmetric == null)
             {
@@ -31,7 +31,12 @@ namespace LazyGuy.Extensions
                 throw new ArgumentOutOfRangeException(msg);
             }
 
-            return Encrypt(symmetric, Encoding.UTF8.GetBytes(plaintext));
+            if (encoding == null)
+            {
+                encoding = Encoding.UTF8;
+            }
+
+            return Encrypt(symmetric, encoding.GetBytes(plaintext));
         }
 
         /// <summary>
