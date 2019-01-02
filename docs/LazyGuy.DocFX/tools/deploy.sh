@@ -3,7 +3,7 @@ onException(){
     exit 1;
 }
 
-workspaceLocation=$(pwd)
+read -p "Generated site location: " workspaceLocation
 
 read -p "GitHub Repository: " remote
 
@@ -28,7 +28,7 @@ localDirPath=$localDir/Project.DocFX
 
 {
   echo "=====> Copying generated files to current folder"
-  cp -r $workspaceLocation/../_site/* .
+  cp -r $workspaceLocation/* .
 } || onException
 
 {
