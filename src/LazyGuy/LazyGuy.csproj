@@ -45,6 +45,7 @@
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\HashAlgorithmExtensions.cs" />
     <Compile Include="Extensions\SymmetricAlgorithmExtensions.cs" />
+    <Compile Include="Extensions\X509Certificate2Extensions.cs" />
     <Compile Include="Http\HttpHelper.cs" />
     <Compile Include="Http\RequestOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
