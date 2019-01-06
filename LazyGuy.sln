@@ -7,11 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyGuy", "src\LazyGuy\Lazy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyGuy.Tests", "src\LazyGuy.Tests\LazyGuy.Tests.csproj", "{07B084C0-69F6-497B-8B09-56D56730112A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A16A5BCB-C00B-4FFB-9ABF-9AC8A6B0C266}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{9CE5ABB4-74E1-4946-AE14-A26AC9804B8E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyGuy.DocFX", "docs\LazyGuy.DocFX\LazyGuy.DocFX.csproj", "{660F3605-9127-46F2-8A38-3866B8466231}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyGuy.DocFX", "src\LazyGuy.DocFX\LazyGuy.DocFX.csproj", "{660F3605-9127-46F2-8A38-3866B8466231}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,11 +30,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{38336691-3917-4806-A940-A580C00D7B99} = {A16A5BCB-C00B-4FFB-9ABF-9AC8A6B0C266}
-		{07B084C0-69F6-497B-8B09-56D56730112A} = {A16A5BCB-C00B-4FFB-9ABF-9AC8A6B0C266}
-		{660F3605-9127-46F2-8A38-3866B8466231} = {9CE5ABB4-74E1-4946-AE14-A26AC9804B8E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F97B22FB-38D3-4E42-AFEC-FE6E23CB4914}

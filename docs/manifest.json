@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/Ron/Desktop/MyGithub/LazyGuy/docs/LazyGuy.DocFX",
+  "source_base_path": "C:/Users/Ron/Desktop/MyGithub/LazyGuy/src/LazyGuy.DocFX",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "UmUvckox0J6Esr7w9Db+cg=="
+          "hash": "XWvFyi4ga/5PwzgVNnYvJw=="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "BdO20O+KY6NXFbAuumfJcA=="
+          "hash": "79G9BItHrDyfmie7f6MuUw=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "Mq4NEgxdeMWaxrM+CjyC8Q=="
+          "hash": "kbJU1aeNC95Gld6R9ScWSA=="
         }
       },
       "is_incremental": false,
