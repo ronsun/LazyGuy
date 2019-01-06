@@ -1,0 +1,478 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: LazyGuy.Constants
+  name: LazyGuy.Constants
+  href: api/LazyGuy.Constants.html
+  commentId: N:LazyGuy.Constants
+  fullName: LazyGuy.Constants
+  nameWithType: LazyGuy.Constants
+- uid: LazyGuy.Constants.MessageTemplates
+  name: MessageTemplates
+  href: api/LazyGuy.Constants.MessageTemplates.html
+  commentId: T:LazyGuy.Constants.MessageTemplates
+  fullName: LazyGuy.Constants.MessageTemplates
+  nameWithType: MessageTemplates
+- uid: LazyGuy.Constants.MessageTemplates.ArgumentEmpty
+  name: ArgumentEmpty
+  href: api/LazyGuy.Constants.MessageTemplates.html#LazyGuy_Constants_MessageTemplates_ArgumentEmpty
+  commentId: F:LazyGuy.Constants.MessageTemplates.ArgumentEmpty
+  fullName: LazyGuy.Constants.MessageTemplates.ArgumentEmpty
+  nameWithType: MessageTemplates.ArgumentEmpty
+- uid: LazyGuy.Constants.MessageTemplates.ArgumentNull
+  name: ArgumentNull
+  href: api/LazyGuy.Constants.MessageTemplates.html#LazyGuy_Constants_MessageTemplates_ArgumentNull
+  commentId: F:LazyGuy.Constants.MessageTemplates.ArgumentNull
+  fullName: LazyGuy.Constants.MessageTemplates.ArgumentNull
+  nameWithType: MessageTemplates.ArgumentNull
+- uid: LazyGuy.Constants.MessageTemplates.InvalidArrayTypeForParams
+  name: InvalidArrayTypeForParams
+  href: api/LazyGuy.Constants.MessageTemplates.html#LazyGuy_Constants_MessageTemplates_InvalidArrayTypeForParams
+  commentId: F:LazyGuy.Constants.MessageTemplates.InvalidArrayTypeForParams
+  fullName: LazyGuy.Constants.MessageTemplates.InvalidArrayTypeForParams
+  nameWithType: MessageTemplates.InvalidArrayTypeForParams
+- uid: LazyGuy.Constants.MessageTemplates.NumberMustGreatherThanAnother
+  name: NumberMustGreatherThanAnother
+  href: api/LazyGuy.Constants.MessageTemplates.html#LazyGuy_Constants_MessageTemplates_NumberMustGreatherThanAnother
+  commentId: F:LazyGuy.Constants.MessageTemplates.NumberMustGreatherThanAnother
+  fullName: LazyGuy.Constants.MessageTemplates.NumberMustGreatherThanAnother
+  nameWithType: MessageTemplates.NumberMustGreatherThanAnother
+- uid: LazyGuy.Constants.MessageTemplates.ValueNotInEnum
+  name: ValueNotInEnum
+  href: api/LazyGuy.Constants.MessageTemplates.html#LazyGuy_Constants_MessageTemplates_ValueNotInEnum
+  commentId: F:LazyGuy.Constants.MessageTemplates.ValueNotInEnum
+  fullName: LazyGuy.Constants.MessageTemplates.ValueNotInEnum
+  nameWithType: MessageTemplates.ValueNotInEnum
+- uid: LazyGuy.Extensions
+  name: LazyGuy.Extensions
+  href: api/LazyGuy.Extensions.html
+  commentId: N:LazyGuy.Extensions
+  fullName: LazyGuy.Extensions
+  nameWithType: LazyGuy.Extensions
+- uid: LazyGuy.Extensions.DictionaryExtensions
+  name: DictionaryExtensions
+  href: api/LazyGuy.Extensions.DictionaryExtensions.html
+  commentId: T:LazyGuy.Extensions.DictionaryExtensions
+  fullName: LazyGuy.Extensions.DictionaryExtensions
+  nameWithType: DictionaryExtensions
+- uid: LazyGuy.Extensions.DictionaryExtensions.AddOrIgnore*
+  name: AddOrIgnore
+  href: api/LazyGuy.Extensions.DictionaryExtensions.html#LazyGuy_Extensions_DictionaryExtensions_AddOrIgnore_
+  commentId: Overload:LazyGuy.Extensions.DictionaryExtensions.AddOrIgnore
+  isSpec: "True"
+  fullName: LazyGuy.Extensions.DictionaryExtensions.AddOrIgnore
+  nameWithType: DictionaryExtensions.AddOrIgnore
+- uid: LazyGuy.Extensions.DictionaryExtensions.AddOrIgnore``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)
+  name: AddOrIgnore<TKey, TValue>(IDictionary<TKey, TValue>, TKey, TValue)
+  href: api/LazyGuy.Extensions.DictionaryExtensions.html#LazyGuy_Extensions_DictionaryExtensions_AddOrIgnore__2_System_Collections_Generic_IDictionary___0___1____0___1_
+  commentId: M:LazyGuy.Extensions.DictionaryExtensions.AddOrIgnore``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)
+  name.vb: AddOrIgnore(Of TKey, TValue)(IDictionary(Of TKey, TValue), TKey, TValue)
+  fullName: LazyGuy.Extensions.DictionaryExtensions.AddOrIgnore<TKey, TValue>(System.Collections.Generic.IDictionary<TKey, TValue>, TKey, TValue)
+  fullName.vb: LazyGuy.Extensions.DictionaryExtensions.AddOrIgnore(Of TKey, TValue)(System.Collections.Generic.IDictionary(Of TKey, TValue), TKey, TValue)
+  nameWithType: DictionaryExtensions.AddOrIgnore<TKey, TValue>(IDictionary<TKey, TValue>, TKey, TValue)
+  nameWithType.vb: DictionaryExtensions.AddOrIgnore(Of TKey, TValue)(IDictionary(Of TKey, TValue), TKey, TValue)
+- uid: LazyGuy.Extensions.DictionaryExtensions.AddOrUpdate*
+  name: AddOrUpdate
+  href: api/LazyGuy.Extensions.DictionaryExtensions.html#LazyGuy_Extensions_DictionaryExtensions_AddOrUpdate_
+  commentId: Overload:LazyGuy.Extensions.DictionaryExtensions.AddOrUpdate
+  isSpec: "True"
+  fullName: LazyGuy.Extensions.DictionaryExtensions.AddOrUpdate
+  nameWithType: DictionaryExtensions.AddOrUpdate
+- uid: LazyGuy.Extensions.DictionaryExtensions.AddOrUpdate``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)
+  name: AddOrUpdate<TKey, TValue>(IDictionary<TKey, TValue>, TKey, TValue)
+  href: api/LazyGuy.Extensions.DictionaryExtensions.html#LazyGuy_Extensions_DictionaryExtensions_AddOrUpdate__2_System_Collections_Generic_IDictionary___0___1____0___1_
+  commentId: M:LazyGuy.Extensions.DictionaryExtensions.AddOrUpdate``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)
+  name.vb: AddOrUpdate(Of TKey, TValue)(IDictionary(Of TKey, TValue), TKey, TValue)
+  fullName: LazyGuy.Extensions.DictionaryExtensions.AddOrUpdate<TKey, TValue>(System.Collections.Generic.IDictionary<TKey, TValue>, TKey, TValue)
+  fullName.vb: LazyGuy.Extensions.DictionaryExtensions.AddOrUpdate(Of TKey, TValue)(System.Collections.Generic.IDictionary(Of TKey, TValue), TKey, TValue)
+  nameWithType: DictionaryExtensions.AddOrUpdate<TKey, TValue>(IDictionary<TKey, TValue>, TKey, TValue)
+  nameWithType.vb: DictionaryExtensions.AddOrUpdate(Of TKey, TValue)(IDictionary(Of TKey, TValue), TKey, TValue)
+- uid: LazyGuy.Extensions.DictionaryExtensions.ToQueryString(System.Collections.Generic.IDictionary{System.String,System.String})
+  name: ToQueryString(IDictionary<String, String>)
+  href: api/LazyGuy.Extensions.DictionaryExtensions.html#LazyGuy_Extensions_DictionaryExtensions_ToQueryString_System_Collections_Generic_IDictionary_System_String_System_String__
+  commentId: M:LazyGuy.Extensions.DictionaryExtensions.ToQueryString(System.Collections.Generic.IDictionary{System.String,System.String})
+  name.vb: ToQueryString(IDictionary(Of String, String))
+  fullName: LazyGuy.Extensions.DictionaryExtensions.ToQueryString(System.Collections.Generic.IDictionary<System.String, System.String>)
+  fullName.vb: LazyGuy.Extensions.DictionaryExtensions.ToQueryString(System.Collections.Generic.IDictionary(Of System.String, System.String))
+  nameWithType: DictionaryExtensions.ToQueryString(IDictionary<String, String>)
+  nameWithType.vb: DictionaryExtensions.ToQueryString(IDictionary(Of String, String))
+- uid: LazyGuy.Extensions.DictionaryExtensions.ToQueryString*
+  name: ToQueryString
+  href: api/LazyGuy.Extensions.DictionaryExtensions.html#LazyGuy_Extensions_DictionaryExtensions_ToQueryString_
+  commentId: Overload:LazyGuy.Extensions.DictionaryExtensions.ToQueryString
+  isSpec: "True"
+  fullName: LazyGuy.Extensions.DictionaryExtensions.ToQueryString
+  nameWithType: DictionaryExtensions.ToQueryString
+- uid: LazyGuy.Extensions.EnumExtensions
+  name: EnumExtensions
+  href: api/LazyGuy.Extensions.EnumExtensions.html
+  commentId: T:LazyGuy.Extensions.EnumExtensions
+  fullName: LazyGuy.Extensions.EnumExtensions
+  nameWithType: EnumExtensions
+- uid: LazyGuy.Extensions.EnumExtensions.In(System.Enum,System.Enum[])
+  name: In(Enum, Enum[])
+  href: api/LazyGuy.Extensions.EnumExtensions.html#LazyGuy_Extensions_EnumExtensions_In_System_Enum_System_Enum___
+  commentId: M:LazyGuy.Extensions.EnumExtensions.In(System.Enum,System.Enum[])
+  name.vb: In(Enum, Enum())
+  fullName: LazyGuy.Extensions.EnumExtensions.In(System.Enum, System.Enum[])
+  fullName.vb: LazyGuy.Extensions.EnumExtensions.In(System.Enum, System.Enum())
+  nameWithType: EnumExtensions.In(Enum, Enum[])
+  nameWithType.vb: EnumExtensions.In(Enum, Enum())
+- uid: LazyGuy.Extensions.EnumExtensions.In*
+  name: In
+  href: api/LazyGuy.Extensions.EnumExtensions.html#LazyGuy_Extensions_EnumExtensions_In_
+  commentId: Overload:LazyGuy.Extensions.EnumExtensions.In
+  isSpec: "True"
+  fullName: LazyGuy.Extensions.EnumExtensions.In
+  nameWithType: EnumExtensions.In
+- uid: LazyGuy.Extensions.HashAlgorithmExtensions
+  name: HashAlgorithmExtensions
+  href: api/LazyGuy.Extensions.HashAlgorithmExtensions.html
+  commentId: T:LazyGuy.Extensions.HashAlgorithmExtensions
+  fullName: LazyGuy.Extensions.HashAlgorithmExtensions
+  nameWithType: HashAlgorithmExtensions
+- uid: LazyGuy.Extensions.HashAlgorithmExtensions.ComputeHashToString(System.Security.Cryptography.HashAlgorithm,System.Byte[])
+  name: ComputeHashToString(HashAlgorithm, Byte[])
+  href: api/LazyGuy.Extensions.HashAlgorithmExtensions.html#LazyGuy_Extensions_HashAlgorithmExtensions_ComputeHashToString_System_Security_Cryptography_HashAlgorithm_System_Byte___
+  commentId: M:LazyGuy.Extensions.HashAlgorithmExtensions.ComputeHashToString(System.Security.Cryptography.HashAlgorithm,System.Byte[])
+  name.vb: ComputeHashToString(HashAlgorithm, Byte())
+  fullName: LazyGuy.Extensions.HashAlgorithmExtensions.ComputeHashToString(System.Security.Cryptography.HashAlgorithm, System.Byte[])
+  fullName.vb: LazyGuy.Extensions.HashAlgorithmExtensions.ComputeHashToString(System.Security.Cryptography.HashAlgorithm, System.Byte())
+  nameWithType: HashAlgorithmExtensions.ComputeHashToString(HashAlgorithm, Byte[])
+  nameWithType.vb: HashAlgorithmExtensions.ComputeHashToString(HashAlgorithm, Byte())
+- uid: LazyGuy.Extensions.HashAlgorithmExtensions.ComputeHashToString(System.Security.Cryptography.HashAlgorithm,System.String)
+  name: ComputeHashToString(HashAlgorithm, String)
+  href: api/LazyGuy.Extensions.HashAlgorithmExtensions.html#LazyGuy_Extensions_HashAlgorithmExtensions_ComputeHashToString_System_Security_Cryptography_HashAlgorithm_System_String_
+  commentId: M:LazyGuy.Extensions.HashAlgorithmExtensions.ComputeHashToString(System.Security.Cryptography.HashAlgorithm,System.String)
+  fullName: LazyGuy.Extensions.HashAlgorithmExtensions.ComputeHashToString(System.Security.Cryptography.HashAlgorithm, System.String)
+  nameWithType: HashAlgorithmExtensions.ComputeHashToString(HashAlgorithm, String)
+- uid: LazyGuy.Extensions.HashAlgorithmExtensions.ComputeHashToString*
+  name: ComputeHashToString
+  href: api/LazyGuy.Extensions.HashAlgorithmExtensions.html#LazyGuy_Extensions_HashAlgorithmExtensions_ComputeHashToString_
+  commentId: Overload:LazyGuy.Extensions.HashAlgorithmExtensions.ComputeHashToString
+  isSpec: "True"
+  fullName: LazyGuy.Extensions.HashAlgorithmExtensions.ComputeHashToString
+  nameWithType: HashAlgorithmExtensions.ComputeHashToString
+- uid: LazyGuy.Extensions.SymmetricAlgorithmExtensions
+  name: SymmetricAlgorithmExtensions
+  href: api/LazyGuy.Extensions.SymmetricAlgorithmExtensions.html
+  commentId: T:LazyGuy.Extensions.SymmetricAlgorithmExtensions
+  fullName: LazyGuy.Extensions.SymmetricAlgorithmExtensions
+  nameWithType: SymmetricAlgorithmExtensions
+- uid: LazyGuy.Extensions.SymmetricAlgorithmExtensions.Decrypt(System.Security.Cryptography.SymmetricAlgorithm,System.String,System.Text.Encoding)
+  name: Decrypt(SymmetricAlgorithm, String, Encoding)
+  href: api/LazyGuy.Extensions.SymmetricAlgorithmExtensions.html#LazyGuy_Extensions_SymmetricAlgorithmExtensions_Decrypt_System_Security_Cryptography_SymmetricAlgorithm_System_String_System_Text_Encoding_
+  commentId: M:LazyGuy.Extensions.SymmetricAlgorithmExtensions.Decrypt(System.Security.Cryptography.SymmetricAlgorithm,System.String,System.Text.Encoding)
+  fullName: LazyGuy.Extensions.SymmetricAlgorithmExtensions.Decrypt(System.Security.Cryptography.SymmetricAlgorithm, System.String, System.Text.Encoding)
+  nameWithType: SymmetricAlgorithmExtensions.Decrypt(SymmetricAlgorithm, String, Encoding)
+- uid: LazyGuy.Extensions.SymmetricAlgorithmExtensions.Decrypt*
+  name: Decrypt
+  href: api/LazyGuy.Extensions.SymmetricAlgorithmExtensions.html#LazyGuy_Extensions_SymmetricAlgorithmExtensions_Decrypt_
+  commentId: Overload:LazyGuy.Extensions.SymmetricAlgorithmExtensions.Decrypt
+  isSpec: "True"
+  fullName: LazyGuy.Extensions.SymmetricAlgorithmExtensions.Decrypt
+  nameWithType: SymmetricAlgorithmExtensions.Decrypt
+- uid: LazyGuy.Extensions.SymmetricAlgorithmExtensions.Encrypt(System.Security.Cryptography.SymmetricAlgorithm,System.Byte[])
+  name: Encrypt(SymmetricAlgorithm, Byte[])
+  href: api/LazyGuy.Extensions.SymmetricAlgorithmExtensions.html#LazyGuy_Extensions_SymmetricAlgorithmExtensions_Encrypt_System_Security_Cryptography_SymmetricAlgorithm_System_Byte___
+  commentId: M:LazyGuy.Extensions.SymmetricAlgorithmExtensions.Encrypt(System.Security.Cryptography.SymmetricAlgorithm,System.Byte[])
+  name.vb: Encrypt(SymmetricAlgorithm, Byte())
+  fullName: LazyGuy.Extensions.SymmetricAlgorithmExtensions.Encrypt(System.Security.Cryptography.SymmetricAlgorithm, System.Byte[])
+  fullName.vb: LazyGuy.Extensions.SymmetricAlgorithmExtensions.Encrypt(System.Security.Cryptography.SymmetricAlgorithm, System.Byte())
+  nameWithType: SymmetricAlgorithmExtensions.Encrypt(SymmetricAlgorithm, Byte[])
+  nameWithType.vb: SymmetricAlgorithmExtensions.Encrypt(SymmetricAlgorithm, Byte())
+- uid: LazyGuy.Extensions.SymmetricAlgorithmExtensions.Encrypt(System.Security.Cryptography.SymmetricAlgorithm,System.String,System.Text.Encoding)
+  name: Encrypt(SymmetricAlgorithm, String, Encoding)
+  href: api/LazyGuy.Extensions.SymmetricAlgorithmExtensions.html#LazyGuy_Extensions_SymmetricAlgorithmExtensions_Encrypt_System_Security_Cryptography_SymmetricAlgorithm_System_String_System_Text_Encoding_
+  commentId: M:LazyGuy.Extensions.SymmetricAlgorithmExtensions.Encrypt(System.Security.Cryptography.SymmetricAlgorithm,System.String,System.Text.Encoding)
+  fullName: LazyGuy.Extensions.SymmetricAlgorithmExtensions.Encrypt(System.Security.Cryptography.SymmetricAlgorithm, System.String, System.Text.Encoding)
+  nameWithType: SymmetricAlgorithmExtensions.Encrypt(SymmetricAlgorithm, String, Encoding)
+- uid: LazyGuy.Extensions.SymmetricAlgorithmExtensions.Encrypt*
+  name: Encrypt
+  href: api/LazyGuy.Extensions.SymmetricAlgorithmExtensions.html#LazyGuy_Extensions_SymmetricAlgorithmExtensions_Encrypt_
+  commentId: Overload:LazyGuy.Extensions.SymmetricAlgorithmExtensions.Encrypt
+  isSpec: "True"
+  fullName: LazyGuy.Extensions.SymmetricAlgorithmExtensions.Encrypt
+  nameWithType: SymmetricAlgorithmExtensions.Encrypt
+- uid: LazyGuy.Extensions.X509Certificate2Extensions
+  name: X509Certificate2Extensions
+  href: api/LazyGuy.Extensions.X509Certificate2Extensions.html
+  commentId: T:LazyGuy.Extensions.X509Certificate2Extensions
+  fullName: LazyGuy.Extensions.X509Certificate2Extensions
+  nameWithType: X509Certificate2Extensions
+- uid: LazyGuy.Extensions.X509Certificate2Extensions.Import(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Reflection.Assembly,System.String)
+  name: Import(X509Certificate2, Assembly, String)
+  href: api/LazyGuy.Extensions.X509Certificate2Extensions.html#LazyGuy_Extensions_X509Certificate2Extensions_Import_System_Security_Cryptography_X509Certificates_X509Certificate2_System_Reflection_Assembly_System_String_
+  commentId: M:LazyGuy.Extensions.X509Certificate2Extensions.Import(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Reflection.Assembly,System.String)
+  fullName: LazyGuy.Extensions.X509Certificate2Extensions.Import(System.Security.Cryptography.X509Certificates.X509Certificate2, System.Reflection.Assembly, System.String)
+  nameWithType: X509Certificate2Extensions.Import(X509Certificate2, Assembly, String)
+- uid: LazyGuy.Extensions.X509Certificate2Extensions.Import*
+  name: Import
+  href: api/LazyGuy.Extensions.X509Certificate2Extensions.html#LazyGuy_Extensions_X509Certificate2Extensions_Import_
+  commentId: Overload:LazyGuy.Extensions.X509Certificate2Extensions.Import
+  isSpec: "True"
+  fullName: LazyGuy.Extensions.X509Certificate2Extensions.Import
+  nameWithType: X509Certificate2Extensions.Import
+- uid: LazyGuy.Http
+  name: LazyGuy.Http
+  href: api/LazyGuy.Http.html
+  commentId: N:LazyGuy.Http
+  fullName: LazyGuy.Http
+  nameWithType: LazyGuy.Http
+- uid: LazyGuy.Http.HttpHelper
+  name: HttpHelper
+  href: api/LazyGuy.Http.HttpHelper.html
+  commentId: T:LazyGuy.Http.HttpHelper
+  fullName: LazyGuy.Http.HttpHelper
+  nameWithType: HttpHelper
+- uid: LazyGuy.Http.HttpHelper.CurrentRequest
+  name: CurrentRequest
+  href: api/LazyGuy.Http.HttpHelper.html#LazyGuy_Http_HttpHelper_CurrentRequest
+  commentId: P:LazyGuy.Http.HttpHelper.CurrentRequest
+  fullName: LazyGuy.Http.HttpHelper.CurrentRequest
+  nameWithType: HttpHelper.CurrentRequest
+- uid: LazyGuy.Http.HttpHelper.CurrentRequest*
+  name: CurrentRequest
+  href: api/LazyGuy.Http.HttpHelper.html#LazyGuy_Http_HttpHelper_CurrentRequest_
+  commentId: Overload:LazyGuy.Http.HttpHelper.CurrentRequest
+  isSpec: "True"
+  fullName: LazyGuy.Http.HttpHelper.CurrentRequest
+  nameWithType: HttpHelper.CurrentRequest
+- uid: LazyGuy.Http.HttpHelper.CurrentResponse
+  name: CurrentResponse
+  href: api/LazyGuy.Http.HttpHelper.html#LazyGuy_Http_HttpHelper_CurrentResponse
+  commentId: P:LazyGuy.Http.HttpHelper.CurrentResponse
+  fullName: LazyGuy.Http.HttpHelper.CurrentResponse
+  nameWithType: HttpHelper.CurrentResponse
+- uid: LazyGuy.Http.HttpHelper.CurrentResponse*
+  name: CurrentResponse
+  href: api/LazyGuy.Http.HttpHelper.html#LazyGuy_Http_HttpHelper_CurrentResponse_
+  commentId: Overload:LazyGuy.Http.HttpHelper.CurrentResponse
+  isSpec: "True"
+  fullName: LazyGuy.Http.HttpHelper.CurrentResponse
+  nameWithType: HttpHelper.CurrentResponse
+- uid: LazyGuy.Http.HttpHelper.Get(System.String,LazyGuy.Http.RequestOptions)
+  name: Get(String, RequestOptions)
+  href: api/LazyGuy.Http.HttpHelper.html#LazyGuy_Http_HttpHelper_Get_System_String_LazyGuy_Http_RequestOptions_
+  commentId: M:LazyGuy.Http.HttpHelper.Get(System.String,LazyGuy.Http.RequestOptions)
+  fullName: LazyGuy.Http.HttpHelper.Get(System.String, LazyGuy.Http.RequestOptions)
+  nameWithType: HttpHelper.Get(String, RequestOptions)
+- uid: LazyGuy.Http.HttpHelper.Get*
+  name: Get
+  href: api/LazyGuy.Http.HttpHelper.html#LazyGuy_Http_HttpHelper_Get_
+  commentId: Overload:LazyGuy.Http.HttpHelper.Get
+  isSpec: "True"
+  fullName: LazyGuy.Http.HttpHelper.Get
+  nameWithType: HttpHelper.Get
+- uid: LazyGuy.Http.HttpHelper.Post(System.String,System.String,LazyGuy.Http.RequestOptions)
+  name: Post(String, String, RequestOptions)
+  href: api/LazyGuy.Http.HttpHelper.html#LazyGuy_Http_HttpHelper_Post_System_String_System_String_LazyGuy_Http_RequestOptions_
+  commentId: M:LazyGuy.Http.HttpHelper.Post(System.String,System.String,LazyGuy.Http.RequestOptions)
+  fullName: LazyGuy.Http.HttpHelper.Post(System.String, System.String, LazyGuy.Http.RequestOptions)
+  nameWithType: HttpHelper.Post(String, String, RequestOptions)
+- uid: LazyGuy.Http.HttpHelper.Post*
+  name: Post
+  href: api/LazyGuy.Http.HttpHelper.html#LazyGuy_Http_HttpHelper_Post_
+  commentId: Overload:LazyGuy.Http.HttpHelper.Post
+  isSpec: "True"
+  fullName: LazyGuy.Http.HttpHelper.Post
+  nameWithType: HttpHelper.Post
+- uid: LazyGuy.Http.RequestOptions
+  name: RequestOptions
+  href: api/LazyGuy.Http.RequestOptions.html
+  commentId: T:LazyGuy.Http.RequestOptions
+  fullName: LazyGuy.Http.RequestOptions
+  nameWithType: RequestOptions
+- uid: LazyGuy.Http.RequestOptions.ContentType
+  name: ContentType
+  href: api/LazyGuy.Http.RequestOptions.html#LazyGuy_Http_RequestOptions_ContentType
+  commentId: P:LazyGuy.Http.RequestOptions.ContentType
+  fullName: LazyGuy.Http.RequestOptions.ContentType
+  nameWithType: RequestOptions.ContentType
+- uid: LazyGuy.Http.RequestOptions.ContentType*
+  name: ContentType
+  href: api/LazyGuy.Http.RequestOptions.html#LazyGuy_Http_RequestOptions_ContentType_
+  commentId: Overload:LazyGuy.Http.RequestOptions.ContentType
+  isSpec: "True"
+  fullName: LazyGuy.Http.RequestOptions.ContentType
+  nameWithType: RequestOptions.ContentType
+- uid: LazyGuy.Http.RequestOptions.Encoding
+  name: Encoding
+  href: api/LazyGuy.Http.RequestOptions.html#LazyGuy_Http_RequestOptions_Encoding
+  commentId: P:LazyGuy.Http.RequestOptions.Encoding
+  fullName: LazyGuy.Http.RequestOptions.Encoding
+  nameWithType: RequestOptions.Encoding
+- uid: LazyGuy.Http.RequestOptions.Encoding*
+  name: Encoding
+  href: api/LazyGuy.Http.RequestOptions.html#LazyGuy_Http_RequestOptions_Encoding_
+  commentId: Overload:LazyGuy.Http.RequestOptions.Encoding
+  isSpec: "True"
+  fullName: LazyGuy.Http.RequestOptions.Encoding
+  nameWithType: RequestOptions.Encoding
+- uid: LazyGuy.Http.RequestOptions.Proxy
+  name: Proxy
+  href: api/LazyGuy.Http.RequestOptions.html#LazyGuy_Http_RequestOptions_Proxy
+  commentId: P:LazyGuy.Http.RequestOptions.Proxy
+  fullName: LazyGuy.Http.RequestOptions.Proxy
+  nameWithType: RequestOptions.Proxy
+- uid: LazyGuy.Http.RequestOptions.Proxy*
+  name: Proxy
+  href: api/LazyGuy.Http.RequestOptions.html#LazyGuy_Http_RequestOptions_Proxy_
+  commentId: Overload:LazyGuy.Http.RequestOptions.Proxy
+  isSpec: "True"
+  fullName: LazyGuy.Http.RequestOptions.Proxy
+  nameWithType: RequestOptions.Proxy
+- uid: LazyGuy.Http.RequestOptions.ReadWriteTimeout
+  name: ReadWriteTimeout
+  href: api/LazyGuy.Http.RequestOptions.html#LazyGuy_Http_RequestOptions_ReadWriteTimeout
+  commentId: P:LazyGuy.Http.RequestOptions.ReadWriteTimeout
+  fullName: LazyGuy.Http.RequestOptions.ReadWriteTimeout
+  nameWithType: RequestOptions.ReadWriteTimeout
+- uid: LazyGuy.Http.RequestOptions.ReadWriteTimeout*
+  name: ReadWriteTimeout
+  href: api/LazyGuy.Http.RequestOptions.html#LazyGuy_Http_RequestOptions_ReadWriteTimeout_
+  commentId: Overload:LazyGuy.Http.RequestOptions.ReadWriteTimeout
+  isSpec: "True"
+  fullName: LazyGuy.Http.RequestOptions.ReadWriteTimeout
+  nameWithType: RequestOptions.ReadWriteTimeout
+- uid: LazyGuy.Http.RequestOptions.SetDefaultProxy
+  name: SetDefaultProxy()
+  href: api/LazyGuy.Http.RequestOptions.html#LazyGuy_Http_RequestOptions_SetDefaultProxy
+  commentId: M:LazyGuy.Http.RequestOptions.SetDefaultProxy
+  fullName: LazyGuy.Http.RequestOptions.SetDefaultProxy()
+  nameWithType: RequestOptions.SetDefaultProxy()
+- uid: LazyGuy.Http.RequestOptions.SetDefaultProxy*
+  name: SetDefaultProxy
+  href: api/LazyGuy.Http.RequestOptions.html#LazyGuy_Http_RequestOptions_SetDefaultProxy_
+  commentId: Overload:LazyGuy.Http.RequestOptions.SetDefaultProxy
+  isSpec: "True"
+  fullName: LazyGuy.Http.RequestOptions.SetDefaultProxy
+  nameWithType: RequestOptions.SetDefaultProxy
+- uid: LazyGuy.Http.RequestOptions.SetProxy(System.String,System.String,System.String)
+  name: SetProxy(String, String, String)
+  href: api/LazyGuy.Http.RequestOptions.html#LazyGuy_Http_RequestOptions_SetProxy_System_String_System_String_System_String_
+  commentId: M:LazyGuy.Http.RequestOptions.SetProxy(System.String,System.String,System.String)
+  fullName: LazyGuy.Http.RequestOptions.SetProxy(System.String, System.String, System.String)
+  nameWithType: RequestOptions.SetProxy(String, String, String)
+- uid: LazyGuy.Http.RequestOptions.SetProxy*
+  name: SetProxy
+  href: api/LazyGuy.Http.RequestOptions.html#LazyGuy_Http_RequestOptions_SetProxy_
+  commentId: Overload:LazyGuy.Http.RequestOptions.SetProxy
+  isSpec: "True"
+  fullName: LazyGuy.Http.RequestOptions.SetProxy
+  nameWithType: RequestOptions.SetProxy
+- uid: LazyGuy.Http.RequestOptions.Timeout
+  name: Timeout
+  href: api/LazyGuy.Http.RequestOptions.html#LazyGuy_Http_RequestOptions_Timeout
+  commentId: P:LazyGuy.Http.RequestOptions.Timeout
+  fullName: LazyGuy.Http.RequestOptions.Timeout
+  nameWithType: RequestOptions.Timeout
+- uid: LazyGuy.Http.RequestOptions.Timeout*
+  name: Timeout
+  href: api/LazyGuy.Http.RequestOptions.html#LazyGuy_Http_RequestOptions_Timeout_
+  commentId: Overload:LazyGuy.Http.RequestOptions.Timeout
+  isSpec: "True"
+  fullName: LazyGuy.Http.RequestOptions.Timeout
+  nameWithType: RequestOptions.Timeout
+- uid: LazyGuy.Utils
+  name: LazyGuy.Utils
+  href: api/LazyGuy.Utils.html
+  commentId: N:LazyGuy.Utils
+  fullName: LazyGuy.Utils
+  nameWithType: LazyGuy.Utils
+- uid: LazyGuy.Utils.RandomValueGenerator
+  name: RandomValueGenerator
+  href: api/LazyGuy.Utils.RandomValueGenerator.html
+  commentId: T:LazyGuy.Utils.RandomValueGenerator
+  fullName: LazyGuy.Utils.RandomValueGenerator
+  nameWithType: RandomValueGenerator
+- uid: LazyGuy.Utils.RandomValueGenerator.#ctor(System.Security.Cryptography.RandomNumberGenerator)
+  name: RandomValueGenerator(RandomNumberGenerator)
+  href: api/LazyGuy.Utils.RandomValueGenerator.html#LazyGuy_Utils_RandomValueGenerator__ctor_System_Security_Cryptography_RandomNumberGenerator_
+  commentId: M:LazyGuy.Utils.RandomValueGenerator.#ctor(System.Security.Cryptography.RandomNumberGenerator)
+  fullName: LazyGuy.Utils.RandomValueGenerator.RandomValueGenerator(System.Security.Cryptography.RandomNumberGenerator)
+  nameWithType: RandomValueGenerator.RandomValueGenerator(RandomNumberGenerator)
+- uid: LazyGuy.Utils.RandomValueGenerator.#ctor*
+  name: RandomValueGenerator
+  href: api/LazyGuy.Utils.RandomValueGenerator.html#LazyGuy_Utils_RandomValueGenerator__ctor_
+  commentId: Overload:LazyGuy.Utils.RandomValueGenerator.#ctor
+  isSpec: "True"
+  fullName: LazyGuy.Utils.RandomValueGenerator.RandomValueGenerator
+  nameWithType: RandomValueGenerator.RandomValueGenerator
+- uid: LazyGuy.Utils.RandomValueGenerator.GetInt(System.Int32,System.Int32)
+  name: GetInt(Int32, Int32)
+  href: api/LazyGuy.Utils.RandomValueGenerator.html#LazyGuy_Utils_RandomValueGenerator_GetInt_System_Int32_System_Int32_
+  commentId: M:LazyGuy.Utils.RandomValueGenerator.GetInt(System.Int32,System.Int32)
+  fullName: LazyGuy.Utils.RandomValueGenerator.GetInt(System.Int32, System.Int32)
+  nameWithType: RandomValueGenerator.GetInt(Int32, Int32)
+- uid: LazyGuy.Utils.RandomValueGenerator.GetInt*
+  name: GetInt
+  href: api/LazyGuy.Utils.RandomValueGenerator.html#LazyGuy_Utils_RandomValueGenerator_GetInt_
+  commentId: Overload:LazyGuy.Utils.RandomValueGenerator.GetInt
+  isSpec: "True"
+  fullName: LazyGuy.Utils.RandomValueGenerator.GetInt
+  nameWithType: RandomValueGenerator.GetInt
+- uid: LazyGuy.Utils.RandomValueGenerator.GetString(System.Int32,System.String)
+  name: GetString(Int32, String)
+  href: api/LazyGuy.Utils.RandomValueGenerator.html#LazyGuy_Utils_RandomValueGenerator_GetString_System_Int32_System_String_
+  commentId: M:LazyGuy.Utils.RandomValueGenerator.GetString(System.Int32,System.String)
+  fullName: LazyGuy.Utils.RandomValueGenerator.GetString(System.Int32, System.String)
+  nameWithType: RandomValueGenerator.GetString(Int32, String)
+- uid: LazyGuy.Utils.RandomValueGenerator.GetString*
+  name: GetString
+  href: api/LazyGuy.Utils.RandomValueGenerator.html#LazyGuy_Utils_RandomValueGenerator_GetString_
+  commentId: Overload:LazyGuy.Utils.RandomValueGenerator.GetString
+  isSpec: "True"
+  fullName: LazyGuy.Utils.RandomValueGenerator.GetString
+  nameWithType: RandomValueGenerator.GetString
+- uid: LazyGuy.Utils.XmlConverter
+  name: XmlConverter
+  href: api/LazyGuy.Utils.XmlConverter.html
+  commentId: T:LazyGuy.Utils.XmlConverter
+  fullName: LazyGuy.Utils.XmlConverter
+  nameWithType: XmlConverter
+- uid: LazyGuy.Utils.XmlConverter.#ctor(System.Xml.Serialization.XmlSerializer)
+  name: XmlConverter(XmlSerializer)
+  href: api/LazyGuy.Utils.XmlConverter.html#LazyGuy_Utils_XmlConverter__ctor_System_Xml_Serialization_XmlSerializer_
+  commentId: M:LazyGuy.Utils.XmlConverter.#ctor(System.Xml.Serialization.XmlSerializer)
+  fullName: LazyGuy.Utils.XmlConverter.XmlConverter(System.Xml.Serialization.XmlSerializer)
+  nameWithType: XmlConverter.XmlConverter(XmlSerializer)
+- uid: LazyGuy.Utils.XmlConverter.#ctor*
+  name: XmlConverter
+  href: api/LazyGuy.Utils.XmlConverter.html#LazyGuy_Utils_XmlConverter__ctor_
+  commentId: Overload:LazyGuy.Utils.XmlConverter.#ctor
+  isSpec: "True"
+  fullName: LazyGuy.Utils.XmlConverter.XmlConverter
+  nameWithType: XmlConverter.XmlConverter
+- uid: LazyGuy.Utils.XmlConverter.DeSerialize*
+  name: DeSerialize
+  href: api/LazyGuy.Utils.XmlConverter.html#LazyGuy_Utils_XmlConverter_DeSerialize_
+  commentId: Overload:LazyGuy.Utils.XmlConverter.DeSerialize
+  isSpec: "True"
+  fullName: LazyGuy.Utils.XmlConverter.DeSerialize
+  nameWithType: XmlConverter.DeSerialize
+- uid: LazyGuy.Utils.XmlConverter.DeSerialize``1(System.String,System.Text.Encoding)
+  name: DeSerialize<T>(String, Encoding)
+  href: api/LazyGuy.Utils.XmlConverter.html#LazyGuy_Utils_XmlConverter_DeSerialize__1_System_String_System_Text_Encoding_
+  commentId: M:LazyGuy.Utils.XmlConverter.DeSerialize``1(System.String,System.Text.Encoding)
+  name.vb: DeSerialize(Of T)(String, Encoding)
+  fullName: LazyGuy.Utils.XmlConverter.DeSerialize<T>(System.String, System.Text.Encoding)
+  fullName.vb: LazyGuy.Utils.XmlConverter.DeSerialize(Of T)(System.String, System.Text.Encoding)
+  nameWithType: XmlConverter.DeSerialize<T>(String, Encoding)
+  nameWithType.vb: XmlConverter.DeSerialize(Of T)(String, Encoding)
+- uid: LazyGuy.Utils.XmlConverter.Serialize*
+  name: Serialize
+  href: api/LazyGuy.Utils.XmlConverter.html#LazyGuy_Utils_XmlConverter_Serialize_
+  commentId: Overload:LazyGuy.Utils.XmlConverter.Serialize
+  isSpec: "True"
+  fullName: LazyGuy.Utils.XmlConverter.Serialize
+  nameWithType: XmlConverter.Serialize
+- uid: LazyGuy.Utils.XmlConverter.Serialize``1(``0,System.Xml.XmlWriterSettings,System.Xml.Serialization.XmlSerializerNamespaces)
+  name: Serialize<T>(T, XmlWriterSettings, XmlSerializerNamespaces)
+  href: api/LazyGuy.Utils.XmlConverter.html#LazyGuy_Utils_XmlConverter_Serialize__1___0_System_Xml_XmlWriterSettings_System_Xml_Serialization_XmlSerializerNamespaces_
+  commentId: M:LazyGuy.Utils.XmlConverter.Serialize``1(``0,System.Xml.XmlWriterSettings,System.Xml.Serialization.XmlSerializerNamespaces)
+  name.vb: Serialize(Of T)(T, XmlWriterSettings, XmlSerializerNamespaces)
+  fullName: LazyGuy.Utils.XmlConverter.Serialize<T>(T, System.Xml.XmlWriterSettings, System.Xml.Serialization.XmlSerializerNamespaces)
+  fullName.vb: LazyGuy.Utils.XmlConverter.Serialize(Of T)(T, System.Xml.XmlWriterSettings, System.Xml.Serialization.XmlSerializerNamespaces)
+  nameWithType: XmlConverter.Serialize<T>(T, XmlWriterSettings, XmlSerializerNamespaces)
+  nameWithType.vb: XmlConverter.Serialize(Of T)(T, XmlWriterSettings, XmlSerializerNamespaces)

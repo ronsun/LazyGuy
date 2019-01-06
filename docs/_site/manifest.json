@@ -1,0 +1,285 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/Ron/Desktop/MyGithub/LazyGuy/docs/LazyGuy.DocFX",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "UmUvckox0J6Esr7w9Db+cg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "BdO20O+KY6NXFbAuumfJcA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "t7iiFrmuYmrKWisdq+lN6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "Mq4NEgxdeMWaxrM+CjyC8Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LazyGuy.Constants.MessageTemplates.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LazyGuy.Constants.MessageTemplates.html",
+          "hash": "x+R1AIQwM03ZVcU/mxP5ug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LazyGuy.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LazyGuy.Constants.html",
+          "hash": "llPx5nGZvVQnNQt6p32YUA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LazyGuy.Extensions.DictionaryExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LazyGuy.Extensions.DictionaryExtensions.html",
+          "hash": "lFPOBS8P+sgkxZ7vjiY+xw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LazyGuy.Extensions.EnumExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LazyGuy.Extensions.EnumExtensions.html",
+          "hash": "3pssFt0Klc9E7Iw5fIVXXg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LazyGuy.Extensions.HashAlgorithmExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LazyGuy.Extensions.HashAlgorithmExtensions.html",
+          "hash": "rwRu0B6FkWhW17xE0xAw6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LazyGuy.Extensions.SymmetricAlgorithmExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LazyGuy.Extensions.SymmetricAlgorithmExtensions.html",
+          "hash": "KBKKFwr90/mZTW/Z/J4oWQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LazyGuy.Extensions.X509Certificate2Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LazyGuy.Extensions.X509Certificate2Extensions.html",
+          "hash": "myMgvx427orvwyP5DFeLVw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LazyGuy.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LazyGuy.Extensions.html",
+          "hash": "r1dPFAvcUoLcL7H2e2e0Cg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LazyGuy.Http.HttpHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LazyGuy.Http.HttpHelper.html",
+          "hash": "rWgETQzK3LP5BpjyYWKJoQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LazyGuy.Http.RequestOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LazyGuy.Http.RequestOptions.html",
+          "hash": "8KkxZncGZll2gWUESA3VoQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LazyGuy.Http.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LazyGuy.Http.html",
+          "hash": "4Y549Y66+jDrCulZkxOK6g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LazyGuy.Utils.RandomValueGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LazyGuy.Utils.RandomValueGenerator.html",
+          "hash": "/xhsajQhyGO3/kl5V7b6sA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LazyGuy.Utils.XmlConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LazyGuy.Utils.XmlConverter.html",
+          "hash": "44ScQMYsICnJgnpfqyhlJw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LazyGuy.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LazyGuy.Utils.html",
+          "hash": "wBJ4yvkKxhaBcjzLg21eFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "x3Z055MPHzS+vjy13Y95iQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "Sg+nKmnHP++YKMT39ruhpw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

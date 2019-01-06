@@ -10,7 +10,7 @@
           "exclude": [
             "**/obj/**",
             "**/bin/**",
-            "_site/**"
+            "../_site/**"
           ],
           "src": "../../src/LazyGuy"
         }
@@ -35,7 +35,7 @@
         ],
         "exclude": [
           "obj/**",
-          "_site/**"
+          "../_site/**"
         ]
       }
     ],
@@ -46,7 +46,7 @@
         ],
         "exclude": [
           "obj/**",
-          "_site/**"
+          "../_site/**"
         ]
       }
     ],
@@ -57,11 +57,11 @@
         ],
         "exclude": [
           "obj/**",
-          "_site/**"
+          "../_site/**"
         ]
       }
     ],
-    "dest": "_site",
+    "dest": "../_site",
     "template": [
       "default"
     ]

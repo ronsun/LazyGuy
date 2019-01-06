@@ -48,6 +48,7 @@
     <None Include="index.md" />
     <None Include="packages.config" />
     <None Include="toc.yml" />
+    <None Include="tools\deploy.sh" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\LazyGuy\LazyGuy.csproj">
