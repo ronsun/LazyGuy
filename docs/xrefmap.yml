@@ -200,12 +200,12 @@ references:
   commentId: T:LazyGuy.Extensions.X509Certificate2Extensions
   fullName: LazyGuy.Extensions.X509Certificate2Extensions
   nameWithType: X509Certificate2Extensions
-- uid: LazyGuy.Extensions.X509Certificate2Extensions.Import(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Reflection.Assembly,System.String)
-  name: Import(X509Certificate2, Assembly, String)
-  href: api/LazyGuy.Extensions.X509Certificate2Extensions.html#LazyGuy_Extensions_X509Certificate2Extensions_Import_System_Security_Cryptography_X509Certificates_X509Certificate2_System_Reflection_Assembly_System_String_
-  commentId: M:LazyGuy.Extensions.X509Certificate2Extensions.Import(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Reflection.Assembly,System.String)
-  fullName: LazyGuy.Extensions.X509Certificate2Extensions.Import(System.Security.Cryptography.X509Certificates.X509Certificate2, System.Reflection.Assembly, System.String)
-  nameWithType: X509Certificate2Extensions.Import(X509Certificate2, Assembly, String)
+- uid: LazyGuy.Extensions.X509Certificate2Extensions.Import(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Reflection.Assembly,System.String,System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)
+  name: Import(X509Certificate2, Assembly, String, String, X509KeyStorageFlags)
+  href: api/LazyGuy.Extensions.X509Certificate2Extensions.html#LazyGuy_Extensions_X509Certificate2Extensions_Import_System_Security_Cryptography_X509Certificates_X509Certificate2_System_Reflection_Assembly_System_String_System_String_System_Security_Cryptography_X509Certificates_X509KeyStorageFlags_
+  commentId: M:LazyGuy.Extensions.X509Certificate2Extensions.Import(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Reflection.Assembly,System.String,System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)
+  fullName: LazyGuy.Extensions.X509Certificate2Extensions.Import(System.Security.Cryptography.X509Certificates.X509Certificate2, System.Reflection.Assembly, System.String, System.String, System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)
+  nameWithType: X509Certificate2Extensions.Import(X509Certificate2, Assembly, String, String, X509KeyStorageFlags)
 - uid: LazyGuy.Extensions.X509Certificate2Extensions.Import*
   name: Import
   href: api/LazyGuy.Extensions.X509Certificate2Extensions.html#LazyGuy_Extensions_X509Certificate2Extensions_Import_
@@ -425,6 +425,28 @@ references:
   isSpec: "True"
   fullName: LazyGuy.Utils.RandomValueGenerator.GetString
   nameWithType: RandomValueGenerator.GetString
+- uid: LazyGuy.Utils.StopwatchReporter
+  name: StopwatchReporter
+  href: api/LazyGuy.Utils.StopwatchReporter.html
+  commentId: T:LazyGuy.Utils.StopwatchReporter
+  fullName: LazyGuy.Utils.StopwatchReporter
+  nameWithType: StopwatchReporter
+- uid: LazyGuy.Utils.StopwatchReporter.Execute(System.Action,System.Action{System.Int64})
+  name: Execute(Action, Action<Int64>)
+  href: api/LazyGuy.Utils.StopwatchReporter.html#LazyGuy_Utils_StopwatchReporter_Execute_System_Action_System_Action_System_Int64__
+  commentId: M:LazyGuy.Utils.StopwatchReporter.Execute(System.Action,System.Action{System.Int64})
+  name.vb: Execute(Action, Action(Of Int64))
+  fullName: LazyGuy.Utils.StopwatchReporter.Execute(System.Action, System.Action<System.Int64>)
+  fullName.vb: LazyGuy.Utils.StopwatchReporter.Execute(System.Action, System.Action(Of System.Int64))
+  nameWithType: StopwatchReporter.Execute(Action, Action<Int64>)
+  nameWithType.vb: StopwatchReporter.Execute(Action, Action(Of Int64))
+- uid: LazyGuy.Utils.StopwatchReporter.Execute*
+  name: Execute
+  href: api/LazyGuy.Utils.StopwatchReporter.html#LazyGuy_Utils_StopwatchReporter_Execute_
+  commentId: Overload:LazyGuy.Utils.StopwatchReporter.Execute
+  isSpec: "True"
+  fullName: LazyGuy.Utils.StopwatchReporter.Execute
+  nameWithType: StopwatchReporter.Execute
 - uid: LazyGuy.Utils.XmlConverter
   name: XmlConverter
   href: api/LazyGuy.Utils.XmlConverter.html

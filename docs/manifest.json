@@ -24,7 +24,7 @@
           "hash": "79G9BItHrDyfmie7f6MuUw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -48,7 +48,7 @@
           "hash": "kbJU1aeNC95Gld6R9ScWSA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LazyGuy.Extensions.X509Certificate2Extensions.html",
-          "hash": "myMgvx427orvwyP5DFeLVw=="
+          "hash": "osYx0VZ6TfRMpBb2rhyP3g=="
         }
       },
       "is_incremental": false,
@@ -197,6 +197,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/api/LazyGuy.Utils.StopwatchReporter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LazyGuy.Utils.StopwatchReporter.html",
+          "hash": "vFZz9ZfOq/p9Eno2MxS4cw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/api/LazyGuy.Utils.XmlConverter.yml",
       "output": {
         ".html": {
@@ -213,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LazyGuy.Utils.html",
-          "hash": "wBJ4yvkKxhaBcjzLg21eFw=="
+          "hash": "BpsRcc1pfeJ76bxslvb8QQ=="
         }
       },
       "is_incremental": false,
@@ -225,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "x3Z055MPHzS+vjy13Y95iQ=="
+          "hash": "mDv736Ys9jD0CXX7hxAZWA=="
         }
       },
       "is_incremental": false,
@@ -247,8 +259,7 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Disable incremental build by force rebuild option.",
+        "can_incremental": true,
         "incrementalPhase": "build"
       },
       "processors": {
@@ -258,19 +269,19 @@
           "incrementalPhase": "build"
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build"
         }
       }
     },
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
         "incrementalPhase": "postProcessing"
       },
       "processors": {}
