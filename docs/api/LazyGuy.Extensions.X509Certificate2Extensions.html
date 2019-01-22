@@ -115,20 +115,20 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/ronsun/LazyGuy/new/master/apiSpec/new?filename=LazyGuy_Extensions_X509Certificate2Extensions_Import_System_Security_Cryptography_X509Certificates_X509Certificate2_System_Reflection_Assembly_System_String_.md&amp;value=---%0Auid%3A%20LazyGuy.Extensions.X509Certificate2Extensions.Import(System.Security.Cryptography.X509Certificates.X509Certificate2%2CSystem.Reflection.Assembly%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/ronsun/LazyGuy/new/master/apiSpec/new?filename=LazyGuy_Extensions_X509Certificate2Extensions_Import_System_Security_Cryptography_X509Certificates_X509Certificate2_System_Reflection_Assembly_System_String_System_String_System_Security_Cryptography_X509Certificates_X509KeyStorageFlags_.md&amp;value=---%0Auid%3A%20LazyGuy.Extensions.X509Certificate2Extensions.Import(System.Security.Cryptography.X509Certificates.X509Certificate2%2CSystem.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Security.Cryptography.X509Certificates.X509KeyStorageFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/ronsun/LazyGuy/blob/master/src/LazyGuy/Extensions/X509Certificate2Extensions.cs/#L22">View Source</a>
   </span>
   <a id="LazyGuy_Extensions_X509Certificate2Extensions_Import_" data-uid="LazyGuy.Extensions.X509Certificate2Extensions.Import*"></a>
-  <h4 id="LazyGuy_Extensions_X509Certificate2Extensions_Import_System_Security_Cryptography_X509Certificates_X509Certificate2_System_Reflection_Assembly_System_String_" data-uid="LazyGuy.Extensions.X509Certificate2Extensions.Import(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Reflection.Assembly,System.String)">Import(X509Certificate2, Assembly, String)</h4>
+  <h4 id="LazyGuy_Extensions_X509Certificate2Extensions_Import_System_Security_Cryptography_X509Certificates_X509Certificate2_System_Reflection_Assembly_System_String_System_String_System_Security_Cryptography_X509Certificates_X509KeyStorageFlags_" data-uid="LazyGuy.Extensions.X509Certificate2Extensions.Import(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Reflection.Assembly,System.String,System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">Import(X509Certificate2, Assembly, String, String, X509KeyStorageFlags)</h4>
   <div class="markdown level1 summary"><p>Populates an X509Certificate2 object
 with data from embedded resource in assembly.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static X509Certificate2 Import(this X509Certificate2 cert, Assembly assembly, string fullName)</code></pre>
+    <pre><code class="lang-csharp hljs">public static X509Certificate2 Import(this X509Certificate2 cert, Assembly assembly, string fullName, string password = null, X509KeyStorageFlags keyStorageFlags = X509KeyStorageFlags.DefaultKeySet)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -156,6 +156,16 @@ with data from embedded resource in assembly.</p>
         <td><span class="parametername">fullName</span></td>
         <td><p>Full name of target embedded resource. </p>
 </td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">password</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Security.Cryptography.X509Certificates.X509KeyStorageFlags</span></td>
+        <td><span class="parametername">keyStorageFlags</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>

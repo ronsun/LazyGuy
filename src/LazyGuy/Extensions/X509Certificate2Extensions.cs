@@ -19,7 +19,11 @@ namespace LazyGuy.Extensions
         /// <param name="assembly">The assembly contain the target embedded resource. </param>
         /// <param name="fullName">Full name of target embedded resource. </param>
         /// <returns></returns>
-        public static X509Certificate2 Import(this X509Certificate2 cert, Assembly assembly, string fullName)
+        public static X509Certificate2 Import(this X509Certificate2 cert,
+            Assembly assembly,
+            string fullName,
+            string password = null,
+            X509KeyStorageFlags keyStorageFlags = 0)
         {
             if (cert == null)
             {
@@ -47,7 +51,14 @@ namespace LazyGuy.Extensions
                     rawBytes[index] = (byte)certStream.ReadByte();
                 }
 
-                cert.Import(rawBytes);
+                if (string.IsNullOrEmpty(password))
+                {
+                    cert.Import(rawBytes);
+                }
+                else
+                {
+                    cert.Import(rawBytes, password, keyStorageFlags);
+                }
             }
 
             return cert;
