@@ -24,20 +24,6 @@ namespace LazyGuy.Utils.Tests
             act.Should().Throw<ArgumentNullException>().WithMessage(FakeMessageTemplates.ArgumentNull);
         }
 
-        [Test()]
-        public void ExecuteTest_NullReport_ThrowArgumentNullExceptionWithMessage()
-        {
-            //arrange
-            Action stubAction = () => { };
-            Action<long> stubReport = null;
-
-            //act
-            Action act = () => { StopwatchReporter.Execute(stubAction, stubReport); };
-
-            //assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(FakeMessageTemplates.ArgumentNull);
-        }
-
         #endregion
     }
 }

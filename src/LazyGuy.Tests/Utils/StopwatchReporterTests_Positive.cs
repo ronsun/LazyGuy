@@ -15,6 +15,19 @@ namespace LazyGuy.Tests.Utils
         {
             //arrange
             Action mockAction = Substitute.For<Action>();
+
+            //act
+            StopwatchReporter.Execute(mockAction);
+
+            //assert
+            mockAction.Received(1);
+        }
+
+        [Test()]
+        public void ExecuteTest_InputActionWithReport_Excuted()
+        {
+            //arrange
+            Action mockAction = Substitute.For<Action>();
             Action<long> stubReport = (tick) => { };
 
             //act
