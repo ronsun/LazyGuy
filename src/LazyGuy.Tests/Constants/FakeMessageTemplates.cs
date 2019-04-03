@@ -17,7 +17,7 @@ namespace LazyGuy.Tests.Constants
         {
             get
             {
-                string wildcard = string.Format(MessageTemplates.ArgumentEmpty, "*");
+                string wildcard = $"Argument '*' should not be empty.";
                 return $"*{wildcard}*";
             }
         }

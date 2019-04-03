@@ -27,12 +27,7 @@ namespace LazyGuy.Extensions
         {
             Argument.NotNull(cert, nameof(cert));
             Argument.NotNull(assembly, nameof(assembly));
-
-            if (string.IsNullOrEmpty(fullName))
-            {
-                string msg = string.Format(MessageTemplates.ArgumentEmpty, nameof(fullName));
-                throw new ArgumentOutOfRangeException(msg);
-            }
+            Argument.NotNullOrEmpty(fullName, nameof(fullName));
 
             using (Stream certStream = assembly.GetManifestResourceStream(fullName))
             {

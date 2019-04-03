@@ -20,11 +20,7 @@ namespace LazyGuy.Utils
 
         public virtual string GetString(int length, string dictionary = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
         {
-            if (string.IsNullOrEmpty(dictionary))
-            {
-                string msg = string.Format(MessageTemplates.ArgumentEmpty, nameof(dictionary));
-                throw new ArgumentOutOfRangeException(msg);
-            }
+            Argument.NotNullOrEmpty(dictionary, nameof(dictionary));
 
             var charArray = new char[length];
             for (int i = 0; i < length; i++)

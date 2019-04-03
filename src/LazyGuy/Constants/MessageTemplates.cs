@@ -2,8 +2,6 @@
 {
     public class MessageTemplates
     {
-        public const string ArgumentEmpty = "Argument '{0}' should not be empty.";
-
         public const string NumberMustGreatherThanAnother = "{0} must greather than {1}. ";
 
         public const string InvalidArrayTypeForParams = "Invalid type(s) in params array '{0}' ";

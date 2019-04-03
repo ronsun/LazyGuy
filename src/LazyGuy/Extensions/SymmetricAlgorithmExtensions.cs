@@ -20,12 +20,7 @@ namespace LazyGuy.Extensions
         public static string Encrypt(this SymmetricAlgorithm symmetric, string plaintext, Encoding encoding = null)
         {
             Argument.NotNull(symmetric, nameof(symmetric));
-
-            if (string.IsNullOrEmpty(plaintext))
-            {
-                string msg = string.Format(MessageTemplates.ArgumentEmpty, nameof(plaintext));
-                throw new ArgumentOutOfRangeException(msg);
-            }
+            Argument.NotNullOrEmpty(plaintext, nameof(plaintext));
 
             if (encoding == null)
             {
@@ -44,12 +39,7 @@ namespace LazyGuy.Extensions
         public static string Encrypt(this SymmetricAlgorithm symmetric, byte[] plaintextBytes)
         {
             Argument.NotNull(symmetric, nameof(symmetric));
-
-            if (plaintextBytes == null || plaintextBytes.Length == 0)
-            {
-                string msg = string.Format(MessageTemplates.ArgumentEmpty, nameof(plaintextBytes));
-                throw new ArgumentOutOfRangeException(msg);
-            }
+            Argument.NotNullOrEmpty(plaintextBytes, nameof(plaintextBytes));
 
             string ciphertext = string.Empty;
 
@@ -73,12 +63,7 @@ namespace LazyGuy.Extensions
         public static string Decrypt(this SymmetricAlgorithm symmetric, string ciphertext, Encoding plaintextEncoding = null)
         {
             Argument.NotNull(symmetric, nameof(symmetric));
-
-            if (string.IsNullOrEmpty(ciphertext))
-            {
-                string msg = string.Format(MessageTemplates.ArgumentEmpty, nameof(ciphertext));
-                throw new ArgumentOutOfRangeException(msg);
-            }
+            Argument.NotNullOrEmpty(ciphertext, nameof(ciphertext));
 
             if (plaintextEncoding == null)
             {
