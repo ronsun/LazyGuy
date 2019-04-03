@@ -47,10 +47,10 @@ namespace LazyGuy.Extensions.Tests
             var cases = new List<object[]>()
             {
                 // type of target different
-                new object[] { FakeEnum_In_A.A1, new Enum[] { FakeEnum_In_B.B1 }, FakeMessageTemplates.InvalidArrayTypeForParams },
+                new object[] { FakeEnum_In_A.A1, new Enum[] { FakeEnum_In_B.B1 }, MessageTemplates.InvalidArrayTypeForParams },
 
                 // one of types different in enum list
-                new object[] { FakeEnum_In_B.B1, new Enum[] { FakeEnum_In_A.A1, FakeEnum_In_B.B1 }, FakeMessageTemplates.InvalidArrayTypeForParams },
+                new object[] { FakeEnum_In_B.B1, new Enum[] { FakeEnum_In_A.A1, FakeEnum_In_B.B1 }, MessageTemplates.InvalidArrayTypeForParams },
             };
             return cases;
         }
@@ -73,10 +73,10 @@ namespace LazyGuy.Extensions.Tests
             var cases = new List<object[]>()
             {
                 // type of target out of range
-                new object[] { (FakeEnum_In_A)(0), new Enum[] { FakeEnum_In_A.A1 }, FakeMessageTemplates.ValueNotInEnum },
+                new object[] { (FakeEnum_In_A)(0), new Enum[] { FakeEnum_In_A.A1 }, MessageTemplates.ValueNotInEnum },
                 
                 // type of parameter list out of range
-                new object[] { FakeEnum_In_A.A1, new Enum[] { (FakeEnum_In_A)(0) } , FakeMessageTemplates.ValueNotInEnum },
+                new object[] { FakeEnum_In_A.A1, new Enum[] { (FakeEnum_In_A)(0) } , MessageTemplates.ValueNotInEnum },
             };
             return cases;
         }

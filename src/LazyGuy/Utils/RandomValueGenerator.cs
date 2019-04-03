@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Security.Cryptography;
-using LazyGuy.Constants;
 
 namespace LazyGuy.Utils
 {

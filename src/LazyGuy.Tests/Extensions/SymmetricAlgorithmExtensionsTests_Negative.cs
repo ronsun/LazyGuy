@@ -22,7 +22,7 @@ namespace LazyGuy.Extensions.Tests
             Action act = () => { target.Encrypt(stubPlaintext); };
 
             //assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(FakeMessageTemplates.ArgumentNull);
+            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
         }
 
         [Test()]
@@ -36,7 +36,7 @@ namespace LazyGuy.Extensions.Tests
             Action act = () => { target.Encrypt(stubPlaintext); };
 
             //assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(FakeMessageTemplates.ArgumentEmpty);
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentEmpty);
         }
 
         [Test()]
@@ -50,7 +50,7 @@ namespace LazyGuy.Extensions.Tests
             Action act = () => { target.Encrypt(stubPlaintext); };
 
             //assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(FakeMessageTemplates.ArgumentNull);
+            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
         }
 
         #endregion
@@ -68,7 +68,7 @@ namespace LazyGuy.Extensions.Tests
             Action act = () => { target.Encrypt(stubPlaintextBytes); };
 
             //assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(FakeMessageTemplates.ArgumentNull);
+            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
         }
 
         [Test()]
@@ -82,7 +82,7 @@ namespace LazyGuy.Extensions.Tests
             Action act = () => { target.Encrypt(stubPlaintextBytes); };
 
             //assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(FakeMessageTemplates.ArgumentEmpty);
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentEmpty);
         }
 
         [Test()]
@@ -96,7 +96,7 @@ namespace LazyGuy.Extensions.Tests
             Action act = () => { target.Encrypt(stubPlaintextBytes); };
 
             //assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(FakeMessageTemplates.ArgumentNull);
+            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
         }
 
         #endregion
@@ -114,7 +114,7 @@ namespace LazyGuy.Extensions.Tests
             Action act = () => { target.Decrypt(stubCiphertext); };
 
             //assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(FakeMessageTemplates.ArgumentNull);
+            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
         }
 
         [Test()]
@@ -128,7 +128,7 @@ namespace LazyGuy.Extensions.Tests
             Action act = () => { target.Decrypt(stubCiphertext); };
 
             //assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(FakeMessageTemplates.ArgumentEmpty);
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentEmpty);
         }
 
         [Test()]
@@ -142,7 +142,7 @@ namespace LazyGuy.Extensions.Tests
             Action act = () => { target.Decrypt(stubCiphertext); };
 
             //assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(FakeMessageTemplates.ArgumentNull);
+            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
         }
 
         #endregion

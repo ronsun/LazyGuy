@@ -1,8 +1,6 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
-using LazyGuy.Constants;
 
 namespace LazyGuy.Extensions
 {

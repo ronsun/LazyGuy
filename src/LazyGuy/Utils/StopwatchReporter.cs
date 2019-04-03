@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using LazyGuy.Constants;
 
 namespace LazyGuy.Utils
 {

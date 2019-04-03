@@ -2,7 +2,6 @@
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using LazyGuy.Constants;
 
 namespace LazyGuy.Extensions
 {

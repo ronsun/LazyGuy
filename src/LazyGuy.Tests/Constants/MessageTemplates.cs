@@ -1,6 +1,6 @@
 ﻿namespace LazyGuy.Tests.Constants
 {
-    public class FakeMessageTemplates
+    public class MessageTemplates
     {
         public static string ArgumentNull
         {

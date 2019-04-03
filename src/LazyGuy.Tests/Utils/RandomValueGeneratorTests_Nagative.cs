@@ -22,7 +22,7 @@ namespace LazyGuy.Utils.Tests
             Action act = () => { target.GetInt(stubMin, stubMax); };
 
             // Assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(FakeMessageTemplates.ArgumentOutOfRange);
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentOutOfRange);
         }
 
         #endregion
@@ -41,7 +41,7 @@ namespace LazyGuy.Utils.Tests
             Action act = () => { target.GetString(stubLength, stubDictionary); };
 
             // Assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(FakeMessageTemplates.ArgumentNull);
+            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
         }
 
         [Test()]
@@ -56,7 +56,7 @@ namespace LazyGuy.Utils.Tests
             Action act = () => { target.GetString(stubLength, stubDictionary); };
 
             // Assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(FakeMessageTemplates.ArgumentEmpty);
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentEmpty);
         }
         #endregion
 
