@@ -8,11 +8,7 @@ namespace LazyGuy.Utils
     {
         public static void Execute(Action action, Action<long> report = null)
         {
-            if (action == null)
-            {
-                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(action));
-                throw new ArgumentNullException(msg);
-            }
+            Argument.NotNull(action, nameof(action));
 
             var stopwatch = Stopwatch.StartNew();
 

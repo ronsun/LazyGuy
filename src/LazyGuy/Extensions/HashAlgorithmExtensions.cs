@@ -18,11 +18,7 @@ namespace LazyGuy.Extensions
         /// <returns></returns>
         public static string ComputeHashToString(this HashAlgorithm hash, string plaintext)
         {
-            if (hash == null)
-            {
-                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(hash));
-                throw new ArgumentNullException(msg);
-            }
+            Argument.NotNull(hash, nameof(hash));
 
             if (string.IsNullOrEmpty(plaintext))
             {
@@ -41,11 +37,7 @@ namespace LazyGuy.Extensions
         /// <returns></returns>
         public static string ComputeHashToString(this HashAlgorithm hash, byte[] plaintextBytes)
         {
-            if (hash == null)
-            {
-                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(hash));
-                throw new ArgumentNullException(msg);
-            }
+            Argument.NotNull(hash, nameof(hash));
 
             if (plaintextBytes == null || plaintextBytes.Length == 0)
             {

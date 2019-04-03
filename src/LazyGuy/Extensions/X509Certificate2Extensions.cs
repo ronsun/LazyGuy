@@ -25,17 +25,8 @@ namespace LazyGuy.Extensions
             string password = null,
             X509KeyStorageFlags keyStorageFlags = 0)
         {
-            if (cert == null)
-            {
-                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(cert));
-                throw new ArgumentNullException(msg);
-            }
-
-            if (assembly == null)
-            {
-                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(assembly));
-                throw new ArgumentNullException(msg);
-            }
+            Argument.NotNull(cert, nameof(cert));
+            Argument.NotNull(assembly, nameof(assembly));
 
             if (string.IsNullOrEmpty(fullName))
             {
