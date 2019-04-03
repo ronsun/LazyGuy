@@ -11,18 +11,32 @@ namespace LazyGuy.Extensions.Tests
     {
         #region Encrypt with string input
 
-        [TestCase(null)]
-        [TestCase("")]
-        public void EncryptTest_InputEmptyString_ReturnArgumentOutOfRangeException(string stubPlaintext)
+        [Test()]
+        public void EncryptTest_InputEmptyString_ReturnArgumentNullException()
         {
             // arrange
+            string stubPlaintext = null;
             var target = new AesCryptoServiceProvider();
 
             //act
             Action act = () => { target.Encrypt(stubPlaintext); };
 
             //assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(FakeMessageTemplates.ArgumentEmpty);
+            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
+        }
+
+        [Test()]
+        public void EncryptTest_InputEmptyString_ReturnArgumentOutOfRangeException()
+        {
+            // arrange
+            string stubPlaintext = string.Empty;
+            var target = new AesCryptoServiceProvider();
+
+            //act
+            Action act = () => { target.Encrypt(stubPlaintext); };
+
+            //assert
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentEmpty);
         }
 
         [Test()]
@@ -36,27 +50,40 @@ namespace LazyGuy.Extensions.Tests
             Action act = () => { target.Encrypt(stubPlaintext); };
 
             //assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(FakeMessageTemplates.ArgumentNull);
+            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
         }
 
         #endregion
 
         #region Encrypt with bytes input
 
-        [TestCase(null)]
-        [TestCase(new byte[0])]
-        public void EncryptTest_InputEmptyBytes_ReturnArgumentOutOfRangeException(byte[] stubPlaintextBytes)
+        [Test()]
+        public void EncryptTest_InputNullBytes_ReturnArgumentNullException()
         {
             // arrange
+            byte[] stubPlaintextBytes = null;
             var target = new AesCryptoServiceProvider();
 
             //act
             Action act = () => { target.Encrypt(stubPlaintextBytes); };
 
             //assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(FakeMessageTemplates.ArgumentEmpty);
+            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
         }
 
+        [Test()]
+        public void EncryptTest_InputEmptyBytes_ReturnArgumentOutOfRangeException()
+        {
+            // arrange
+            byte[] stubPlaintextBytes = new byte[0];
+            var target = new AesCryptoServiceProvider();
+
+            //act
+            Action act = () => { target.Encrypt(stubPlaintextBytes); };
+
+            //assert
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentEmpty);
+        }
 
         [Test()]
         public void EncryptTest_InputNullSymmetricAlgorithmWithBytes_ReturnArgumentNullException()
@@ -69,25 +96,39 @@ namespace LazyGuy.Extensions.Tests
             Action act = () => { target.Encrypt(stubPlaintextBytes); };
 
             //assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(FakeMessageTemplates.ArgumentNull);
+            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
         }
 
         #endregion
 
         #region Decrypt
 
-        [TestCase(null)]
-        [TestCase("")]
-        public void DecryptTest_InputEmptyString_ReturnArgumentOutOfRangeException(string stubCiphertext)
+        [Test()]
+        public void DecryptTest_InputNullString_ReturnArgumentNullException()
         {
             // arrange
+            string stubCiphertext = null;
             var target = new AesCryptoServiceProvider();
 
             //act
             Action act = () => { target.Decrypt(stubCiphertext); };
 
             //assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(FakeMessageTemplates.ArgumentEmpty);
+            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
+        }
+
+        [Test()]
+        public void DecryptTest_InputEmptyString_ReturnArgumentOutOfRangeException()
+        {
+            // arrange
+            string stubCiphertext = string.Empty;
+            var target = new AesCryptoServiceProvider();
+
+            //act
+            Action act = () => { target.Decrypt(stubCiphertext); };
+
+            //assert
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentEmpty);
         }
 
         [Test()]
@@ -101,7 +142,7 @@ namespace LazyGuy.Extensions.Tests
             Action act = () => { target.Decrypt(stubCiphertext); };
 
             //assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(FakeMessageTemplates.ArgumentNull);
+            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
         }
 
         #endregion

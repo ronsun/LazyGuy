@@ -2,7 +2,6 @@
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using LazyGuy.Constants;
 
 namespace LazyGuy.Extensions
 {
@@ -19,17 +18,8 @@ namespace LazyGuy.Extensions
         /// <returns></returns>
         public static string Encrypt(this SymmetricAlgorithm symmetric, string plaintext, Encoding encoding = null)
         {
-            if (symmetric == null)
-            {
-                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(symmetric));
-                throw new ArgumentNullException(msg);
-            }
-
-            if (string.IsNullOrEmpty(plaintext))
-            {
-                string msg = string.Format(MessageTemplates.ArgumentEmpty, nameof(plaintext));
-                throw new ArgumentOutOfRangeException(msg);
-            }
+            Argument.NotNull(symmetric, nameof(symmetric));
+            Argument.NotNullOrEmpty(plaintext, nameof(plaintext));
 
             if (encoding == null)
             {
@@ -47,17 +37,8 @@ namespace LazyGuy.Extensions
         /// <returns></returns>
         public static string Encrypt(this SymmetricAlgorithm symmetric, byte[] plaintextBytes)
         {
-            if (symmetric == null)
-            {
-                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(symmetric));
-                throw new ArgumentNullException(msg);
-            }
-
-            if (plaintextBytes == null || plaintextBytes.Length == 0)
-            {
-                string msg = string.Format(MessageTemplates.ArgumentEmpty, nameof(plaintextBytes));
-                throw new ArgumentOutOfRangeException(msg);
-            }
+            Argument.NotNull(symmetric, nameof(symmetric));
+            Argument.NotNullOrEmpty(plaintextBytes, nameof(plaintextBytes));
 
             string ciphertext = string.Empty;
 
@@ -80,17 +61,8 @@ namespace LazyGuy.Extensions
         /// <returns></returns>
         public static string Decrypt(this SymmetricAlgorithm symmetric, string ciphertext, Encoding plaintextEncoding = null)
         {
-            if (symmetric == null)
-            {
-                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(symmetric));
-                throw new ArgumentNullException(msg);
-            }
-
-            if (string.IsNullOrEmpty(ciphertext))
-            {
-                string msg = string.Format(MessageTemplates.ArgumentEmpty, nameof(ciphertext));
-                throw new ArgumentOutOfRangeException(msg);
-            }
+            Argument.NotNull(symmetric, nameof(symmetric));
+            Argument.NotNullOrEmpty(ciphertext, nameof(ciphertext));
 
             if (plaintextEncoding == null)
             {

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using LazyGuy.Constants;
 
 namespace LazyGuy.Extensions
 {
@@ -19,17 +17,8 @@ namespace LazyGuy.Extensions
 
         private static void AddSafty<TKey, TValue>(this IDictionary<TKey, TValue> self, TKey key, TValue value, bool updateWhenDuplicate)
         {
-            if (self == null)
-            {
-                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(key));
-                throw new ArgumentNullException(msg);
-            }
-
-            if (key == null)
-            {
-                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(value));
-                throw new ArgumentNullException(msg);
-            }
+            Argument.NotNull(self, nameof(key));
+            Argument.NotNull(key, nameof(value));
 
             if (self.ContainsKey(key))
             {
@@ -45,11 +34,7 @@ namespace LazyGuy.Extensions
 
         public static string ToQueryString(this IDictionary<string, string> target)
         {
-            if (target == null)
-            {
-                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(target));
-                throw new ArgumentNullException(msg);
-            }
+            Argument.NotNull(target, nameof(target));
 
             if (target.Count == 0)
             {

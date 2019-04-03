@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Security.Cryptography;
 using System.Text;
-using LazyGuy.Constants;
 
 namespace LazyGuy.Extensions
 {
@@ -18,17 +17,8 @@ namespace LazyGuy.Extensions
         /// <returns></returns>
         public static string ComputeHashToString(this HashAlgorithm hash, string plaintext)
         {
-            if (hash == null)
-            {
-                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(hash));
-                throw new ArgumentNullException(msg);
-            }
-
-            if (string.IsNullOrEmpty(plaintext))
-            {
-                string msg = string.Format(MessageTemplates.ArgumentEmpty, nameof(plaintext));
-                throw new ArgumentOutOfRangeException(msg);
-            }
+            Argument.NotNull(hash, nameof(hash));
+            Argument.NotNullOrEmpty(plaintext, nameof(plaintext));
 
             return ComputeHashToString(hash, Encoding.UTF8.GetBytes(plaintext));
         }
@@ -41,17 +31,8 @@ namespace LazyGuy.Extensions
         /// <returns></returns>
         public static string ComputeHashToString(this HashAlgorithm hash, byte[] plaintextBytes)
         {
-            if (hash == null)
-            {
-                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(hash));
-                throw new ArgumentNullException(msg);
-            }
-
-            if (plaintextBytes == null || plaintextBytes.Length == 0)
-            {
-                string msg = string.Format(MessageTemplates.ArgumentEmpty, nameof(plaintextBytes));
-                throw new ArgumentOutOfRangeException(msg);
-            }
+            Argument.NotNull(hash, nameof(hash));
+            Argument.NotNullOrEmpty(plaintextBytes, nameof(plaintextBytes));
 
             byte[] ciphertextBytes = hash.ComputeHash(plaintextBytes);
 

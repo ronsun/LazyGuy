@@ -1,8 +1,6 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
-using LazyGuy.Constants;
 
 namespace LazyGuy.Extensions
 {
@@ -25,23 +23,9 @@ namespace LazyGuy.Extensions
             string password = null,
             X509KeyStorageFlags keyStorageFlags = 0)
         {
-            if (cert == null)
-            {
-                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(cert));
-                throw new ArgumentNullException(msg);
-            }
-
-            if (assembly == null)
-            {
-                string msg = string.Format(MessageTemplates.ArgumentNull, nameof(assembly));
-                throw new ArgumentNullException(msg);
-            }
-
-            if (string.IsNullOrEmpty(fullName))
-            {
-                string msg = string.Format(MessageTemplates.ArgumentEmpty, nameof(fullName));
-                throw new ArgumentOutOfRangeException(msg);
-            }
+            Argument.NotNull(cert, nameof(cert));
+            Argument.NotNull(assembly, nameof(assembly));
+            Argument.NotNullOrEmpty(fullName, nameof(fullName));
 
             using (Stream certStream = assembly.GetManifestResourceStream(fullName))
             {

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using LazyGuy.Constants;
 
 namespace LazyGuy.Extensions
 {
@@ -8,25 +7,11 @@ namespace LazyGuy.Extensions
     {
         public static bool In(this Enum target, params Enum[] list)
         {
-            bool anyInvalidType = list.Any(r => r.GetType() != target.GetType());
-            if (anyInvalidType)
+            Argument.ArrayTypeMatched(list, nameof(list), target.GetType());
+            Argument.EnumDefined(target, nameof(target));
+            foreach (var item in list)
             {
-                string msg = string.Format(MessageTemplates.InvalidArrayTypeForParams, nameof(list));
-                throw new ArrayTypeMismatchException(msg);
-            }
-
-            var isTargetOutOfRange = !Enum.IsDefined(target.GetType(), target);
-            if (isTargetOutOfRange)
-            {
-                string msg = string.Format(MessageTemplates.ValueNotInEnum, nameof(target));
-                throw new ArgumentOutOfRangeException(msg);
-            }
-
-            var anyItemInListOutOfRange = list.Any(r => !Enum.IsDefined(r.GetType(), r));
-            if (anyItemInListOutOfRange)
-            {
-                string msg = string.Format(MessageTemplates.ValueNotInEnum, nameof(list));
-                throw new ArgumentOutOfRangeException(msg);
+                Argument.EnumDefined(item, nameof(list));
             }
 
             return list.Contains(target);

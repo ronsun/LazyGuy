@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Security.Cryptography;
-using LazyGuy.Constants;
 
 namespace LazyGuy.Utils
 {
@@ -20,11 +19,7 @@ namespace LazyGuy.Utils
 
         public virtual string GetString(int length, string dictionary = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
         {
-            if (string.IsNullOrEmpty(dictionary))
-            {
-                string msg = string.Format(MessageTemplates.ArgumentEmpty, nameof(dictionary));
-                throw new ArgumentOutOfRangeException(msg);
-            }
+            Argument.NotNullOrEmpty(dictionary, nameof(dictionary));
 
             var charArray = new char[length];
             for (int i = 0; i < length; i++)
@@ -38,12 +33,8 @@ namespace LazyGuy.Utils
 
         public virtual int GetInt(int min = 0, int max = int.MaxValue)
         {
-            if (max < min)
-            {
-                string msg = string.Format(MessageTemplates.NumberMustGreatherThanAnother, nameof(max), nameof(min));
-                throw new ArgumentOutOfRangeException(msg);
-            }
-
+            Argument.InRange(() => max >= min, nameof(max));
+            
             if (min == max)
             {
                 return min;

@@ -21,7 +21,7 @@ namespace LazyGuy.Utils.Tests
             Action act = () => { StopwatchReporter.Execute(stubAction, stubReport); };
 
             //assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(FakeMessageTemplates.ArgumentNull);
+            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
         }
 
         #endregion
