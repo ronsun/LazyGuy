@@ -34,12 +34,8 @@ namespace LazyGuy.Utils
 
         public virtual int GetInt(int min = 0, int max = int.MaxValue)
         {
-            if (max < min)
-            {
-                string msg = string.Format(MessageTemplates.NumberMustGreatherThanAnother, nameof(max), nameof(min));
-                throw new ArgumentOutOfRangeException(msg);
-            }
-
+            Argument.InRange(() => max >= min, nameof(max));
+            
             if (min == max)
             {
                 return min;

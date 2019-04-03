@@ -22,11 +22,11 @@ namespace LazyGuy.Tests.Constants
             }
         }
 
-        public static string NumberMustGreatherThanAnother
+        public static string ArgumentOutOfRange
         {
             get
             {
-                string wildcard = string.Format(MessageTemplates.NumberMustGreatherThanAnother, "*", "*");
+                string wildcard = $"Argument '*' out of range.";
                 return $"*{wildcard}*";
             }
         }

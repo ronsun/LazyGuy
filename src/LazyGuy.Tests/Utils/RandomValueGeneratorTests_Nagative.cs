@@ -22,7 +22,7 @@ namespace LazyGuy.Utils.Tests
             Action act = () => { target.GetInt(stubMin, stubMax); };
 
             // Assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(FakeMessageTemplates.NumberMustGreatherThanAnother);
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(FakeMessageTemplates.ArgumentOutOfRange);
         }
 
         #endregion

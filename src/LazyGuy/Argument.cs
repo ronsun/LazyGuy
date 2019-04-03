@@ -41,5 +41,15 @@ namespace LazyGuy
                 }
             }
         }
+
+        public static void InRange(Func<bool> rule, string argName, string errorMessage = null)
+        {
+            bool matchRule = rule();
+            if (!matchRule)
+            {
+                errorMessage = errorMessage ?? $"Argument '{argName}' out of range.";
+                throw new ArgumentOutOfRangeException(errorMessage);
+            }
+        }
     }
 }
