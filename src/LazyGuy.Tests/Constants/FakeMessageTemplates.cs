@@ -1,6 +1,4 @@
-﻿using LazyGuy.Constants;
-
-namespace LazyGuy.Tests.Constants
+﻿namespace LazyGuy.Tests.Constants
 {
     public class FakeMessageTemplates
     {
@@ -35,7 +33,7 @@ namespace LazyGuy.Tests.Constants
         {
             get
             {
-                string wildcard = string.Format(MessageTemplates.InvalidArrayTypeForParams, "*");
+                string wildcard = $"Arugment '*' exist invalid type(s)";
                 return $"*{wildcard}*";
             }
         }
@@ -44,7 +42,7 @@ namespace LazyGuy.Tests.Constants
         {
             get
             {
-                string wildcard = string.Format(MessageTemplates.ValueNotInEnum, "*");
+                string wildcard = $"Value of argument '*' not defind in enum.";
                 return $"*{wildcard}*";
             }
         }
