@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "XWvFyi4ga/5PwzgVNnYvJw=="
+          "hash": "0+KxM7X7jEx9EFGGYd5tSA=="
         }
       },
       "is_incremental": false,
@@ -21,10 +21,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "79G9BItHrDyfmie7f6MuUw=="
+          "hash": "6+k2W4lhYn8V0ga3LCZeIQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -45,19 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "kbJU1aeNC95Gld6R9ScWSA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/LazyGuy.Constants.MessageTemplates.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LazyGuy.Constants.MessageTemplates.html",
-          "hash": "x+R1AIQwM03ZVcU/mxP5ug=="
+          "hash": "pGcCr+2x4umrqRApipL8sQ=="
         }
       },
       "is_incremental": false,
@@ -65,11 +53,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "obj/api/LazyGuy.Constants.yml",
+      "source_relative_path": "obj/api/LazyGuy.Argument.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LazyGuy.Constants.html",
-          "hash": "llPx5nGZvVQnNQt6p32YUA=="
+          "relative_path": "api/LazyGuy.Argument.html",
+          "hash": "6DOjzOTOqUdHUG1fuoaJ4A=="
         }
       },
       "is_incremental": false,
@@ -81,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LazyGuy.Extensions.DictionaryExtensions.html",
-          "hash": "lFPOBS8P+sgkxZ7vjiY+xw=="
+          "hash": "Kr5J9xpvYur0sXTC913ebA=="
         }
       },
       "is_incremental": false,
@@ -93,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LazyGuy.Extensions.EnumExtensions.html",
-          "hash": "3pssFt0Klc9E7Iw5fIVXXg=="
+          "hash": "pC8TrZ59JHT31Qed/3C7qA=="
         }
       },
       "is_incremental": false,
@@ -105,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LazyGuy.Extensions.HashAlgorithmExtensions.html",
-          "hash": "rwRu0B6FkWhW17xE0xAw6Q=="
+          "hash": "77P9dTYny/VNOuKERhYI7w=="
         }
       },
       "is_incremental": false,
@@ -117,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LazyGuy.Extensions.SymmetricAlgorithmExtensions.html",
-          "hash": "KBKKFwr90/mZTW/Z/J4oWQ=="
+          "hash": "E0uXpfG35QhgM44CAcuNSw=="
         }
       },
       "is_incremental": false,
@@ -129,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LazyGuy.Extensions.X509Certificate2Extensions.html",
-          "hash": "osYx0VZ6TfRMpBb2rhyP3g=="
+          "hash": "2QBBIVrdhP7XNBt4SQ+3OQ=="
         }
       },
       "is_incremental": false,
@@ -141,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LazyGuy.Extensions.html",
-          "hash": "r1dPFAvcUoLcL7H2e2e0Cg=="
+          "hash": "XhSnfbEMiMnyd3y19ED+MQ=="
         }
       },
       "is_incremental": false,
@@ -153,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LazyGuy.Http.HttpHelper.html",
-          "hash": "rWgETQzK3LP5BpjyYWKJoQ=="
+          "hash": "YUAVT3JF/0h8s6jBaYd+Yw=="
         }
       },
       "is_incremental": false,
@@ -165,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LazyGuy.Http.RequestOptions.html",
-          "hash": "8KkxZncGZll2gWUESA3VoQ=="
+          "hash": "UJNhlV0hjJ9Zpg2vciP0sQ=="
         }
       },
       "is_incremental": false,
@@ -177,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LazyGuy.Http.html",
-          "hash": "4Y549Y66+jDrCulZkxOK6g=="
+          "hash": "8mHQkuC8QVzlewFOdFWGMg=="
         }
       },
       "is_incremental": false,
@@ -189,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LazyGuy.Utils.RandomValueGenerator.html",
-          "hash": "/xhsajQhyGO3/kl5V7b6sA=="
+          "hash": "gHl7jeKtc5+ykF4nNQBi4w=="
         }
       },
       "is_incremental": false,
@@ -201,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LazyGuy.Utils.StopwatchReporter.html",
-          "hash": "vFZz9ZfOq/p9Eno2MxS4cw=="
+          "hash": "ASLQ2cxxzJ1TOO0qOP9V4A=="
         }
       },
       "is_incremental": false,
@@ -213,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LazyGuy.Utils.XmlConverter.html",
-          "hash": "44ScQMYsICnJgnpfqyhlJw=="
+          "hash": "OqFJ6tWcZBQ5mpCXbbDT+g=="
         }
       },
       "is_incremental": false,
@@ -225,7 +213,19 @@
       "output": {
         ".html": {
           "relative_path": "api/LazyGuy.Utils.html",
-          "hash": "BpsRcc1pfeJ76bxslvb8QQ=="
+          "hash": "e/yR95o4NtUG3y/nzwxfyA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LazyGuy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LazyGuy.html",
+          "hash": "IhQ0rUyKvGQEHr/d06OHzg=="
         }
       },
       "is_incremental": false,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "mDv736Ys9jD0CXX7hxAZWA=="
+          "hash": "k+8s5RmNgcqY2jhf5XMlBw=="
         }
       },
       "is_incremental": false,
@@ -259,30 +259,41 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
-        "incrementalPhase": "build"
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
       },
       "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 15,
+          "skipped_file_count": 0
+        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build"
-        },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build"
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
         }
       }
     },
     {
       "status": {
-        "can_incremental": true,
-        "details": "Can support incremental post processing.",
-        "incrementalPhase": "postProcessing"
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
       },
       "processors": {}
     }

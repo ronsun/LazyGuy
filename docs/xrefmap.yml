@@ -1,48 +1,95 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
-- uid: LazyGuy.Constants
-  name: LazyGuy.Constants
-  href: api/LazyGuy.Constants.html
-  commentId: N:LazyGuy.Constants
-  fullName: LazyGuy.Constants
-  nameWithType: LazyGuy.Constants
-- uid: LazyGuy.Constants.MessageTemplates
-  name: MessageTemplates
-  href: api/LazyGuy.Constants.MessageTemplates.html
-  commentId: T:LazyGuy.Constants.MessageTemplates
-  fullName: LazyGuy.Constants.MessageTemplates
-  nameWithType: MessageTemplates
-- uid: LazyGuy.Constants.MessageTemplates.ArgumentEmpty
-  name: ArgumentEmpty
-  href: api/LazyGuy.Constants.MessageTemplates.html#LazyGuy_Constants_MessageTemplates_ArgumentEmpty
-  commentId: F:LazyGuy.Constants.MessageTemplates.ArgumentEmpty
-  fullName: LazyGuy.Constants.MessageTemplates.ArgumentEmpty
-  nameWithType: MessageTemplates.ArgumentEmpty
-- uid: LazyGuy.Constants.MessageTemplates.ArgumentNull
-  name: ArgumentNull
-  href: api/LazyGuy.Constants.MessageTemplates.html#LazyGuy_Constants_MessageTemplates_ArgumentNull
-  commentId: F:LazyGuy.Constants.MessageTemplates.ArgumentNull
-  fullName: LazyGuy.Constants.MessageTemplates.ArgumentNull
-  nameWithType: MessageTemplates.ArgumentNull
-- uid: LazyGuy.Constants.MessageTemplates.InvalidArrayTypeForParams
-  name: InvalidArrayTypeForParams
-  href: api/LazyGuy.Constants.MessageTemplates.html#LazyGuy_Constants_MessageTemplates_InvalidArrayTypeForParams
-  commentId: F:LazyGuy.Constants.MessageTemplates.InvalidArrayTypeForParams
-  fullName: LazyGuy.Constants.MessageTemplates.InvalidArrayTypeForParams
-  nameWithType: MessageTemplates.InvalidArrayTypeForParams
-- uid: LazyGuy.Constants.MessageTemplates.NumberMustGreatherThanAnother
-  name: NumberMustGreatherThanAnother
-  href: api/LazyGuy.Constants.MessageTemplates.html#LazyGuy_Constants_MessageTemplates_NumberMustGreatherThanAnother
-  commentId: F:LazyGuy.Constants.MessageTemplates.NumberMustGreatherThanAnother
-  fullName: LazyGuy.Constants.MessageTemplates.NumberMustGreatherThanAnother
-  nameWithType: MessageTemplates.NumberMustGreatherThanAnother
-- uid: LazyGuy.Constants.MessageTemplates.ValueNotInEnum
-  name: ValueNotInEnum
-  href: api/LazyGuy.Constants.MessageTemplates.html#LazyGuy_Constants_MessageTemplates_ValueNotInEnum
-  commentId: F:LazyGuy.Constants.MessageTemplates.ValueNotInEnum
-  fullName: LazyGuy.Constants.MessageTemplates.ValueNotInEnum
-  nameWithType: MessageTemplates.ValueNotInEnum
+- uid: LazyGuy
+  name: LazyGuy
+  href: api/LazyGuy.html
+  commentId: N:LazyGuy
+  fullName: LazyGuy
+  nameWithType: LazyGuy
+- uid: LazyGuy.Argument
+  name: Argument
+  href: api/LazyGuy.Argument.html
+  commentId: T:LazyGuy.Argument
+  fullName: LazyGuy.Argument
+  nameWithType: Argument
+- uid: LazyGuy.Argument.ArrayTypeMatched*
+  name: ArrayTypeMatched
+  href: api/LazyGuy.Argument.html#LazyGuy_Argument_ArrayTypeMatched_
+  commentId: Overload:LazyGuy.Argument.ArrayTypeMatched
+  isSpec: "True"
+  fullName: LazyGuy.Argument.ArrayTypeMatched
+  nameWithType: Argument.ArrayTypeMatched
+- uid: LazyGuy.Argument.ArrayTypeMatched``1(``0[],System.String,System.Type,System.String)
+  name: ArrayTypeMatched<T>(T[], String, Type, String)
+  href: api/LazyGuy.Argument.html#LazyGuy_Argument_ArrayTypeMatched__1___0___System_String_System_Type_System_String_
+  commentId: M:LazyGuy.Argument.ArrayTypeMatched``1(``0[],System.String,System.Type,System.String)
+  name.vb: ArrayTypeMatched(Of T)(T(), String, Type, String)
+  fullName: LazyGuy.Argument.ArrayTypeMatched<T>(T[], System.String, System.Type, System.String)
+  fullName.vb: LazyGuy.Argument.ArrayTypeMatched(Of T)(T(), System.String, System.Type, System.String)
+  nameWithType: Argument.ArrayTypeMatched<T>(T[], String, Type, String)
+  nameWithType.vb: Argument.ArrayTypeMatched(Of T)(T(), String, Type, String)
+- uid: LazyGuy.Argument.EnumDefined(System.Enum,System.String)
+  name: EnumDefined(Enum, String)
+  href: api/LazyGuy.Argument.html#LazyGuy_Argument_EnumDefined_System_Enum_System_String_
+  commentId: M:LazyGuy.Argument.EnumDefined(System.Enum,System.String)
+  fullName: LazyGuy.Argument.EnumDefined(System.Enum, System.String)
+  nameWithType: Argument.EnumDefined(Enum, String)
+- uid: LazyGuy.Argument.EnumDefined*
+  name: EnumDefined
+  href: api/LazyGuy.Argument.html#LazyGuy_Argument_EnumDefined_
+  commentId: Overload:LazyGuy.Argument.EnumDefined
+  isSpec: "True"
+  fullName: LazyGuy.Argument.EnumDefined
+  nameWithType: Argument.EnumDefined
+- uid: LazyGuy.Argument.InRange(System.Func{System.Boolean},System.String,System.String)
+  name: InRange(Func<Boolean>, String, String)
+  href: api/LazyGuy.Argument.html#LazyGuy_Argument_InRange_System_Func_System_Boolean__System_String_System_String_
+  commentId: M:LazyGuy.Argument.InRange(System.Func{System.Boolean},System.String,System.String)
+  name.vb: InRange(Func(Of Boolean), String, String)
+  fullName: LazyGuy.Argument.InRange(System.Func<System.Boolean>, System.String, System.String)
+  fullName.vb: LazyGuy.Argument.InRange(System.Func(Of System.Boolean), System.String, System.String)
+  nameWithType: Argument.InRange(Func<Boolean>, String, String)
+  nameWithType.vb: Argument.InRange(Func(Of Boolean), String, String)
+- uid: LazyGuy.Argument.InRange*
+  name: InRange
+  href: api/LazyGuy.Argument.html#LazyGuy_Argument_InRange_
+  commentId: Overload:LazyGuy.Argument.InRange
+  isSpec: "True"
+  fullName: LazyGuy.Argument.InRange
+  nameWithType: Argument.InRange
+- uid: LazyGuy.Argument.NotNull*
+  name: NotNull
+  href: api/LazyGuy.Argument.html#LazyGuy_Argument_NotNull_
+  commentId: Overload:LazyGuy.Argument.NotNull
+  isSpec: "True"
+  fullName: LazyGuy.Argument.NotNull
+  nameWithType: Argument.NotNull
+- uid: LazyGuy.Argument.NotNull``1(``0,System.String)
+  name: NotNull<T>(T, String)
+  href: api/LazyGuy.Argument.html#LazyGuy_Argument_NotNull__1___0_System_String_
+  commentId: M:LazyGuy.Argument.NotNull``1(``0,System.String)
+  name.vb: NotNull(Of T)(T, String)
+  fullName: LazyGuy.Argument.NotNull<T>(T, System.String)
+  fullName.vb: LazyGuy.Argument.NotNull(Of T)(T, System.String)
+  nameWithType: Argument.NotNull<T>(T, String)
+  nameWithType.vb: Argument.NotNull(Of T)(T, String)
+- uid: LazyGuy.Argument.NotNullOrEmpty*
+  name: NotNullOrEmpty
+  href: api/LazyGuy.Argument.html#LazyGuy_Argument_NotNullOrEmpty_
+  commentId: Overload:LazyGuy.Argument.NotNullOrEmpty
+  isSpec: "True"
+  fullName: LazyGuy.Argument.NotNullOrEmpty
+  nameWithType: Argument.NotNullOrEmpty
+- uid: LazyGuy.Argument.NotNullOrEmpty``1(``0,System.String)
+  name: NotNullOrEmpty<T>(T, String)
+  href: api/LazyGuy.Argument.html#LazyGuy_Argument_NotNullOrEmpty__1___0_System_String_
+  commentId: M:LazyGuy.Argument.NotNullOrEmpty``1(``0,System.String)
+  name.vb: NotNullOrEmpty(Of T)(T, String)
+  fullName: LazyGuy.Argument.NotNullOrEmpty<T>(T, System.String)
+  fullName.vb: LazyGuy.Argument.NotNullOrEmpty(Of T)(T, System.String)
+  nameWithType: Argument.NotNullOrEmpty<T>(T, String)
+  nameWithType.vb: Argument.NotNullOrEmpty(Of T)(T, String)
 - uid: LazyGuy.Extensions
   name: LazyGuy.Extensions
   href: api/LazyGuy.Extensions.html
