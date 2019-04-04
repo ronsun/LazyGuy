@@ -6,7 +6,7 @@ using NUnit.Framework;
 namespace LazyGuy.Tests.Utils
 {
     [TestFixture()]
-    public class StopwatchReporterTests_Positive
+    public class StopwatchReporterTests
     {
         #region Execute
 

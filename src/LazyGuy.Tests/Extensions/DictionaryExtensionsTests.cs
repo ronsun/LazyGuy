@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace LazyGuy.Extensions.Tests
 {
     [TestFixture()]
-    public class DictionaryExtensionsTests_Positive
+    public class DictionaryExtensionsTests
     {
         #region AddOrUpdate
 

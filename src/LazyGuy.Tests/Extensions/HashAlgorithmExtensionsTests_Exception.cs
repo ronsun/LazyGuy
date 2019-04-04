@@ -7,7 +7,7 @@ using NUnit.Framework;
 namespace LazyGuy.Extensions.Tests
 {
     [TestFixture()]
-    public class HashAlgorithmExtensionsTests_Negative
+    public class HashAlgorithmExtensionsTests_Exception
     {
         #region ComputeHashToString with string input
 

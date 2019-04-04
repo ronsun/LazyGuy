@@ -7,7 +7,7 @@ using NUnit.Framework;
 namespace LazyGuy.Utils.Tests
 {
     [TestFixture()]
-    public class XmlConverterTests_Positive
+    public class XmlConverterTests
     {
         public class FakeClass
         {

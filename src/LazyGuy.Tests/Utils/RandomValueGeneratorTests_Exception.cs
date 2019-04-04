@@ -6,7 +6,7 @@ using NUnit.Framework;
 namespace LazyGuy.Utils.Tests
 {
     [TestFixture()]
-    public class RandomValueGeneratorTests_Nagative
+    public class RandomValueGeneratorTests_Exception
     {
         #region GetInt
 

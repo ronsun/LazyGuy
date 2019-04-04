@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace LazyGuy.Extensions.Tests
 {
     [TestFixture()]
-    public class EnumExtensionsTests_Positive
+    public class EnumExtensionsTests
     {
         #region In
 

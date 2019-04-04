@@ -10,7 +10,7 @@ using NUnit.Framework;
 namespace LazyGuy.Utils.Tests
 {
     [TestFixture()]
-    public class RandomValueGeneratorTests_Positive
+    public class RandomValueGeneratorTests
     {
         #region GetInt
 

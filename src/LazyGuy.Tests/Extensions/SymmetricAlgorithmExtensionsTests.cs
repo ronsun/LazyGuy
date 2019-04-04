@@ -9,7 +9,7 @@ using NUnit.Framework;
 namespace LazyGuy.Extensions.Tests
 {
     [TestFixture()]
-    public class SymmetricAlgorithmExtensionsTests__Positive
+    public class SymmetricAlgorithmExtensionsTests
     {
         // NOTE: I'm not sure is it a good idea to encrypt and decrypt back to verify it works correctly or not.
 

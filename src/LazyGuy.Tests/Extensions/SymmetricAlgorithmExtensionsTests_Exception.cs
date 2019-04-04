@@ -7,7 +7,7 @@ using NUnit.Framework;
 namespace LazyGuy.Extensions.Tests
 {
     [TestFixture()]
-    public class SymmetricAlgorithmExtensionsTests_Negative
+    public class SymmetricAlgorithmExtensionsTests_Exception
     {
         #region Encrypt with string input
 
