@@ -12,7 +12,7 @@ namespace LazyGuy.Extensions.Tests
         #region Encrypt with string input
 
         [Test()]
-        public void EncryptTest_InputEmptyString_ReturnArgumentNullException()
+        public void EncryptTest_InputEmptyString_ThrowArgumentNullExceptionWithMessage()
         {
             // arrange
             string stubPlaintext = null;
@@ -26,7 +26,7 @@ namespace LazyGuy.Extensions.Tests
         }
 
         [Test()]
-        public void EncryptTest_InputEmptyString_ReturnArgumentOutOfRangeException()
+        public void EncryptTest_InputEmptyString_ThrowArgumentOutOfRangeExceptionWithMessage()
         {
             // arrange
             string stubPlaintext = string.Empty;
@@ -40,7 +40,7 @@ namespace LazyGuy.Extensions.Tests
         }
 
         [Test()]
-        public void EncryptTest_InputNullSymmetricAlgorithmWithString_ReturnArgumentNullException()
+        public void EncryptTest_InputNullSymmetricAlgorithmWithString_ThrowArgumentNullExceptionWithMessage()
         {
             // arrange
             string stubPlaintext = "a";
@@ -58,7 +58,7 @@ namespace LazyGuy.Extensions.Tests
         #region Encrypt with bytes input
 
         [Test()]
-        public void EncryptTest_InputNullBytes_ReturnArgumentNullException()
+        public void EncryptTest_InputNullBytes_ThrowArgumentNullExceptionWithMessage()
         {
             // arrange
             byte[] stubPlaintextBytes = null;
@@ -72,7 +72,7 @@ namespace LazyGuy.Extensions.Tests
         }
 
         [Test()]
-        public void EncryptTest_InputEmptyBytes_ReturnArgumentOutOfRangeException()
+        public void EncryptTest_InputEmptyBytes_ThrowArgumentOutOfRangeExceptionWithMessage()
         {
             // arrange
             byte[] stubPlaintextBytes = new byte[0];
@@ -86,7 +86,7 @@ namespace LazyGuy.Extensions.Tests
         }
 
         [Test()]
-        public void EncryptTest_InputNullSymmetricAlgorithmWithBytes_ReturnArgumentNullException()
+        public void EncryptTest_InputNullSymmetricAlgorithmWithBytes_ThrowArgumentNullExceptionWithMessage()
         {
             // arrange
             byte[] stubPlaintextBytes = new byte[] { 0x31 };
@@ -104,7 +104,7 @@ namespace LazyGuy.Extensions.Tests
         #region Decrypt
 
         [Test()]
-        public void DecryptTest_InputNullString_ReturnArgumentNullException()
+        public void DecryptTest_InputNullString_ThrowArgumentNullExceptionWithMessage()
         {
             // arrange
             string stubCiphertext = null;
@@ -118,7 +118,7 @@ namespace LazyGuy.Extensions.Tests
         }
 
         [Test()]
-        public void DecryptTest_InputEmptyString_ReturnArgumentOutOfRangeException()
+        public void DecryptTest_InputEmptyString_ThrowArgumentOutOfRangeExceptionWithMessage()
         {
             // arrange
             string stubCiphertext = string.Empty;
@@ -132,7 +132,7 @@ namespace LazyGuy.Extensions.Tests
         }
 
         [Test()]
-        public void DecryptTest_InputNullSymmetricAlgorithmWithString_ReturnArgumentNullException()
+        public void DecryptTest_InputNullSymmetricAlgorithmWithString_ThrowArgumentNullExceptionWithMessage()
         {
             // arrange
             string stubCiphertext = "a";

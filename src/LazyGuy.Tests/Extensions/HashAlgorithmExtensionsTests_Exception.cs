@@ -12,7 +12,7 @@ namespace LazyGuy.Extensions.Tests
         #region ComputeHashToString with string input
 
         [Test()]
-        public void ComputeHashToStringTest_InputNullString_ReturnArgumentNullException()
+        public void ComputeHashToStringTest_InputNullString_ThrowArgumentNullExceptionWithMessage()
         {
             // arrange
             string stubPlaintext = null;
@@ -26,7 +26,7 @@ namespace LazyGuy.Extensions.Tests
         }
 
         [Test()]
-        public void ComputeHashToStringTest_InputEmptyString_ReturnArgumentOutOfRangeException()
+        public void ComputeHashToStringTest_InputEmptyString_ThrowArgumentOutOfRangeExceptionWithMessage()
         {
             // arrange
             string stubPlaintext = string.Empty;
@@ -40,7 +40,7 @@ namespace LazyGuy.Extensions.Tests
         }
 
         [Test()]
-        public void ComputeHashToStringTest_InputNullHashAlgorithmWithString_ReturnArgumentNullException()
+        public void ComputeHashToStringTest_InputNullHashAlgorithmWithString_ThrowArgumentNullExceptionWithMessage()
         {
             // arrange
             string stubPlaintext = "a";
@@ -58,7 +58,7 @@ namespace LazyGuy.Extensions.Tests
         #region ComputeHashToString with bytes input
 
         [Test()]
-        public void ComputeHashToStringTest_InputNullBytes_ReturnArgumentNullException()
+        public void ComputeHashToStringTest_InputNullBytes_ThrowArgumentNullExceptionWithMessage()
         {
             // arrange
             byte[] stubPlaintextBytes = null;
@@ -72,7 +72,7 @@ namespace LazyGuy.Extensions.Tests
         }
 
         [Test()]
-        public void ComputeHashToStringTest_InputEmptyBytes_ReturnArgumentOutOfRangeException()
+        public void ComputeHashToStringTest_InputEmptyBytes_ThrowArgumentOutOfRangeExceptionWithMessage()
         {
             // arrange
             byte[] stubPlaintextBytes = new byte[0];
@@ -86,7 +86,7 @@ namespace LazyGuy.Extensions.Tests
         }
 
         [Test()]
-        public void ComputeHashToStringTest_InputNullHashAlgorithmWithBytes_ReturnArgumentNullException()
+        public void ComputeHashToStringTest_InputNullHashAlgorithmWithBytes_ThrowArgumentNullExceptionWithMessage()
         {
             // arrange
             byte[] stubPlaintextBytes = new byte[] { 0x31 };
