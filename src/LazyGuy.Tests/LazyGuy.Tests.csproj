@@ -65,6 +65,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArgumentTests_Exception.cs" />
+    <Compile Include="ArgumentTests.cs" />
     <Compile Include="Constants\MessageTemplates.cs" />
     <Compile Include="Extensions\DictionaryExtensionsTests.cs" />
     <Compile Include="Extensions\DictionaryExtensionsTests_Exception.cs" />
