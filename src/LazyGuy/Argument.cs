@@ -50,7 +50,7 @@ namespace LazyGuy
             if (!matchRule)
             {
                 errorMessage = errorMessage ?? $"Argument '{argName}' out of range.";
-                throw new ArgumentOutOfRangeException(errorMessage);
+                throw new ArgumentOutOfRangeException(errorMessage, new Exception());
             }
         }
 
