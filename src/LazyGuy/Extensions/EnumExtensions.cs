@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Linq;
 
 namespace LazyGuy.Extensions
@@ -16,6 +17,20 @@ namespace LazyGuy.Extensions
             }
 
             return list.Contains(target);
+        }
+
+        public static string GetDescription<T>(this T target)
+            where T : Enum
+        {
+            string enumFieldName = target.ToString();
+            var element = typeof(T).GetField(enumFieldName);
+            var attribute = Attribute.GetCustomAttribute(element, typeof(DescriptionAttribute));
+            if (attribute != null)
+            {
+                return ((DescriptionAttribute)attribute).Description;
+            }
+
+            return enumFieldName;
         }
     }
 }

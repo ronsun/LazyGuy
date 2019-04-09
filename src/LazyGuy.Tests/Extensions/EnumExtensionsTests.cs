@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using LazyGuy.Extensions;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace LazyGuy.Extensions.Tests
@@ -56,6 +57,45 @@ namespace LazyGuy.Extensions.Tests
             // assert
             actual.Should().BeFalse();
         }
+        #endregion
+
+        #region GetDescription
+
+        private enum FakeEnum_GetDescription
+        {
+            [System.ComponentModel.Description("a")]
+            WithDescription,
+            NoDescription
+        }
+
+        [Test()]
+        public void GetDescriptionTest_InputEnumWithDesciption_ReturnDesciption()
+        {
+            // arrange
+            var mockedEnum = FakeEnum_GetDescription.WithDescription;
+            var expected = "a";
+
+            // act
+            var actual = mockedEnum.GetDescription();
+
+            // assert
+            actual.Should().Be(expected);
+        }
+
+        [Test()]
+        public void GetDescriptionTest_InputEnumNoDesciption_ReturnValueString()
+        {
+            // arrange
+            var mockedEnum = FakeEnum_GetDescription.NoDescription;
+            var expected = nameof(FakeEnum_GetDescription.NoDescription);
+
+            // act
+            var actual = mockedEnum.GetDescription();
+
+            // assert
+            actual.Should().Be(expected);
+        }
+
         #endregion
     }
 }
