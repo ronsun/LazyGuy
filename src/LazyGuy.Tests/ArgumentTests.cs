@@ -56,7 +56,7 @@ namespace LazyGuy.Tests
 
         #region EnumDefined
 
-        private enum FakeEnum
+        private enum FakeEnum_EnumDefined
         {
             A1
         }
@@ -65,7 +65,7 @@ namespace LazyGuy.Tests
         public void EnumDefinedTest_InputDefinedEnum_NoException()
         {
             // arrange
-            var stubEnum = FakeEnum.A1;
+            var stubEnum = FakeEnum_EnumDefined.A1;
 
             // act
             Argument.EnumDefined(stubEnum, nameof(stubEnum));

@@ -70,7 +70,7 @@ namespace LazyGuy.Tests
 
         #region EnumDefined
 
-        private enum FakeEnum
+        private enum FakeEnum_EnumDefined
         {
             A1
         }
@@ -79,7 +79,7 @@ namespace LazyGuy.Tests
         public void EnumDefinedTest_InputUndefinedEnum_ThorwArgumentOutOfRangeExceptionWithMessage()
         {
             // arrange
-            var stubEnum = (FakeEnum)1;
+            var stubEnum = (FakeEnum_EnumDefined)1;
 
             // act
             Action act = () => { Argument.EnumDefined(stubEnum, nameof(stubEnum)); };
