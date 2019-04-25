@@ -12,31 +12,18 @@ namespace LazyGuy.Extensions.Tests
         #region ComputeHashToString with string input
 
         [Test()]
-        public void ComputeHashToStringTest_InputNullString_ThrowArgumentNullExceptionWithMessage()
+        [TestCase(null)]
+        [TestCase("")]
+        public void ComputeHashToStringTest_InputNullOrEmptyString_ThrowArgumentOutOfRangeExceptionWithMessage(string stubPlaintext)
         {
             // arrange
-            string stubPlaintext = null;
             var target = new MD5CryptoServiceProvider();
 
             //act
             Action act = () => { target.ComputeHashToString(stubPlaintext); };
 
             //assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
-        }
-
-        [Test()]
-        public void ComputeHashToStringTest_InputEmptyString_ThrowArgumentOutOfRangeExceptionWithMessage()
-        {
-            // arrange
-            string stubPlaintext = string.Empty;
-            var target = new MD5CryptoServiceProvider();
-
-            //act
-            Action act = () => { target.ComputeHashToString(stubPlaintext); };
-
-            //assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentEmpty);
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentNullOrEmpty);
         }
 
         [Test()]
@@ -58,31 +45,18 @@ namespace LazyGuy.Extensions.Tests
         #region ComputeHashToString with bytes input
 
         [Test()]
-        public void ComputeHashToStringTest_InputNullBytes_ThrowArgumentNullExceptionWithMessage()
+        [TestCase(null)]
+        [TestCase(new byte[0])]
+        public void ComputeHashToStringTest_InputNullOrEmptyBytes_ThrowArgumentOutOfRangeExceptionWithMessage(byte[] stubPlaintextBytes)
         {
             // arrange
-            byte[] stubPlaintextBytes = null;
             var target = new MD5CryptoServiceProvider();
 
             //act
             Action act = () => { target.ComputeHashToString(stubPlaintextBytes); };
 
             //assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
-        }
-
-        [Test()]
-        public void ComputeHashToStringTest_InputEmptyBytes_ThrowArgumentOutOfRangeExceptionWithMessage()
-        {
-            // arrange
-            byte[] stubPlaintextBytes = new byte[0];
-            var target = new MD5CryptoServiceProvider();
-
-            //act
-            Action act = () => { target.ComputeHashToString(stubPlaintextBytes); };
-
-            //assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentEmpty);
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentNullOrEmpty);
         }
 
         [Test()]

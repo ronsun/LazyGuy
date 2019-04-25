@@ -30,10 +30,11 @@ namespace LazyGuy.Utils.Tests
         #region GetString
 
         [Test()]
-        public void GetStringTest_DictionaryNull_ThrowArgumentNullExceptionWithMessage()
+        [TestCase(null)]
+        [TestCase("")]
+        public void GetStringTest_DictionaryNullOrEmpty_ThrowArgumentOutOfRangeExceptionWithMessage(string stubDictionary)
         {
             // Arragne
-            string stubDictionary = null;
             var target = new RandomValueGenerator();
             int stubLength = 1;
 
@@ -41,23 +42,9 @@ namespace LazyGuy.Utils.Tests
             Action act = () => { target.GetString(stubLength, stubDictionary); };
 
             // Assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentNullOrEmpty);
         }
 
-        [Test()]
-        public void GetStringTest_DictionaryEmpty_ThrowArgumentOutOfRangeExceptionWithMessage()
-        {
-            // Arragne
-            string stubDictionary = string.Empty;
-            var target = new RandomValueGenerator();
-            int stubLength = 1;
-
-            // Act
-            Action act = () => { target.GetString(stubLength, stubDictionary); };
-
-            // Assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentEmpty);
-        }
         #endregion
 
     }

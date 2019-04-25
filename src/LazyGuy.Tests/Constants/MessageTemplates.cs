@@ -11,11 +11,11 @@
             }
         }
 
-        public static string ArgumentEmpty
+        public static string ArgumentNullOrEmpty
         {
             get
             {
-                string wildcard = $"Argument '*' should not be empty.";
+                string wildcard = $"Argument '*' should not be null or empty.";
                 return $"*{wildcard}*";
             }
         }

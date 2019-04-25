@@ -12,31 +12,18 @@ namespace LazyGuy.Extensions.Tests
         #region Encrypt with string input
 
         [Test()]
-        public void EncryptTest_InputEmptyString_ThrowArgumentNullExceptionWithMessage()
+        [TestCase(null)]
+        [TestCase("")]
+        public void EncryptTest_InputNullOrEmptyString_ThrowArgumentOutOfRangeExceptionWithMessage(string stubPlaintext)
         {
             // arrange
-            string stubPlaintext = null;
             var target = new AesCryptoServiceProvider();
 
             //act
             Action act = () => { target.Encrypt(stubPlaintext); };
 
             //assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
-        }
-
-        [Test()]
-        public void EncryptTest_InputEmptyString_ThrowArgumentOutOfRangeExceptionWithMessage()
-        {
-            // arrange
-            string stubPlaintext = string.Empty;
-            var target = new AesCryptoServiceProvider();
-
-            //act
-            Action act = () => { target.Encrypt(stubPlaintext); };
-
-            //assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentEmpty);
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentNullOrEmpty);
         }
 
         [Test()]
@@ -58,31 +45,18 @@ namespace LazyGuy.Extensions.Tests
         #region Encrypt with bytes input
 
         [Test()]
-        public void EncryptTest_InputNullBytes_ThrowArgumentNullExceptionWithMessage()
+        [TestCase(null)]
+        [TestCase(new byte[0])]
+        public void EncryptTest_InputNullOrEmptyBytes_ThrowArgumentOutOfRangeExceptionWithMessage(byte[] stubPlaintextBytes)
         {
             // arrange
-            byte[] stubPlaintextBytes = null;
             var target = new AesCryptoServiceProvider();
 
             //act
             Action act = () => { target.Encrypt(stubPlaintextBytes); };
 
             //assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
-        }
-
-        [Test()]
-        public void EncryptTest_InputEmptyBytes_ThrowArgumentOutOfRangeExceptionWithMessage()
-        {
-            // arrange
-            byte[] stubPlaintextBytes = new byte[0];
-            var target = new AesCryptoServiceProvider();
-
-            //act
-            Action act = () => { target.Encrypt(stubPlaintextBytes); };
-
-            //assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentEmpty);
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentNullOrEmpty);
         }
 
         [Test()]
@@ -104,31 +78,18 @@ namespace LazyGuy.Extensions.Tests
         #region Decrypt
 
         [Test()]
-        public void DecryptTest_InputNullString_ThrowArgumentNullExceptionWithMessage()
+        [TestCase(null)]
+        [TestCase("")]
+        public void DecryptTest_InputNullOrEmptyString_ThrowArgumentOutOfRangeExceptionWithMessage(string stubCiphertext)
         {
             // arrange
-            string stubCiphertext = null;
             var target = new AesCryptoServiceProvider();
 
             //act
             Action act = () => { target.Decrypt(stubCiphertext); };
 
             //assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
-        }
-
-        [Test()]
-        public void DecryptTest_InputEmptyString_ThrowArgumentOutOfRangeExceptionWithMessage()
-        {
-            // arrange
-            string stubCiphertext = string.Empty;
-            var target = new AesCryptoServiceProvider();
-
-            //act
-            Action act = () => { target.Decrypt(stubCiphertext); };
-
-            //assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentEmpty);
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentNullOrEmpty);
         }
 
         [Test()]

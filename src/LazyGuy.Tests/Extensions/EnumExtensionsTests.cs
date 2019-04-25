@@ -88,7 +88,7 @@ namespace LazyGuy.Extensions.Tests
             // arrange
             var mockedEnum = FakeEnum_GetDescription.NoDescription;
             var expected = nameof(FakeEnum_GetDescription.NoDescription);
-
+            
             // act
             var actual = mockedEnum.GetDescription();
 

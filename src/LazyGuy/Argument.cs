@@ -15,9 +15,12 @@ namespace LazyGuy
 
         public static void NotNullOrEmpty<T>(T arg, string argName)
         {
-            NotNull(arg, argName);
+            var exception = new ArgumentOutOfRangeException($"Argument '{argName}' should not be null or empty.");
 
-            var exception = new ArgumentOutOfRangeException($"Argument '{argName}' should not be empty.");
+            if (arg == null)
+            {
+                throw exception;
+            }
 
             if (arg is string)
             {

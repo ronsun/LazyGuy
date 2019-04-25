@@ -28,29 +28,17 @@ namespace LazyGuy.Tests
         #region NotNullOrEmpty
 
         [Test()]
-        public void NotNullOrEmptyTest_InputNull_ThorwArgumentNullExceptionWithMessage()
+        [TestCase(null)]
+        [TestCase("")]
+        public void NotNullOrEmptyTest_InputNullOrEmptyString_ThorwArgumentOutOfRangeExceptionWithMessage(string stubArg)
         {
             // arrange
-            string stubArg = null;
 
             // act
             Action act = () => { Argument.NotNullOrEmpty(stubArg, nameof(stubArg)); };
 
             // assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
-        }
-
-        [Test()]
-        public void NotNullOrEmptyTest_InputEmptyString_ThorwArgumentOutOfRangeExceptionWithMessage()
-        {
-            // arrange
-            string stubArg = string.Empty;
-
-            // act
-            Action act = () => { Argument.NotNullOrEmpty(stubArg, nameof(stubArg)); };
-
-            // assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentEmpty);
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentNullOrEmpty);
         }
 
         [Test()]
@@ -63,7 +51,7 @@ namespace LazyGuy.Tests
             Action act = () => { Argument.NotNullOrEmpty(stubArg, nameof(stubArg)); };
 
             // assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentEmpty);
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentNullOrEmpty);
         }
 
         #endregion
