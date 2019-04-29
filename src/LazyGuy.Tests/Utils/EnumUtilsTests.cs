@@ -1,11 +1,5 @@
-﻿using NUnit.Framework;
-using LazyGuy.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentAssertions;
+﻿using FluentAssertions;
+using NUnit.Framework;
 
 namespace LazyGuy.Utils.Tests
 {
@@ -28,7 +22,7 @@ namespace LazyGuy.Utils.Tests
             var expectedEnum = FakeEnum_ParseDesciption.WithDescription;
 
             // act
-            var actual = EnumUtils.ParseDesciption<FakeEnum_ParseDesciption>(stubDescrioption);
+            var actual = EnumUtils.ParseDescription<FakeEnum_ParseDesciption>(stubDescrioption);
 
             // assert
             actual.Should().Be(expectedEnum);

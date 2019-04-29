@@ -16,6 +16,11 @@ namespace LazyGuy.Utils.Tests
             WithDescription
         }
 
+        private enum FakeEnum_ParseDesciption_Empty
+        {
+
+        }
+
         [Test()]
         public void ParseDesciptionTest_InputDescriptionNotExist_ThrowArgumentOutOfRangeExceptionWithMessage()
         {
@@ -23,7 +28,20 @@ namespace LazyGuy.Utils.Tests
             var stubDescrioption = "b";
 
             // Act
-            Action act = () => { EnumUtils.ParseDesciption<FakeEnum_ParseDesciption>(stubDescrioption); };
+            Action act = () => { EnumUtils.ParseDescription<FakeEnum_ParseDesciption>(stubDescrioption); };
+
+            // Assert
+            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentOutOfRange);
+        }
+
+        [Test()]
+        public void ParseDesciptionTest_ParseToEmptyEnum_ThrowArgumentOutOfRangeExceptionWithMessage()
+        {
+            // arrange
+            var stubDescrioption = "a";
+
+            // Act
+            Action act = () => { EnumUtils.ParseDescription<FakeEnum_ParseDesciption>(stubDescrioption); };
 
             // Assert
             act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentOutOfRange);
@@ -37,7 +55,7 @@ namespace LazyGuy.Utils.Tests
             // arrange
 
             // Act
-            Action act = () => { EnumUtils.ParseDesciption<FakeEnum_ParseDesciption>(stubDescrioption); };
+            Action act = () => { EnumUtils.ParseDescription<FakeEnum_ParseDesciption>(stubDescrioption); };
 
             // Assert
             act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentNullOrEmpty);
