@@ -45,5 +45,39 @@ namespace LazyGuy.Utils.Tests
         }
 
         #endregion
+
+        #region TryParseDescription
+
+        private enum FakeEnum_TryParseDescription
+        {
+            DefaultMember,
+            [System.ComponentModel.Description("a")]
+            WithDescription,
+            [System.ComponentModel.Description("")]
+            WithEmptyDescroption
+        }
+
+        [Test()]
+        [TestCase("a", true, FakeEnum_TryParseDescription.WithDescription)]
+        [TestCase("", true, FakeEnum_TryParseDescription.WithEmptyDescroption)]
+        [TestCase(null, false, default(FakeEnum_TryParseDescription))]
+        [TestCase("not exist", false, default(FakeEnum_TryParseDescription))]
+        public void TryParseDescriptionTest_InputDescription_ReturnResultAndOutToExpectedEnum(
+            string stubDescrioption,
+            bool expectedResult,
+            int expectedOutEnum)
+        {
+            // arrange
+
+            // act
+            FakeEnum_TryParseDescription actualOutEnum;
+            var actualResult = EnumUtils.TryParseDescription(stubDescrioption, out actualOutEnum);
+
+            // assert
+            actualResult.Should().Be(expectedResult);
+            actualOutEnum.Should().Be(expectedOutEnum);
+        }
+
+        #endregion
     }
 }

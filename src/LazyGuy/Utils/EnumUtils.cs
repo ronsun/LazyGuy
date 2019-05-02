@@ -18,7 +18,26 @@ namespace LazyGuy.Utils
             return result;
         }
 
-        //TODO: TryParseDesciption()
+        // Add additional restrict 'struct' for T so that can use Enum.TryParse()
+        public static bool TryParseDescription<T>(string description, out T result)
+            where T : struct, Enum
+        {
+            result = default;
+
+            if (description == null)
+            {
+                return false;
+            }
+
+            FieldInfo enumField = ParseDescription(typeof(T), description);
+            if (enumField == null)
+            {
+                return false;
+            }
+
+            bool isSuccess = Enum.TryParse(enumField.Name, out result);
+            return isSuccess;
+        }
 
         private static FieldInfo ParseDescription(Type enumType, string description)
         {
