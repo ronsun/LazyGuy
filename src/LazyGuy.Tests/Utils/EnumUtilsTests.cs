@@ -62,7 +62,7 @@ namespace LazyGuy.Utils.Tests
         [TestCase("", true, FakeEnum_TryParseDescription.WithEmptyDescroption)]
         [TestCase(null, false, default(FakeEnum_TryParseDescription))]
         [TestCase("not exist", false, default(FakeEnum_TryParseDescription))]
-        public void TryParseDescriptionTest_InputDescription_ReturnResultAndOutToExpectedEnum(
+        public void TryParseDescriptionTest_InputDescription_ReturnExpectedResultAndOutToExpectedEnum(
             string stubDescrioption,
             bool expectedResult,
             int expectedOutEnum)
