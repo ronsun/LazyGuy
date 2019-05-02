@@ -9,7 +9,7 @@ namespace LazyGuy.Utils
         public static T ParseDescription<T>(string description)
             where T : Enum
         {
-            Argument.NotNullOrEmpty(description, nameof(description));
+            Argument.NotNull(description, nameof(description));
 
             FieldInfo enumField = ParseDescription(typeof(T), description);
             Argument.InRange(() => enumField != null, nameof(description));

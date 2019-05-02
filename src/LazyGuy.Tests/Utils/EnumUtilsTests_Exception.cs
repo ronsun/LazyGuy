@@ -41,24 +41,23 @@ namespace LazyGuy.Utils.Tests
             var stubDescrioption = "a";
 
             // Act
-            Action act = () => { EnumUtils.ParseDescription<FakeEnum_ParseDesciption>(stubDescrioption); };
+            Action act = () => { EnumUtils.ParseDescription<FakeEnum_ParseDesciption_Empty>(stubDescrioption); };
 
             // Assert
             act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentOutOfRange);
         }
 
         [Test()]
-        [TestCase(null)]
-        [TestCase("")]
-        public void ParseDesciptionTest_InputNullOrEmpty_ThrowArgumentOutOfRangeExceptionWithMessage(string stubDescrioption)
+        public void ParseDesciptionTest_InputNull_ThrowNullReferenceExceptionWithMessage()
         {
             // arrange
+            string stubDescrioption = null;
 
             // Act
             Action act = () => { EnumUtils.ParseDescription<FakeEnum_ParseDesciption>(stubDescrioption); };
 
             // Assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentNullOrEmpty);
+            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
         }
 
         #endregion
