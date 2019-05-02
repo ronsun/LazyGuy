@@ -25,7 +25,7 @@ namespace LazyGuy.Utils.Tests
         public void ParseDesciptionTest_InputDescriptionNotExist_ThrowArgumentOutOfRangeExceptionWithMessage()
         {
             // arrange
-            var stubDescrioption = "b";
+            var stubDescrioption = "not exist";
 
             // Act
             Action act = () => { EnumUtils.ParseDescription<FakeEnum_ParseDesciption>(stubDescrioption); };
