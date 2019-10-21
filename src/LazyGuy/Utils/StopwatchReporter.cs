@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace LazyGuy.Utils
 {
-    public class StopwatchReporter
+    public static class StopwatchReporter
     {
         public static void Execute(Action action, Action<long> report = null)
         {

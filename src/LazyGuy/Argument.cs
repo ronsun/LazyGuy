@@ -22,22 +22,16 @@ namespace LazyGuy
                 throw exception;
             }
 
-            if (arg is string)
+            var stringArg = arg as string;
+            if (stringArg == string.Empty)
             {
-                var stringArg = arg as string;
-                if (stringArg == string.Empty)
-                {
-                    throw exception;
-                }
+                throw exception;
             }
 
-            if (arg is Array)
+            var arrayArg = arg as Array;
+            if (arrayArg?.Length == 0)
             {
-                var arrayArg = arg as Array;
-                if (arrayArg.Length == 0)
-                {
-                    throw exception;
-                }
+                throw exception;
             }
         }
 
@@ -62,7 +56,7 @@ namespace LazyGuy
             bool matchRule = arg.All(r => r.GetType() == expectedType);
             if (!matchRule)
             {
-                errorMessage = errorMessage ?? $"Arugment '{argName}' exist invalid type(s)";
+                errorMessage = errorMessage ?? $"Argument '{argName}' exist invalid type(s)";
                 throw new ArrayTypeMismatchException(errorMessage);
             }
         }

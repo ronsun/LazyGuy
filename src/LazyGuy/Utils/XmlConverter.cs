@@ -38,7 +38,7 @@ namespace LazyGuy.Utils
             }
         }
 
-        public virtual T DeSerialize<T>(string xml, Encoding encoding = null)
+        public virtual T Deserialize<T>(string xml, Encoding encoding = null)
         {
             if (encoding == null)
             {
