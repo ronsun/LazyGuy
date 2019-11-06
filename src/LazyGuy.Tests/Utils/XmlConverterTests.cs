@@ -81,7 +81,7 @@ namespace LazyGuy.Utils.Tests
             byte[] expected = stubDefaultEncoding.GetBytes(expectedFakeString);
 
             // act
-            var deserializedResult = target.DeSerialize<FakeClass>(stubXml);
+            var deserializedResult = target.Deserialize<FakeClass>(stubXml);
             byte[] actual = stubDefaultEncoding.GetBytes(deserializedResult.FakeString);
 
             // assert
@@ -116,7 +116,7 @@ namespace LazyGuy.Utils.Tests
             byte[] expected = expectedEncoding.GetBytes(expectedFakeString);
 
             // act
-            var deserializedResult = target.DeSerialize<FakeClass>(stubXml, expectedEncoding);
+            var deserializedResult = target.Deserialize<FakeClass>(stubXml, expectedEncoding);
             byte[] actual = expectedEncoding.GetBytes(deserializedResult.FakeString);
 
             // assert

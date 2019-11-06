@@ -33,7 +33,7 @@
         {
             get
             {
-                string wildcard = $"Arugment '*' exist invalid type(s)";
+                string wildcard = $"Argument '*' exist invalid type(s)";
                 return $"*{wildcard}*";
             }
         }
