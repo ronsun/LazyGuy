@@ -11,10 +11,10 @@ namespace LazyGuy.Utils
         {
             Argument.NotNull(description, nameof(description));
 
-            FieldInfo enumField = ParseDescription(typeof(T), description);
-            Argument.InRange(() => enumField != null, nameof(description));
+            string enumFieldName = ParseDescription(typeof(T), description);
+            Argument.NotNull(enumFieldName, nameof(enumFieldName));
 
-            T result = (T)Enum.Parse(typeof(T), enumField.Name);
+            T result = (T)Enum.Parse(typeof(T), enumFieldName);
             return result;
         }
 
@@ -29,17 +29,17 @@ namespace LazyGuy.Utils
                 return false;
             }
 
-            FieldInfo enumField = ParseDescription(typeof(T), description);
-            if (enumField == null)
+            string enumFieldName = ParseDescription(typeof(T), description);
+            if (enumFieldName == null)
             {
                 return false;
             }
 
-            bool isSuccess = Enum.TryParse(enumField.Name, out result);
+            bool isSuccess = Enum.TryParse(enumFieldName, out result);
             return isSuccess;
         }
 
-        private static FieldInfo ParseDescription(Type enumType, string description)
+        private static string ParseDescription(Type enumType, string description)
         {
             var allFields = enumType.GetFields();
             foreach (var field in allFields)
@@ -47,7 +47,7 @@ namespace LazyGuy.Utils
                 var attr = Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute));
                 if (attr != null && ((DescriptionAttribute)attr).Description == description)
                 {
-                    return field;
+                    return field?.Name;
                 }
             }
 

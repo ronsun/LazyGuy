@@ -31,7 +31,7 @@ namespace LazyGuy.Utils.Tests
             Action act = () => { EnumUtils.ParseDescription<FakeEnum_ParseDesciption>(stubDescrioption); };
 
             // Assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentOutOfRange);
+            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
         }
 
         [Test()]
@@ -44,7 +44,7 @@ namespace LazyGuy.Utils.Tests
             Action act = () => { EnumUtils.ParseDescription<FakeEnum_ParseDesciption_Empty>(stubDescrioption); };
 
             // Assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentOutOfRange);
+            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
         }
 
         [Test()]
