@@ -11,7 +11,7 @@ namespace LazyGuy.Utils
         {
             Argument.NotNull(description, nameof(description));
 
-            string enumFieldName = ParseDescription(typeof(T), description);
+            string enumFieldName = FindFieldName<T>(description);
             Argument.NotNull(enumFieldName, nameof(enumFieldName));
 
             T result = (T)Enum.Parse(typeof(T), enumFieldName);
@@ -29,7 +29,7 @@ namespace LazyGuy.Utils
                 return false;
             }
 
-            string enumFieldName = ParseDescription(typeof(T), description);
+            string enumFieldName = FindFieldName<T>(description);
             if (enumFieldName == null)
             {
                 return false;
@@ -39,9 +39,9 @@ namespace LazyGuy.Utils
             return isSuccess;
         }
 
-        private static string ParseDescription(Type enumType, string description)
+        private static string FindFieldName<T>(string description)
         {
-            var allFields = enumType.GetFields();
+            var allFields = typeof(T).GetFields();
             foreach (var field in allFields)
             {
                 var attr = Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute));
