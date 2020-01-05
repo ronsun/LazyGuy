@@ -13,8 +13,14 @@ namespace LazyGuy.Extensions
         /// CompteHash and convert result to string without charactor '-'.
         /// </summary>
         /// <param name="hash">The instance of HashAlgorithm. </param>
-        /// <param name="plaintext">Plaintext. </param>
-        /// <returns></returns>
+        /// <param name="plaintext">Plaintext, usd UTF-8 as default encoding </param>
+        /// <returns>Hashed string.</returns>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="hash"/> is null.
+        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     <paramref name="plaintext"/> is null or empty string.
+        /// </exception>
         public static string ComputeHashToString(this HashAlgorithm hash, string plaintext)
         {
             Argument.NotNull(hash, nameof(hash));
@@ -29,6 +35,12 @@ namespace LazyGuy.Extensions
         /// <param name="hash">The instance of HashAlgorithm. </param>
         /// <param name="plaintextBytes">Plaintext in byte array. </param>
         /// <returns></returns>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="hash"/> is null.
+        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     <paramref name="plaintextBytes"/> is null or empty string.
+        /// </exception>
         public static string ComputeHashToString(this HashAlgorithm hash, byte[] plaintextBytes)
         {
             Argument.NotNull(hash, nameof(hash));

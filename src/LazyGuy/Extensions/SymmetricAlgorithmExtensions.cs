@@ -16,6 +16,12 @@ namespace LazyGuy.Extensions
         /// <param name="symmetric">The instance of SymmetricAlgorithm. </param>
         /// <param name="plaintext">The plaintext string. </param>
         /// <returns></returns>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="symmetric"/> is null.
+        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     <paramref name="plaintext"/> is null or empty.
+        /// </exception>
         public static string Encrypt(this SymmetricAlgorithm symmetric, string plaintext, Encoding encoding = null)
         {
             Argument.NotNull(symmetric, nameof(symmetric));
@@ -35,6 +41,12 @@ namespace LazyGuy.Extensions
         /// <param name="symmetric">The instance of SymmetricAlgorithm. </param>
         /// <param name="plaintextBytes">The plaintext in byte array. </param>
         /// <returns></returns>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="symmetric"/> is null.
+        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     <paramref name="plaintextBytes"/> is null or empty.
+        /// </exception>
         public static string Encrypt(this SymmetricAlgorithm symmetric, byte[] plaintextBytes)
         {
             Argument.NotNull(symmetric, nameof(symmetric));

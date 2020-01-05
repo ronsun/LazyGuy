@@ -4,8 +4,25 @@ using System.Linq;
 
 namespace LazyGuy.Extensions
 {
+    /// <summary>
+    /// Extension methods for Enum
+    /// </summary>
     public static class EnumExtensions
     {
+        /// <summary>
+        /// Check is specific enum '<paramref name="target"/>' in 
+        /// a list of enum values '<paramref name="list"/>'. 
+        /// </summary>
+        /// <typeparam name="T">Type of enum.</typeparam>
+        /// <param name="target">The enum to be checked.</param>
+        /// <param name="list">The list of enums.</param>
+        /// <returns></returns>
+        /// <exception cref="ArrayTypeMismatchException">
+        ///     Multiple enum types in parameter <paramref name="list"/>.  
+        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Any value of argument not defined in its enum type. 
+        /// </exception>
         public static bool In<T>(this T target, params T[] list)
             where T : Enum
         {
@@ -19,6 +36,12 @@ namespace LazyGuy.Extensions
             return list.Contains(target);
         }
 
+        /// <summary>
+        /// Get Description of DescriptionAttribute specific enum.
+        /// </summary>
+        /// <typeparam name="T">Type of enum.</typeparam>
+        /// <param name="target">The target enum.</param>
+        /// <returns></returns>
         public static string GetDescription<T>(this T target)
             where T : Enum
         {

@@ -156,15 +156,22 @@ references:
   commentId: T:LazyGuy.Extensions.EnumExtensions
   fullName: LazyGuy.Extensions.EnumExtensions
   nameWithType: EnumExtensions
-- uid: LazyGuy.Extensions.EnumExtensions.In(System.Enum,System.Enum[])
-  name: In(Enum, Enum[])
-  href: api/LazyGuy.Extensions.EnumExtensions.html#LazyGuy_Extensions_EnumExtensions_In_System_Enum_System_Enum___
-  commentId: M:LazyGuy.Extensions.EnumExtensions.In(System.Enum,System.Enum[])
-  name.vb: In(Enum, Enum())
-  fullName: LazyGuy.Extensions.EnumExtensions.In(System.Enum, System.Enum[])
-  fullName.vb: LazyGuy.Extensions.EnumExtensions.In(System.Enum, System.Enum())
-  nameWithType: EnumExtensions.In(Enum, Enum[])
-  nameWithType.vb: EnumExtensions.In(Enum, Enum())
+- uid: LazyGuy.Extensions.EnumExtensions.GetDescription*
+  name: GetDescription
+  href: api/LazyGuy.Extensions.EnumExtensions.html#LazyGuy_Extensions_EnumExtensions_GetDescription_
+  commentId: Overload:LazyGuy.Extensions.EnumExtensions.GetDescription
+  isSpec: "True"
+  fullName: LazyGuy.Extensions.EnumExtensions.GetDescription
+  nameWithType: EnumExtensions.GetDescription
+- uid: LazyGuy.Extensions.EnumExtensions.GetDescription``1(``0)
+  name: GetDescription<T>(T)
+  href: api/LazyGuy.Extensions.EnumExtensions.html#LazyGuy_Extensions_EnumExtensions_GetDescription__1___0_
+  commentId: M:LazyGuy.Extensions.EnumExtensions.GetDescription``1(``0)
+  name.vb: GetDescription(Of T)(T)
+  fullName: LazyGuy.Extensions.EnumExtensions.GetDescription<T>(T)
+  fullName.vb: LazyGuy.Extensions.EnumExtensions.GetDescription(Of T)(T)
+  nameWithType: EnumExtensions.GetDescription<T>(T)
+  nameWithType.vb: EnumExtensions.GetDescription(Of T)(T)
 - uid: LazyGuy.Extensions.EnumExtensions.In*
   name: In
   href: api/LazyGuy.Extensions.EnumExtensions.html#LazyGuy_Extensions_EnumExtensions_In_
@@ -172,6 +179,15 @@ references:
   isSpec: "True"
   fullName: LazyGuy.Extensions.EnumExtensions.In
   nameWithType: EnumExtensions.In
+- uid: LazyGuy.Extensions.EnumExtensions.In``1(``0,``0[])
+  name: In<T>(T, T[])
+  href: api/LazyGuy.Extensions.EnumExtensions.html#LazyGuy_Extensions_EnumExtensions_In__1___0___0___
+  commentId: M:LazyGuy.Extensions.EnumExtensions.In``1(``0,``0[])
+  name.vb: In(Of T)(T, T())
+  fullName: LazyGuy.Extensions.EnumExtensions.In<T>(T, T[])
+  fullName.vb: LazyGuy.Extensions.EnumExtensions.In(Of T)(T, T())
+  nameWithType: EnumExtensions.In<T>(T, T[])
+  nameWithType.vb: EnumExtensions.In(Of T)(T, T())
 - uid: LazyGuy.Extensions.HashAlgorithmExtensions
   name: HashAlgorithmExtensions
   href: api/LazyGuy.Extensions.HashAlgorithmExtensions.html
@@ -427,6 +443,44 @@ references:
   commentId: N:LazyGuy.Utils
   fullName: LazyGuy.Utils
   nameWithType: LazyGuy.Utils
+- uid: LazyGuy.Utils.EnumUtils
+  name: EnumUtils
+  href: api/LazyGuy.Utils.EnumUtils.html
+  commentId: T:LazyGuy.Utils.EnumUtils
+  fullName: LazyGuy.Utils.EnumUtils
+  nameWithType: EnumUtils
+- uid: LazyGuy.Utils.EnumUtils.ParseDescription*
+  name: ParseDescription
+  href: api/LazyGuy.Utils.EnumUtils.html#LazyGuy_Utils_EnumUtils_ParseDescription_
+  commentId: Overload:LazyGuy.Utils.EnumUtils.ParseDescription
+  isSpec: "True"
+  fullName: LazyGuy.Utils.EnumUtils.ParseDescription
+  nameWithType: EnumUtils.ParseDescription
+- uid: LazyGuy.Utils.EnumUtils.ParseDescription``1(System.String)
+  name: ParseDescription<T>(String)
+  href: api/LazyGuy.Utils.EnumUtils.html#LazyGuy_Utils_EnumUtils_ParseDescription__1_System_String_
+  commentId: M:LazyGuy.Utils.EnumUtils.ParseDescription``1(System.String)
+  name.vb: ParseDescription(Of T)(String)
+  fullName: LazyGuy.Utils.EnumUtils.ParseDescription<T>(System.String)
+  fullName.vb: LazyGuy.Utils.EnumUtils.ParseDescription(Of T)(System.String)
+  nameWithType: EnumUtils.ParseDescription<T>(String)
+  nameWithType.vb: EnumUtils.ParseDescription(Of T)(String)
+- uid: LazyGuy.Utils.EnumUtils.TryParseDescription*
+  name: TryParseDescription
+  href: api/LazyGuy.Utils.EnumUtils.html#LazyGuy_Utils_EnumUtils_TryParseDescription_
+  commentId: Overload:LazyGuy.Utils.EnumUtils.TryParseDescription
+  isSpec: "True"
+  fullName: LazyGuy.Utils.EnumUtils.TryParseDescription
+  nameWithType: EnumUtils.TryParseDescription
+- uid: LazyGuy.Utils.EnumUtils.TryParseDescription``1(System.String,``0@)
+  name: TryParseDescription<T>(String, out T)
+  href: api/LazyGuy.Utils.EnumUtils.html#LazyGuy_Utils_EnumUtils_TryParseDescription__1_System_String___0__
+  commentId: M:LazyGuy.Utils.EnumUtils.TryParseDescription``1(System.String,``0@)
+  name.vb: TryParseDescription(Of T)(String, ByRef T)
+  fullName: LazyGuy.Utils.EnumUtils.TryParseDescription<T>(System.String, out T)
+  fullName.vb: LazyGuy.Utils.EnumUtils.TryParseDescription(Of T)(System.String, ByRef T)
+  nameWithType: EnumUtils.TryParseDescription<T>(String, out T)
+  nameWithType.vb: EnumUtils.TryParseDescription(Of T)(String, ByRef T)
 - uid: LazyGuy.Utils.RandomValueGenerator
   name: RandomValueGenerator
   href: api/LazyGuy.Utils.RandomValueGenerator.html
@@ -513,22 +567,22 @@ references:
   isSpec: "True"
   fullName: LazyGuy.Utils.XmlConverter.XmlConverter
   nameWithType: XmlConverter.XmlConverter
-- uid: LazyGuy.Utils.XmlConverter.DeSerialize*
-  name: DeSerialize
-  href: api/LazyGuy.Utils.XmlConverter.html#LazyGuy_Utils_XmlConverter_DeSerialize_
-  commentId: Overload:LazyGuy.Utils.XmlConverter.DeSerialize
+- uid: LazyGuy.Utils.XmlConverter.Deserialize*
+  name: Deserialize
+  href: api/LazyGuy.Utils.XmlConverter.html#LazyGuy_Utils_XmlConverter_Deserialize_
+  commentId: Overload:LazyGuy.Utils.XmlConverter.Deserialize
   isSpec: "True"
-  fullName: LazyGuy.Utils.XmlConverter.DeSerialize
-  nameWithType: XmlConverter.DeSerialize
-- uid: LazyGuy.Utils.XmlConverter.DeSerialize``1(System.String,System.Text.Encoding)
-  name: DeSerialize<T>(String, Encoding)
-  href: api/LazyGuy.Utils.XmlConverter.html#LazyGuy_Utils_XmlConverter_DeSerialize__1_System_String_System_Text_Encoding_
-  commentId: M:LazyGuy.Utils.XmlConverter.DeSerialize``1(System.String,System.Text.Encoding)
-  name.vb: DeSerialize(Of T)(String, Encoding)
-  fullName: LazyGuy.Utils.XmlConverter.DeSerialize<T>(System.String, System.Text.Encoding)
-  fullName.vb: LazyGuy.Utils.XmlConverter.DeSerialize(Of T)(System.String, System.Text.Encoding)
-  nameWithType: XmlConverter.DeSerialize<T>(String, Encoding)
-  nameWithType.vb: XmlConverter.DeSerialize(Of T)(String, Encoding)
+  fullName: LazyGuy.Utils.XmlConverter.Deserialize
+  nameWithType: XmlConverter.Deserialize
+- uid: LazyGuy.Utils.XmlConverter.Deserialize``1(System.String,System.Text.Encoding)
+  name: Deserialize<T>(String, Encoding)
+  href: api/LazyGuy.Utils.XmlConverter.html#LazyGuy_Utils_XmlConverter_Deserialize__1_System_String_System_Text_Encoding_
+  commentId: M:LazyGuy.Utils.XmlConverter.Deserialize``1(System.String,System.Text.Encoding)
+  name.vb: Deserialize(Of T)(String, Encoding)
+  fullName: LazyGuy.Utils.XmlConverter.Deserialize<T>(System.String, System.Text.Encoding)
+  fullName.vb: LazyGuy.Utils.XmlConverter.Deserialize(Of T)(System.String, System.Text.Encoding)
+  nameWithType: XmlConverter.Deserialize<T>(String, Encoding)
+  nameWithType.vb: XmlConverter.Deserialize(Of T)(String, Encoding)
 - uid: LazyGuy.Utils.XmlConverter.Serialize*
   name: Serialize
   href: api/LazyGuy.Utils.XmlConverter.html#LazyGuy_Utils_XmlConverter_Serialize_
