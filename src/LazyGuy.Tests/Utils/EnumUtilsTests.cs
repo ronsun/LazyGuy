@@ -17,26 +17,14 @@ namespace LazyGuy.Utils.Tests
         }
 
         [Test()]
-        public void ParseDesciptionTest_InputExistingDescription_ReturnExpectedEnum()
+        [TestCase("a", FakeEnum_ParseDesciption.WithDescription)]
+        [TestCase("", FakeEnum_ParseDesciption.WithEmptyDescroption)]
+        public void ParseDesciptionTest_InputDescription_ReturnExpectedEnum(
+            string stubDescrioption,
+            int expectedEnum)
         {
             // arrange
-            var stubDescrioption = "a";
-            var expectedEnum = FakeEnum_ParseDesciption.WithDescription;
-
-            // act
-            var actual = EnumUtils.ParseDescription<FakeEnum_ParseDesciption>(stubDescrioption);
-
-            // assert
-            actual.Should().Be(expectedEnum);
-        }
-
-        [Test()]
-        public void ParseDesciptionTest_InputEmptyDescription_ReturnExpectedEnum()
-        {
-            // arrange
-            var stubDescrioption = "";
-            var expectedEnum = FakeEnum_ParseDesciption.WithEmptyDescroption;
-
+            
             // act
             var actual = EnumUtils.ParseDescription<FakeEnum_ParseDesciption>(stubDescrioption);
 
