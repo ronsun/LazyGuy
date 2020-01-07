@@ -142,13 +142,9 @@ namespace LazyGuy.Extensions.Tests
         private static byte[] GenerateKey(int bits)
         {
             int bytes = bits / 8;
-
-            var result = new byte[bytes];
-            for (int i = 0; i < bytes; i++)
-            {
-                result[i] = BitConverter.GetBytes(i).First();
-            }
-            return result;
+            var key = new byte[bytes];
+            new Random(0).NextBytes(key);
+            return key;
         }
     }
 }
