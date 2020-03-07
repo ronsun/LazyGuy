@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using FluentAssertions;
+using NUnit.Framework;
+using System.Collections;
 using System.Text;
 using System.Xml;
-using FluentAssertions;
-using NUnit.Framework;
 
 namespace LazyGuy.Utils.Tests
 {
@@ -88,20 +88,15 @@ namespace LazyGuy.Utils.Tests
             actual.Should().BeEquivalentTo(expected);
         }
 
-        private static List<object[]> TestCase_DeSerializeTest_XmlWithDefaultEncoding_ReturnObjectWithExpectedValue()
+        private static IEnumerable TestCase_DeSerializeTest_XmlWithDefaultEncoding_ReturnObjectWithExpectedValue()
         {
             var expectedFakeString = "繁简A";
             var xml = $"<FakeClass><FakeString>{expectedFakeString}</FakeString></FakeClass>";
             var xmlWithDeclaration = $"<?xml version=\"1.0\" ?><FakeClass><FakeString>{expectedFakeString}</FakeString></FakeClass>";
 
-            var cases = new List<object[]>()
-            {
-                new object[] { xml, expectedFakeString },
-                new object[] { xmlWithDeclaration, expectedFakeString },
-                new object[] { _utf8BOM + xmlWithDeclaration, expectedFakeString },
-            };
-
-            return cases;
+            yield return new TestCaseData(xml, expectedFakeString);
+            yield return new TestCaseData(xmlWithDeclaration, expectedFakeString);
+            yield return new TestCaseData(_utf8BOM + xmlWithDeclaration, expectedFakeString);
         }
 
         [Test()]
@@ -123,27 +118,22 @@ namespace LazyGuy.Utils.Tests
             actual.Should().BeEquivalentTo(expected);
         }
 
-        private static List<object[]> TestCase_DeSerializeTest_XmlWithSpecificEncoding_ReturnObjectWithExpectedValue()
+        private static IEnumerable TestCase_DeSerializeTest_XmlWithSpecificEncoding_ReturnObjectWithExpectedValue()
         {
             var expectedFakeString = "繁简A";
             var xml = $"<FakeClass><FakeString>{expectedFakeString}</FakeString></FakeClass>";
             var xmlWithDeclaration = $"<?xml version=\"1.0\" ?><FakeClass><FakeString>{expectedFakeString}</FakeString></FakeClass>";
 
-            var cases = new List<object[]>()
-            {
-                new object[] { xml, expectedFakeString, Encoding.ASCII },
-                new object[] { xmlWithDeclaration, expectedFakeString, Encoding.ASCII },
+            yield return new TestCaseData(xml, expectedFakeString, Encoding.ASCII);
+            yield return new TestCaseData(xmlWithDeclaration, expectedFakeString, Encoding.ASCII);
 
-                new object[] { xml, expectedFakeString, Encoding.UTF8 },
-                new object[] { xmlWithDeclaration, expectedFakeString, Encoding.UTF8 },
-                new object[] { _utf8BOM + xml, expectedFakeString, Encoding.UTF8 },
+            yield return new TestCaseData(xml, expectedFakeString, Encoding.UTF8);
+            yield return new TestCaseData(xmlWithDeclaration, expectedFakeString, Encoding.UTF8);
+            yield return new TestCaseData(_utf8BOM + xml, expectedFakeString, Encoding.UTF8);
 
-                new object[] { xml, expectedFakeString, Encoding.UTF32 },
-                new object[] { xmlWithDeclaration, expectedFakeString, Encoding.UTF32 },
-                new object[] { _utf32BOM + xml, expectedFakeString, Encoding.UTF32 },
-            };
-
-            return cases;
+            yield return new TestCaseData(xml, expectedFakeString, Encoding.UTF32);
+            yield return new TestCaseData(xmlWithDeclaration, expectedFakeString, Encoding.UTF32);
+            yield return new TestCaseData(_utf32BOM + xml, expectedFakeString, Encoding.UTF32);
         }
 
 

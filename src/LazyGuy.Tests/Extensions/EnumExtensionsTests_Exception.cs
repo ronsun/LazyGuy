@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using FluentAssertions;
+﻿using FluentAssertions;
 using LazyGuy.Tests.Constants;
 using NUnit.Framework;
+using System;
+using System.Collections;
 
 namespace LazyGuy.Extensions.Tests
 {
@@ -42,17 +42,13 @@ namespace LazyGuy.Extensions.Tests
             act.Should().Throw<ArrayTypeMismatchException>().WithMessage(expectedMessage);
         }
 
-        private static List<object[]> TestCases_InTest_InvalidEnumType()
+        private static IEnumerable TestCases_InTest_InvalidEnumType()
         {
-            var cases = new List<object[]>()
-            {
-                // type of target different
-                new object[] { FakeEnum_In_A.A1, new Enum[] { FakeEnum_In_B.B1 }, MessageTemplates.InvalidArrayTypeForParams },
+            // different type of target 
+            yield return new TestCaseData(FakeEnum_In_A.A1, new Enum[] { FakeEnum_In_B.B1 }, MessageTemplates.InvalidArrayTypeForParams);
 
-                // one of types different in enum list
-                new object[] { FakeEnum_In_B.B1, new Enum[] { FakeEnum_In_A.A1, FakeEnum_In_B.B1 }, MessageTemplates.InvalidArrayTypeForParams },
-            };
-            return cases;
+            // one of types different in enum list
+            yield return new TestCaseData(FakeEnum_In_B.B1, new Enum[] { FakeEnum_In_A.A1, FakeEnum_In_B.B1 }, MessageTemplates.InvalidArrayTypeForParams);
         }
 
         [Test()]
@@ -68,17 +64,13 @@ namespace LazyGuy.Extensions.Tests
             act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(expectedMessage);
         }
 
-        private static List<object[]> TestCases_InTest_InvalidEnumValue()
+        private static IEnumerable TestCases_InTest_InvalidEnumValue()
         {
-            var cases = new List<object[]>()
-            {
-                // type of target out of range
-                new object[] { (FakeEnum_In_A)(0), new Enum[] { FakeEnum_In_A.A1 }, MessageTemplates.ValueNotInEnum },
-                
-                // type of parameter list out of range
-                new object[] { FakeEnum_In_A.A1, new Enum[] { (FakeEnum_In_A)(0) } , MessageTemplates.ValueNotInEnum },
-            };
-            return cases;
+            // type of target out of range
+            yield return new TestCaseData((FakeEnum_In_A)(0), new Enum[] { FakeEnum_In_A.A1 }, MessageTemplates.ValueNotInEnum);
+
+            // type of parameter list out of range
+            yield return new TestCaseData(FakeEnum_In_A.A1, new Enum[] { (FakeEnum_In_A)(0) }, MessageTemplates.ValueNotInEnum);
         }
 
         #endregion

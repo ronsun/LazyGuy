@@ -1,11 +1,12 @@
-﻿using System;
+﻿using FluentAssertions;
+using NSubstitute;
+using NUnit.Framework;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Threading;
-using FluentAssertions;
-using NSubstitute;
-using NUnit.Framework;
 
 namespace LazyGuy.Utils.Tests
 {
@@ -71,37 +72,19 @@ namespace LazyGuy.Utils.Tests
             actual.Should().Be(expected);
         }
 
-        private static List<object[]> TestCase_GetIntTest_FixedMinAndMaxButDynamicBytes_ReturnExpectedValue()
+        private static IEnumerable TestCase_GetIntTest_FixedMinAndMaxButDynamicBytes_ReturnExpectedValue()
         {
-            var cases = new List<object[]>()
-            {
-                // random 0, reutrn min
-                new object[] { 1, 4, BitConverter.GetBytes(0), 1 },
-                
-                // random 1, return min + 1
-                new object[] { 1, 4, BitConverter.GetBytes(1), 2 },
-                
-                // random 2, return min + 2
-                new object[] { 1, 4, BitConverter.GetBytes(2), 3 },
-                
-                // random 3, return min
-                new object[] { 1, 4, BitConverter.GetBytes(3), 1 },
+            // For positive random value N, let 0 <= N < 4, return min + N
+            yield return new TestCaseData(1, 4, BitConverter.GetBytes(0), 1);
+            yield return new TestCaseData(1, 4, BitConverter.GetBytes(1), 2);
+            yield return new TestCaseData(1, 4, BitConverter.GetBytes(2), 3);
+            yield return new TestCaseData(1, 4, BitConverter.GetBytes(3), 1);
 
-                // random -1, return max - 1
-                new object[] { 1, 4, BitConverter.GetBytes(-1), 3 },
-                
-                // random -2, return max - 2
-                new object[] { 1, 4, BitConverter.GetBytes(-2), 2 },
-                
-                // random -3, return max - 3
-                new object[] { 1, 4, BitConverter.GetBytes(-3), 1 },
-                
-                // random -4, return max - 1
-                new object[] { 1, 4, BitConverter.GetBytes(-4), 3 },
-
-                // as above, result include min but exclude max
-            };
-            return cases;
+            // For negative random value N, let -1 <= N < 0, return max + N
+            yield return new TestCaseData(1, 4, BitConverter.GetBytes(-1), 3);
+            yield return new TestCaseData(1, 4, BitConverter.GetBytes(-2), 2);
+            yield return new TestCaseData(1, 4, BitConverter.GetBytes(-3), 1);
+            yield return new TestCaseData(1, 4, BitConverter.GetBytes(-4), 3);
         }
 
         /// <summary>

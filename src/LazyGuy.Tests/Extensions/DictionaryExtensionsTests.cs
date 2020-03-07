@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
-using FluentAssertions;
+﻿using FluentAssertions;
 using NUnit.Framework;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace LazyGuy.Extensions.Tests
 {
@@ -10,7 +11,7 @@ namespace LazyGuy.Extensions.Tests
         #region AddOrUpdate
 
         [Test()]
-        [TestCaseSource(nameof(TestCases_AddOrUpdateTest_AddToTarget))]
+        [TestCaseSource(nameof(TestCases_AddOrUpdateTest))]
         public void AddOrUpdateTest_AddToTarget_ExpectedResultAndCount(
             Dictionary<string, string> target,
             string stubKey,
@@ -25,9 +26,10 @@ namespace LazyGuy.Extensions.Tests
             //assert
             target.Count.Should().Be(expected.Count);
             target.Should().Equal(expected);
+
         }
 
-        private static List<object[]> TestCases_AddOrUpdateTest_AddToTarget()
+        private static IEnumerable TestCases_AddOrUpdateTest()
         {
             string stubKey1 = "k1";
             string stubKey2 = "k2";
@@ -35,18 +37,14 @@ namespace LazyGuy.Extensions.Tests
             string stubValue1 = "v1";
             string stubValue2 = "v2";
 
-            var cases = new List<object[]>()
-            {
-                // add one to empty dictionary
-                new object[]{ new Dictionary<string, string>(), stubKey1, stubValue1, new Dictionary<string, string> { [stubKey1] = stubValue1 } },
+            // add one to empty dictionary
+            yield return new TestCaseData(new Dictionary<string, string>(), stubKey1, stubValue1, new Dictionary<string, string> { [stubKey1] = stubValue1 });
 
-                // add one to dictionary with different key
-                new object[]{ new Dictionary<string, string>() { [stubKey1] = stubValue1 }, stubKey2, stubValue2, new Dictionary<string, string> { [stubKey1] = stubValue1, [stubKey2] = stubValue2 } },
+            // add one to dictionary with different key
+            yield return new TestCaseData(new Dictionary<string, string>() { [stubKey1] = stubValue1 }, stubKey2, stubValue2, new Dictionary<string, string> { [stubKey1] = stubValue1, [stubKey2] = stubValue2 });
 
-                // add one to dictionary with same key
-                new object[]{ new Dictionary<string, string>() { [stubKey1] = stubValue1 }, stubKey1, stubValue2, new Dictionary<string, string> { [stubKey1] = stubValue2 } },
-            };
-            return cases;
+            // add one to dictionary with same key
+            yield return new TestCaseData(new Dictionary<string, string>() { [stubKey1] = stubValue1 }, stubKey1, stubValue2, new Dictionary<string, string> { [stubKey1] = stubValue2 });
         }
 
         #endregion
@@ -54,7 +52,7 @@ namespace LazyGuy.Extensions.Tests
         #region AddOrIgnore
 
         [Test()]
-        [TestCaseSource(nameof(TestCases_AddOrIgnoreTest_AddToTarget))]
+        [TestCaseSource(nameof(TestCases_AddOrIgnoreTest))]
         public void AddOrIgnoreTest_AddToTarget_ExpectedResultAndCount(
             Dictionary<string, string> target,
             string stubKey,
@@ -71,7 +69,7 @@ namespace LazyGuy.Extensions.Tests
             target.Should().Equal(expected);
         }
 
-        private static List<object[]> TestCases_AddOrIgnoreTest_AddToTarget()
+        private static IEnumerable TestCases_AddOrIgnoreTest()
         {
             string stubKey1 = "k1";
             string stubKey2 = "k2";
@@ -79,18 +77,14 @@ namespace LazyGuy.Extensions.Tests
             string stubValue1 = "v1";
             string stubValue2 = "v2";
 
-            var cases = new List<object[]>()
-            {
-                // add one to empty dictionary
-                new object[]{ new Dictionary<string, string>(), stubKey1, stubValue1, new Dictionary<string, string> { [stubKey1] = stubValue1 } },
+            // add one to empty dictionary
+            yield return new TestCaseData(new Dictionary<string, string>(), stubKey1, stubValue1, new Dictionary<string, string> { [stubKey1] = stubValue1 });
 
-                // add one to dictionary with different key
-                new object[]{ new Dictionary<string, string>() { [stubKey1] = stubValue1 }, stubKey2, stubValue2, new Dictionary<string, string> { [stubKey1] = stubValue1, [stubKey2] = stubValue2 } },
+            // add one to dictionary with different key
+            yield return new TestCaseData(new Dictionary<string, string>() { [stubKey1] = stubValue1 }, stubKey2, stubValue2, new Dictionary<string, string> { [stubKey1] = stubValue1, [stubKey2] = stubValue2 });
 
-                // add one to dictionary with same key
-                new object[]{ new Dictionary<string, string>() { [stubKey1] = stubValue1 }, stubKey1, stubValue2, new Dictionary<string, string> { [stubKey1] = stubValue1 } },
-            };
-            return cases;
+            // add one to dictionary with same key
+            yield return new TestCaseData(new Dictionary<string, string>() { [stubKey1] = stubValue1 }, stubKey1, stubValue2, new Dictionary<string, string> { [stubKey1] = stubValue1 });
         }
 
         #endregion
@@ -98,7 +92,7 @@ namespace LazyGuy.Extensions.Tests
         #region ToQueryString
 
         [Test()]
-        [TestCaseSource(nameof(TestCases_ToQueryStringTest_ValidTarget))]
+        [TestCaseSource(nameof(TestCases_ToQueryStringTest))]
         public void ToQueryStringTest_ValidTarget_GetExpectedString(Dictionary<string, string> target, string expected)
         {
             //arrange
@@ -110,7 +104,7 @@ namespace LazyGuy.Extensions.Tests
             actual.Should().Be(expected);
         }
 
-        private static List<object[]> TestCases_ToQueryStringTest_ValidTarget()
+        private static IEnumerable TestCases_ToQueryStringTest()
         {
             string stubKey1 = "k1";
             string stubKey2 = "k2";
@@ -118,18 +112,14 @@ namespace LazyGuy.Extensions.Tests
             string stubValue1 = "v1";
             string stubValue2 = "v2";
 
-            var cases = new List<object[]>()
-            {
-                // empty to query string
-                new object[]{ new Dictionary<string, string>(), string.Empty },
+            // empty to query string
+            yield return new TestCaseData(new Dictionary<string, string>(), string.Empty);
 
-                // dictionary with single item to query string
-                new object[]{ new Dictionary<string, string>() { [stubKey1] = stubValue1 }, $"{stubKey1}={stubValue1}" },
+            // dictionary with single item to query string
+            yield return new TestCaseData(new Dictionary<string, string>() { [stubKey1] = stubValue1 }, $"{stubKey1}={stubValue1}");
 
-                // dictionary with multiple item to query string 
-                new object[]{ new Dictionary<string, string>() { [stubKey1] = stubValue1, [stubKey2] = stubValue2 }, $"{stubKey1}={stubValue1}&{stubKey2}={stubValue2}" },
-            };
-            return cases;
+            // dictionary with multiple item to query string 
+            yield return new TestCaseData(new Dictionary<string, string>() { [stubKey1] = stubValue1, [stubKey2] = stubValue2 }, $"{stubKey1}={stubValue1}&{stubKey2}={stubValue2}");
         }
 
         #endregion

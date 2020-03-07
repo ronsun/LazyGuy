@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -53,12 +54,9 @@ namespace LazyGuy.Extensions.Tests
 
         #endregion
 
-        private static List<object[]> TestCase_EncryptAndDecryptCorrectly()
+        private static IEnumerable TestCase_EncryptAndDecryptCorrectly()
         {
-            return new List<object[]>()
-            {
-                new object[]
-                {
+            yield return new TestCaseData(
                     new AesCryptoServiceProvider()
                     {
                         Mode = CipherMode.ECB,
@@ -69,10 +67,9 @@ namespace LazyGuy.Extensions.Tests
                         Mode = CipherMode.ECB,
                         Key = GenerateKey(128),
                     }
-                },
+                );
 
-                new object[]
-                {
+            yield return new TestCaseData(
                     new DESCryptoServiceProvider()
                     {
                         Mode = CipherMode.ECB,
@@ -83,9 +80,9 @@ namespace LazyGuy.Extensions.Tests
                         Mode = CipherMode.ECB,
                         Key = GenerateKey(64)
                     }
-                },
-                new object []
-                {
+                );
+
+            yield return new TestCaseData(
                     new RC2CryptoServiceProvider()
                     {
                         Mode = CipherMode.ECB,
@@ -96,9 +93,9 @@ namespace LazyGuy.Extensions.Tests
                         Mode = CipherMode.ECB,
                         Key = GenerateKey(64)
                     }
-                },
-                new object []
-                {
+                );
+
+            yield return new TestCaseData(
                     new RijndaelManaged()
                     {
                         Mode = CipherMode.ECB,
@@ -109,9 +106,9 @@ namespace LazyGuy.Extensions.Tests
                         Mode = CipherMode.ECB,
                         Key = GenerateKey(128),
                     }
-                },
-                new object []
-                {
+                );
+
+            yield return new TestCaseData(
                     new TripleDESCryptoServiceProvider()
                     {
                         Mode = CipherMode.ECB,
@@ -122,9 +119,9 @@ namespace LazyGuy.Extensions.Tests
                         Mode = CipherMode.ECB,
                         Key = GenerateKey(192)
                     }
-                },
-                new object []
-                {
+                );
+
+            yield return new TestCaseData(
                     new TripleDESCng()
                     {
                         Mode = CipherMode.ECB,
@@ -135,8 +132,7 @@ namespace LazyGuy.Extensions.Tests
                         Mode = CipherMode.ECB,
                         Key = GenerateKey(192)
                     }
-                },
-            };
+                );
         }
 
         private static byte[] GenerateKey(int bits)
