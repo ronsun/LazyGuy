@@ -209,15 +209,20 @@ namespace LazyGuy.Utils.Tests
 
         #endregion
 
-        private void FakeGetBytes(RandomNumberGenerator fake, byte[] bytes)
+        /// <summary>
+        /// Always use stub value when RandomNumberGenerator.GetBytes() called.
+        /// </summary>
+        /// <param name="fake">RandomNumberGenerator.</param>
+        /// <param name="stubBytes">stub byte array.</param>
+        private void FakeGetBytes(RandomNumberGenerator fake, byte[] stubBytes)
         {
-            fake.When(r => r.GetBytes(Arg.Is<byte[]>(s => s.Length == bytes.Length)))
+            fake.When(r => r.GetBytes(Arg.Is<byte[]>(s => s.Length == stubBytes.Length)))
                 .Do(calledMethod =>
                 {
                     var inputByteArray = calledMethod.Arg<byte[]>();
-                    for (int i = 0; i < bytes.Length; i++)
+                    for (int i = 0; i < stubBytes.Length; i++)
                     {
-                        inputByteArray[i] = bytes[i];
+                        inputByteArray[i] = stubBytes[i];
                     }
                 });
         }
