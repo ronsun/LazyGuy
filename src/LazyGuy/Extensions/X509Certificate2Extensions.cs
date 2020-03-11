@@ -17,6 +17,15 @@ namespace LazyGuy.Extensions
         /// <param name="assembly">The assembly contain the target embedded resource. </param>
         /// <param name="fullName">Full name of target embedded resource. </param>
         /// <returns></returns>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="cert"/> is null.
+        /// </exception>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="assembly"/> is null.
+        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     <paramref name="fullName"/> is null or empty.
+        /// </exception>
         public static X509Certificate2 Import(this X509Certificate2 cert,
             Assembly assembly,
             string fullName,

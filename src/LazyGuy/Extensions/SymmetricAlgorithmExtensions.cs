@@ -71,6 +71,12 @@ namespace LazyGuy.Extensions
         /// <param name="ciphertext">The ciphertext string. </param>
         /// <param name="plaintextEncoding">Encoding of plaintext. </param>
         /// <returns></returns>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="symmetric"/> is null.
+        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     <paramref name="ciphertext"/> is null or empty.
+        /// </exception>
         public static string Decrypt(this SymmetricAlgorithm symmetric, string ciphertext, Encoding plaintextEncoding = null)
         {
             Argument.NotNull(symmetric, nameof(symmetric));
