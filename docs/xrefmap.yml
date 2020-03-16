@@ -102,38 +102,6 @@ references:
   commentId: T:LazyGuy.Extensions.DictionaryExtensions
   fullName: LazyGuy.Extensions.DictionaryExtensions
   nameWithType: DictionaryExtensions
-- uid: LazyGuy.Extensions.DictionaryExtensions.AddOrIgnore*
-  name: AddOrIgnore
-  href: api/LazyGuy.Extensions.DictionaryExtensions.html#LazyGuy_Extensions_DictionaryExtensions_AddOrIgnore_
-  commentId: Overload:LazyGuy.Extensions.DictionaryExtensions.AddOrIgnore
-  isSpec: "True"
-  fullName: LazyGuy.Extensions.DictionaryExtensions.AddOrIgnore
-  nameWithType: DictionaryExtensions.AddOrIgnore
-- uid: LazyGuy.Extensions.DictionaryExtensions.AddOrIgnore``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)
-  name: AddOrIgnore<TKey, TValue>(IDictionary<TKey, TValue>, TKey, TValue)
-  href: api/LazyGuy.Extensions.DictionaryExtensions.html#LazyGuy_Extensions_DictionaryExtensions_AddOrIgnore__2_System_Collections_Generic_IDictionary___0___1____0___1_
-  commentId: M:LazyGuy.Extensions.DictionaryExtensions.AddOrIgnore``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)
-  name.vb: AddOrIgnore(Of TKey, TValue)(IDictionary(Of TKey, TValue), TKey, TValue)
-  fullName: LazyGuy.Extensions.DictionaryExtensions.AddOrIgnore<TKey, TValue>(System.Collections.Generic.IDictionary<TKey, TValue>, TKey, TValue)
-  fullName.vb: LazyGuy.Extensions.DictionaryExtensions.AddOrIgnore(Of TKey, TValue)(System.Collections.Generic.IDictionary(Of TKey, TValue), TKey, TValue)
-  nameWithType: DictionaryExtensions.AddOrIgnore<TKey, TValue>(IDictionary<TKey, TValue>, TKey, TValue)
-  nameWithType.vb: DictionaryExtensions.AddOrIgnore(Of TKey, TValue)(IDictionary(Of TKey, TValue), TKey, TValue)
-- uid: LazyGuy.Extensions.DictionaryExtensions.AddOrUpdate*
-  name: AddOrUpdate
-  href: api/LazyGuy.Extensions.DictionaryExtensions.html#LazyGuy_Extensions_DictionaryExtensions_AddOrUpdate_
-  commentId: Overload:LazyGuy.Extensions.DictionaryExtensions.AddOrUpdate
-  isSpec: "True"
-  fullName: LazyGuy.Extensions.DictionaryExtensions.AddOrUpdate
-  nameWithType: DictionaryExtensions.AddOrUpdate
-- uid: LazyGuy.Extensions.DictionaryExtensions.AddOrUpdate``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)
-  name: AddOrUpdate<TKey, TValue>(IDictionary<TKey, TValue>, TKey, TValue)
-  href: api/LazyGuy.Extensions.DictionaryExtensions.html#LazyGuy_Extensions_DictionaryExtensions_AddOrUpdate__2_System_Collections_Generic_IDictionary___0___1____0___1_
-  commentId: M:LazyGuy.Extensions.DictionaryExtensions.AddOrUpdate``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)
-  name.vb: AddOrUpdate(Of TKey, TValue)(IDictionary(Of TKey, TValue), TKey, TValue)
-  fullName: LazyGuy.Extensions.DictionaryExtensions.AddOrUpdate<TKey, TValue>(System.Collections.Generic.IDictionary<TKey, TValue>, TKey, TValue)
-  fullName.vb: LazyGuy.Extensions.DictionaryExtensions.AddOrUpdate(Of TKey, TValue)(System.Collections.Generic.IDictionary(Of TKey, TValue), TKey, TValue)
-  nameWithType: DictionaryExtensions.AddOrUpdate<TKey, TValue>(IDictionary<TKey, TValue>, TKey, TValue)
-  nameWithType.vb: DictionaryExtensions.AddOrUpdate(Of TKey, TValue)(IDictionary(Of TKey, TValue), TKey, TValue)
 - uid: LazyGuy.Extensions.DictionaryExtensions.ToQueryString(System.Collections.Generic.IDictionary{System.String,System.String})
   name: ToQueryString(IDictionary<String, String>)
   href: api/LazyGuy.Extensions.DictionaryExtensions.html#LazyGuy_Extensions_DictionaryExtensions_ToQueryString_System_Collections_Generic_IDictionary_System_String_System_String__

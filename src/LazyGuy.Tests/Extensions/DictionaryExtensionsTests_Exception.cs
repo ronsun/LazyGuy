@@ -9,40 +9,6 @@ namespace LazyGuy.Extensions.Tests
     [TestFixture()]
     public class DictionaryExtensionsTests_Exception
     {
-        #region AddOrUpdate
-
-        [Test()]
-        public void AddOrUpdateTest_AddToNull_ThrowArgumentNullExceptionWithMessage()
-        {
-            //arrange
-            Dictionary<string, string> target = null;
-            string stubKey = "k";
-            string stubValue = "v";
-
-            //act
-            Action act = () => { target.AddOrUpdate(stubKey, stubValue); };
-
-            //assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
-        }
-
-        [Test()]
-        public void AddOrUpdateTest_AddNullKey_ThrowArgumentNullExceptionWithMessage()
-        {
-            //arrange
-            var target = new Dictionary<string, string>();
-            string stubKey = null;
-            string stubValue = "v";
-
-            //act
-            Action act = () => { target.AddOrUpdate(stubKey, stubValue); };
-
-            //assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
-        }
-
-        #endregion
-
         #region ToQueryString
 
         [Test()]
