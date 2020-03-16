@@ -4,12 +4,21 @@ using System.Text;
 
 namespace LazyGuy.Http
 {
+    /// <summary>
+    /// Heper to send HTTP request
+    /// </summary>
     public class HttpHelper
     {
         public HttpWebRequest CurrentRequest { get; private set; }
 
         public HttpWebResponse CurrentResponse { get; private set; }
 
+        /// <summary>
+        /// Send request by HTTP GET. 
+        /// </summary>
+        /// <param name="url">The target URL.</param>
+        /// <param name="options">Optional parameters for the request.</param>
+        /// <returns>Response body from target URL in string type.</returns>
         public string Get(string url, RequestOptions options = null)
         {
             if (options == null)
@@ -22,6 +31,13 @@ namespace LazyGuy.Http
             return SendRequest(options.Encoding);
         }
 
+        /// <summary>
+        ///  Send request by HTTP POST. 
+        /// </summary>
+        /// <param name="url">The target URL.</param>
+        /// <param name="content">The request body.</param>
+        /// <param name="options">Optional parameters for the request.</param>
+        /// <returns>Response body from target URL in string type.</returns>
         public string Post(string url, string content, RequestOptions options = null)
         {
             if (options == null)
