@@ -8,6 +8,7 @@ namespace LazyGuy.ClientDemo.DataAccess
     public abstract class EFUnitOfWork : IUnitOfWork, IDisposable
     {
         private readonly DbContext _dbContext;
+        private Dictionary<Type, dynamic> _repositories = new Dictionary<Type, dynamic>();
 
         protected EFUnitOfWork()
         {
@@ -18,8 +19,15 @@ namespace LazyGuy.ClientDemo.DataAccess
 
         public IRepository<T> GetRepository<T>() where T : class
         {
-            var dbSet = _dbContext.Set<T>();
-            return EFRepository<T>.Create(dbSet);
+            _repositories.TryGetValue(typeof(T), out var repository);
+            if(repository == null)
+            {
+                var dbSet = _dbContext.Set<T>();
+                repository = EFRepository<T>.Create(dbSet);
+                _repositories.Add(typeof(T), repository);
+            }
+
+            return repository;
         }
 
         public void SaveChanges()
@@ -30,7 +38,7 @@ namespace LazyGuy.ClientDemo.DataAccess
         #endregion
 
         #region IDisposable
-        
+
         private bool isDisposed;
 
         public void Dispose()
@@ -54,15 +62,5 @@ namespace LazyGuy.ClientDemo.DataAccess
         #endregion
 
         protected abstract DbContext GetDbContext();
-
-        public void SetEntityModified<T>(T entity, ICollection<string> fileds)
-            where T : class
-        {
-            var entry = _dbContext.Entry(entity);
-            foreach (var f in fileds)
-            {
-                entry.Property(f).IsModified = true;
-            }
-        }
     }
 }
