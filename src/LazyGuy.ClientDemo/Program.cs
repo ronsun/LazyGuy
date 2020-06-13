@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace LazyGuy.ClientDemo
 {
@@ -8,6 +9,7 @@ namespace LazyGuy.ClientDemo
         {
             var dataAccessDemo = new DataAccessDemo();
             dataAccessDemo.ReadAllCategories();
+            dataAccessDemo.UpdateCategoryDemo();
             Console.ReadLine();
         }
     }
