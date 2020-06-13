@@ -7,12 +7,6 @@ namespace LazyGuy.ClientDemo.DataAccess
 {
     public abstract class EFUnitOfWork : IUnitOfWork, IDisposable
     {
-        // Note: 
-        // from https://stackoverflow.com/questions/32282979/is-dbcontext-an-expensive-operation
-        // and https://docs.microsoft.com/en-us/ef/ef6/fundamentals/performance/perf-whitepaper?redirectedfrom=MSDN#93-context-per-request
-        // + Contexts are expected to be short lived and discarded   
-        // + Generally speaking, one should avoid having a context instance throughout the life of the application, 
-        //   as well as contexts per thread and static contexts.
         private readonly DbContext _dbContext;
 
         protected EFUnitOfWork()
