@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2047
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyGuy", "src\LazyGuy\LazyGuy.csproj", "{38336691-3917-4806-A940-A580C00D7B99}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyGuy.DocFX", "src\LazyGuy.DocFX\LazyGuy.DocFX.csproj", "{660F3605-9127-46F2-8A38-3866B8466231}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyGuy.IntegrationTests", "src\LazyGuy.IntegrationTests\LazyGuy.IntegrationTests.csproj", "{C68BB989-6C12-4659-9E3A-7A6211151E7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyGuy.ClientDemo", "src\LazyGuy.ClientDemo\LazyGuy.ClientDemo.csproj", "{87FFCF1A-BF39-406F-B0F4-9D87E67427DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{C68BB989-6C12-4659-9E3A-7A6211151E7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C68BB989-6C12-4659-9E3A-7A6211151E7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C68BB989-6C12-4659-9E3A-7A6211151E7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87FFCF1A-BF39-406F-B0F4-9D87E67427DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87FFCF1A-BF39-406F-B0F4-9D87E67427DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87FFCF1A-BF39-406F-B0F4-9D87E67427DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87FFCF1A-BF39-406F-B0F4-9D87E67427DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
