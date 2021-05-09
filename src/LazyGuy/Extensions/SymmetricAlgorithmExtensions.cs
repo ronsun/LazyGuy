@@ -6,7 +6,7 @@ using System.Text;
 namespace LazyGuy.Extensions
 {
     /// <summary>
-    /// Extension methods for SymmetricAlgorithm
+    /// Extension methods for <see cref="SymmetricAlgorithm"/>.
     /// </summary>
     public static class SymmetricAlgorithmExtensions
     {
@@ -15,7 +15,7 @@ namespace LazyGuy.Extensions
         /// </summary>
         /// <param name="symmetric">The instance of SymmetricAlgorithm. </param>
         /// <param name="plaintext">The plaintext string. </param>
-        /// <returns></returns>
+        /// <returns>Ciphertext. </returns>
         /// <exception cref="ArgumentNullException">
         ///     <paramref name="symmetric"/> is null.
         /// </exception>
@@ -40,7 +40,7 @@ namespace LazyGuy.Extensions
         /// </summary>
         /// <param name="symmetric">The instance of SymmetricAlgorithm. </param>
         /// <param name="plaintextBytes">The plaintext in byte array. </param>
-        /// <returns></returns>
+        /// <returns>Ciphertext. </returns>
         /// <exception cref="ArgumentNullException">
         ///     <paramref name="symmetric"/> is null.
         /// </exception>
@@ -61,6 +61,7 @@ namespace LazyGuy.Extensions
                 cs.FlushFinalBlock();
                 ciphertext = Convert.ToBase64String(ms.ToArray());
             }
+
             return ciphertext;
         }
 
@@ -70,7 +71,7 @@ namespace LazyGuy.Extensions
         /// <param name="symmetric">The instance of SymmetricAlgorithm. </param>
         /// <param name="ciphertext">The ciphertext string. </param>
         /// <param name="plaintextEncoding">Encoding of plaintext. </param>
-        /// <returns></returns>
+        /// <returns>Plaintext. </returns>
         /// <exception cref="ArgumentNullException">
         ///     <paramref name="symmetric"/> is null.
         /// </exception>
@@ -98,6 +99,7 @@ namespace LazyGuy.Extensions
                 cs.FlushFinalBlock();
                 plaintext = plaintextEncoding.GetString(ms.ToArray());
             }
+
             return plaintext;
         }
     }

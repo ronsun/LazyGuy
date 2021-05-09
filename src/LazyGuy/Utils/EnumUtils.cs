@@ -1,10 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Reflection;
 
 namespace LazyGuy.Utils
 {
-    public class EnumUtils
+    // TODO: migrate to extension methods.
+    public static class EnumUtils
     {
         public static T ParseDescription<T>(string description)
             where T : Enum

@@ -29,19 +29,6 @@ namespace LazyGuy.Extensions.Tests
             B1 = 1
         }
 
-        [Test()]
-        [TestCaseSource(nameof(TestCases_InTest_InvalidEnumType))]
-        public void InTest_InvalidEnumType_ThrowArrayTypeMismatchExceptionWithMessage(Enum target, Enum[] parameters, string expectedMessage)
-        {
-            // Arrange
-
-            // Act
-            Action act = () => { target.In(parameters); };
-
-            // Assert
-            act.Should().Throw<ArrayTypeMismatchException>().WithMessage(expectedMessage);
-        }
-
         private static IEnumerable TestCases_InTest_InvalidEnumType()
         {
             // different type of target 

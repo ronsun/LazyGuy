@@ -4,19 +4,19 @@ using System.Linq;
 namespace LazyGuy.Extensions
 {
     /// <summary>
-    /// Extension methods for Dictionary
+    /// Extension methods for <see cref="Dictionary{TKey, TValue}"/>.
     /// </summary>
     public static class DictionaryExtensions
     {
         /// <summary>
         /// Convert Dictionary to query string.
         /// </summary>
-        /// <param name="target"></param>
+        /// <param name="target">The target.</param>
         /// <returns>
-        ///     Return query string. Reutrn empty string if count of <paramref name="target"/> is 0
+        ///     Return query string. Reutrn empty string if count of <paramref name="target"/> is 0.
         /// </returns>
         /// <exception cref="ArgumentNullException">
-        ///     <paramref name="target"/> is null. 
+        ///     <paramref name="target"/> is null.
         /// </exception>
         public static string ToQueryString(this IDictionary<string, string> target)
         {

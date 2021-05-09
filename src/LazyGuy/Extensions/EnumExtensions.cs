@@ -5,28 +5,27 @@ using System.Linq;
 namespace LazyGuy.Extensions
 {
     /// <summary>
-    /// Extension methods for Enum
+    /// Extension methods for Enum.
     /// </summary>
     public static class EnumExtensions
     {
         /// <summary>
-        /// Check is specific enum '<paramref name="target"/>' in 
-        /// a list of enum values '<paramref name="list"/>'. 
+        /// Check is specific enum '<paramref name="target"/>' in
+        /// a list of enum values '<paramref name="list"/>'.
         /// </summary>
         /// <typeparam name="T">Type of enum.</typeparam>
         /// <param name="target">The enum to be checked.</param>
         /// <param name="list">The list of enums.</param>
-        /// <returns></returns>
+        /// <returns>Whether <paramref name="target"/> in <paramref name="list"/>.</returns>
         /// <exception cref="ArrayTypeMismatchException">
-        ///     Multiple enum types in parameter <paramref name="list"/>.  
+        ///     Multiple enum types in parameter <paramref name="list"/>.
         /// </exception>
         /// <exception cref="ArgumentOutOfRangeException">
-        ///     Any value of argument not defined in its enum type. 
+        ///     Any value of argument not defined in its enum type.
         /// </exception>
         public static bool In<T>(this T target, params T[] list)
             where T : Enum
         {
-            Argument.ArrayTypeMatched(list, nameof(list), target.GetType());
             Argument.EnumDefined(target, nameof(target));
             foreach (var item in list)
             {
@@ -41,7 +40,7 @@ namespace LazyGuy.Extensions
         /// </summary>
         /// <typeparam name="T">Type of enum.</typeparam>
         /// <param name="target">The target enum.</param>
-        /// <returns></returns>
+        /// <returns>Description.</returns>
         public static string GetDescription<T>(this T target)
             where T : Enum
         {

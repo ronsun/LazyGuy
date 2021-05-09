@@ -32,9 +32,9 @@ namespace LazyGuy.Utils
         }
 
         /// <summary>
-        /// Get random int in range, include min but exclude max.  
-        /// Get a random int as N by RandomNumberGenerator, 0 <= N < (max - min), 
-        /// reutrn min + N if N is positive number or 0 ; 
+        /// Get random int in range, include min but exclude max.
+        /// Get a random int as N by RandomNumberGenerator, 0 <= N < (max - min),
+        /// reutrn min + N if N is positive number or 0 ;
         /// reutrn max + N if N is negative number
         /// </summary>
         /// <param name="min">Minimum value of range, default: 0</param>
@@ -43,7 +43,7 @@ namespace LazyGuy.Utils
         public virtual int GetInt(int min = 0, int max = int.MaxValue)
         {
             Argument.InRange(() => max >= min, nameof(max));
-            
+
             if (min == max)
             {
                 return min;

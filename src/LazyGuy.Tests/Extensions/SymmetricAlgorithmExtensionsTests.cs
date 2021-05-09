@@ -120,7 +120,7 @@ namespace LazyGuy.Extensions.Tests
                         Key = GenerateKey(192)
                     }
                 );
-
+#if NET462 || NET471
             yield return new TestCaseData(
                     new TripleDESCng()
                     {
@@ -133,6 +133,7 @@ namespace LazyGuy.Extensions.Tests
                         Key = GenerateKey(192)
                     }
                 );
+#endif
         }
 
         private static byte[] GenerateKey(int bits)

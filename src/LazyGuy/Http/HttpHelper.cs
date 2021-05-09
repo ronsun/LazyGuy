@@ -5,16 +5,22 @@ using System.Text;
 namespace LazyGuy.Http
 {
     /// <summary>
-    /// Heper to send HTTP request
+    /// Heper to send HTTP request.
     /// </summary>
     public class HttpHelper
     {
+        /// <summary>
+        /// Gets current <see cref="HttpWebRequest"/>.
+        /// </summary>
         public HttpWebRequest CurrentRequest { get; private set; }
 
+        /// <summary>
+        /// Gets current <see cref="CurrentResponse"/>.
+        /// </summary>
         public HttpWebResponse CurrentResponse { get; private set; }
 
         /// <summary>
-        /// Send request by HTTP GET. 
+        /// Send request by HTTP GET.
         /// </summary>
         /// <param name="url">The target URL.</param>
         /// <param name="options">Optional parameters for the request.</param>
@@ -32,7 +38,7 @@ namespace LazyGuy.Http
         }
 
         /// <summary>
-        ///  Send request by HTTP POST. 
+        ///  Send request by HTTP POST.
         /// </summary>
         /// <param name="url">The target URL.</param>
         /// <param name="content">The request body.</param>

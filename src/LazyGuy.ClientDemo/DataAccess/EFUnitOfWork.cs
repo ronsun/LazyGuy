@@ -17,10 +17,11 @@ namespace LazyGuy.ClientDemo.DataAccess
 
         #region IUnitOfWork
 
-        public IRepository<T> GetRepository<T>() where T : class
+        public IRepository<T> GetRepository<T>()
+            where T : class
         {
             _repositories.TryGetValue(typeof(T), out var repository);
-            if(repository == null)
+            if (repository == null)
             {
                 var dbSet = _dbContext.Set<T>();
                 repository = EFRepository<T>.Create(dbSet);

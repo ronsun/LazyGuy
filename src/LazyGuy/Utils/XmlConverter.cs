@@ -5,16 +5,22 @@ using System.Xml.Serialization;
 
 namespace LazyGuy.Utils
 {
+    // TODO: To extension method.
     public class XmlConverter
     {
         private XmlSerializer _serializer;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="XmlConverter"/> class.
+        /// </summary>
+        /// <param name="serializer"></param>
         public XmlConverter(XmlSerializer serializer = null)
         {
             _serializer = serializer;
         }
 
-        public virtual string Serialize<T>(T obj,
+        public virtual string Serialize<T>(
+            T obj,
             XmlWriterSettings xmlWriterSettings = null,
             XmlSerializerNamespaces ns = null)
         {
@@ -52,7 +58,7 @@ namespace LazyGuy.Utils
                 var result = _serializer.Deserialize(ms);
                 if (result == null)
                 {
-                    return default(T);
+                    return default;
                 }
 
                 return (T)result;

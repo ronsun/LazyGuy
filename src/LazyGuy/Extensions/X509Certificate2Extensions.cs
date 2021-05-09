@@ -26,7 +26,8 @@ namespace LazyGuy.Extensions
         /// <exception cref="ArgumentOutOfRangeException">
         ///     <paramref name="fullName"/> is null or empty.
         /// </exception>
-        public static X509Certificate2 Import(this X509Certificate2 cert,
+        public static X509Certificate2 Import(
+            this X509Certificate2 cert,
             Assembly assembly,
             string fullName,
             string password = null,
@@ -57,4 +58,7 @@ namespace LazyGuy.Extensions
             return cert;
         }
     }
+
+    // TODO: RSA
+    // TODO: RSA 分段加解密
 }

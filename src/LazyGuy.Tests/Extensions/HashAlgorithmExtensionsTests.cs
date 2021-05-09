@@ -91,22 +91,27 @@ namespace LazyGuy.Extensions.Tests
             yield return new TestCaseData(new HMACSHA256(hmacKeyBytes));
             yield return new TestCaseData(new HMACSHA384(hmacKeyBytes));
             yield return new TestCaseData(new HMACSHA512(hmacKeyBytes));
+#if NET462 || NET471
             yield return new TestCaseData(new HMACRIPEMD160(hmacKeyBytes));
-
+#endif
 
             // managed series
             yield return new TestCaseData(new SHA1Managed());
             yield return new TestCaseData(new SHA256Managed());
             yield return new TestCaseData(new SHA384Managed());
             yield return new TestCaseData(new SHA512Managed());
+#if NET462 || NET471
             yield return new TestCaseData(new RIPEMD160Managed());
+#endif
 
+#if NET462 || NET471
             // cng series
             yield return new TestCaseData(new MD5Cng());
             yield return new TestCaseData(new SHA1Cng());
             yield return new TestCaseData(new SHA256Cng());
             yield return new TestCaseData(new SHA384Cng());
             yield return new TestCaseData(new SHA512Cng());
+#endif
         }
 
         private static IEnumerable TestCase_ComputeHashToStringTest_ReturnWithExpectedLength()
@@ -126,21 +131,27 @@ namespace LazyGuy.Extensions.Tests
             yield return new TestCaseData(new HMACSHA256(hmacKeyBytes), 256 / 4);
             yield return new TestCaseData(new HMACSHA384(hmacKeyBytes), 384 / 4);
             yield return new TestCaseData(new HMACSHA512(hmacKeyBytes), 512 / 4);
+#if NET462 || NET471
             yield return new TestCaseData(new HMACRIPEMD160(hmacKeyBytes), 160 / 4);
+#endif
 
             // managed series
             yield return new TestCaseData(new SHA1Managed(), 160 / 4);
             yield return new TestCaseData(new SHA256Managed(), 256 / 4);
             yield return new TestCaseData(new SHA384Managed(), 384 / 4);
             yield return new TestCaseData(new SHA512Managed(), 512 / 4);
+#if NET462 || NET471
             yield return new TestCaseData(new RIPEMD160Managed(), 160 / 4);
+#endif
 
+#if NET462 || NET471
             // cng series
             yield return new TestCaseData(new MD5Cng(), 128 / 4);
             yield return new TestCaseData(new SHA1Cng(), 160 / 4);
             yield return new TestCaseData(new SHA256Cng(), 256 / 4);
             yield return new TestCaseData(new SHA384Cng(), 384 / 4);
             yield return new TestCaseData(new SHA512Cng(), 512 / 4);
+#endif
         }
     }
 }
