@@ -15,13 +15,8 @@ namespace LazyGuy.Extensions
         /// <returns>
         ///     Return query string. Reutrn empty string if count of <paramref name="target"/> is 0.
         /// </returns>
-        /// <exception cref="ArgumentNullException">
-        ///     <paramref name="target"/> is null.
-        /// </exception>
         public static string ToQueryString(this IDictionary<string, string> target)
         {
-            Argument.NotNull(target, nameof(target));
-
             if (target == null || target.Count == 0)
             {
                 return string.Empty;

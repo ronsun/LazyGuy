@@ -40,7 +40,7 @@ namespace LazyGuy.Extensions.Tests
 
         [Test()]
         [TestCaseSource(nameof(TestCases_InTest_InvalidEnumValue))]
-        public void InTest_InvalidEnumValue_ThrowArgumentOutOfRangeExceptionWithMessage(Enum target, Enum[] parameters, string expectedMessage)
+        public void InTest_InvalidEnumValue_ThrowArgumentOutOfRangeExceptionWithMessage(Enum target, Enum[] parameters)
         {
             // Arrange
 
@@ -48,16 +48,16 @@ namespace LazyGuy.Extensions.Tests
             Action act = () => { target.In(parameters); };
 
             // Assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(expectedMessage);
+            act.Should().Throw<ArgumentOutOfRangeException>();
         }
 
         private static IEnumerable TestCases_InTest_InvalidEnumValue()
         {
             // type of target out of range
-            yield return new TestCaseData((FakeEnum_In_A)(0), new Enum[] { FakeEnum_In_A.A1 }, MessageTemplates.ValueNotInEnum);
+            yield return new TestCaseData((FakeEnum_In_A)(0), new Enum[] { FakeEnum_In_A.A1 });
 
             // type of parameter list out of range
-            yield return new TestCaseData(FakeEnum_In_A.A1, new Enum[] { (FakeEnum_In_A)(0) }, MessageTemplates.ValueNotInEnum);
+            yield return new TestCaseData(FakeEnum_In_A.A1, new Enum[] { (FakeEnum_In_A)(0) });
         }
 
         #endregion

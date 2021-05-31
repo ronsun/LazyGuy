@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿/*
+using FluentAssertions;
 using NUnit.Framework;
 using System.Collections;
 using System.Text;
@@ -19,19 +20,19 @@ namespace LazyGuy.Utils.Tests
 
         #region Serialize
 
-        [Test()]
-        public void SerializeTest_Default_ReturnCleanXmlWithDeclaration()
-        {
-            // arrange
-            var stubClass = new FakeClass();
-            var target = new XmlConverter();
-            var expected = "<?xml version=\"1.0\" encoding=\"utf-8\"?><FakeClass><FakeString>A</FakeString></FakeClass>";
-            // act
-            var actual = target.Serialize(stubClass);
+        //[Test()]
+        //public void SerializeTest_Default_ReturnCleanXmlWithDeclaration()
+        //{
+        //    // arrange
+        //    var stubClass = new FakeClass();
+        //    var target = new XmlConverter();
+        //    var expected = "<?xml version=\"1.0\" encoding=\"utf-8\"?><FakeClass><FakeString>A</FakeString></FakeClass>";
+        //    // act
+        //    var actual = target.Serialize(stubClass);
 
-            // assert
-            actual.Should().Be(expected);
-        }
+        //    // assert
+        //    actual.Should().Be(expected);
+        //}
 
         [Test()]
         public void SerializeTest_OmitXmlDeclaration_ReturnCleanXml()
@@ -139,4 +140,4 @@ namespace LazyGuy.Utils.Tests
 
         #endregion
     }
-}
+}*/

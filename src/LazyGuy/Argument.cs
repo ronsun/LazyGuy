@@ -17,7 +17,7 @@ namespace LazyGuy
         {
             if (arg == null)
             {
-                throw new ArgumentNullException($"Argument '{argName}' should not be null.");
+                throw new ArgumentNullException(argName);
             }
         }
 
@@ -29,7 +29,7 @@ namespace LazyGuy
         /// <param name="argName">Argument name.</param>
         public static void NotNullOrEmpty<T>(T arg, string argName)
         {
-            var exception = new ArgumentOutOfRangeException($"Argument '{argName}' should not be null or empty.");
+            var exception = new ArgumentOutOfRangeException(argName);
 
             if (arg == null)
             {
@@ -56,8 +56,10 @@ namespace LazyGuy
         /// <param name="argName">Argument name.</param>
         public static void EnumDefined(Enum arg, string argName)
         {
-            string errorMessage = $"Value of argument '{argName}' not defind in enum.";
-            InRange(() => Enum.IsDefined(arg.GetType(), arg), argName, errorMessage);
+            if (Enum.IsDefined(arg.GetType(), arg) == false)
+            {
+                throw new ArgumentOutOfRangeException(argName);
+            }
         }
 
         /// <summary>
@@ -65,14 +67,12 @@ namespace LazyGuy
         /// </summary>
         /// <param name="rule">Rule.</param>
         /// <param name="argName">Argument name.</param>
-        /// <param name="errorMessage">Error message.</param>
-        public static void InRange(Func<bool> rule, string argName, string errorMessage = null)
+        public static void InRange(Func<bool> rule, string argName)
         {
             bool matchRule = rule();
             if (!matchRule)
             {
-                errorMessage = errorMessage ?? $"Argument '{argName}' out of range.";
-                throw new ArgumentOutOfRangeException(errorMessage, new Exception());
+                throw new ArgumentOutOfRangeException(argName);
             }
         }
     }

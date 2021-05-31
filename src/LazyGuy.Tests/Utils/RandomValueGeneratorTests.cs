@@ -39,7 +39,7 @@ namespace LazyGuy.Utils.Tests
             int stubMin = int.MinValue;
             int stubMax = int.MaxValue;
 
-            var stubRandomBytes = new byte[] { 1, 0, 0, 0 };
+            var stubRandomBytes = BitConverter.GetBytes(1);
             var stubRNG = Substitute.For<RandomNumberGenerator>();
 
             FakeGetBytes(stubRNG, stubRandomBytes);
@@ -159,22 +159,23 @@ namespace LazyGuy.Utils.Tests
         #region GetString
 
         [Test()]
-        public void GetStringTest_DefaultDictionary_ShouldBeExpected()
+        public void GetStringTest_InputLength_ShouldBeExpected()
         {
             // arrange
             var stubRandomNumberGenerator = Substitute.For<RandomNumberGenerator>();
             var mockedRandomValueGenerator = Substitute.For<RandomValueGenerator>(stubRandomNumberGenerator);
+            var stubDictionary = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
             int stubLength = 1;
             var actualDictionary = string.Empty;
             mockedRandomValueGenerator
-                .When(r => r.GetString(Arg.Any<int>(), Arg.Any<string>()))
+                .When(r => r.GetString(Arg.Any<int>()))
                 .Do(calledMethod =>
                 {
-                    actualDictionary = calledMethod.ArgAt<string>(1);
+                    actualDictionary = stubDictionary;
                 });
 
-            var expectedDefaultDictionary = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+            var expectedDefaultDictionary = stubDictionary;
 
             // act
             mockedRandomValueGenerator.GetString(stubLength);
@@ -188,7 +189,7 @@ namespace LazyGuy.Utils.Tests
         [TestCase(2, 0, "ab", "aa")]
         [TestCase(1, 1, "ab", "b")]
         [TestCase(2, 1, "ab", "bb")]
-        public void GetStringTest_CorrectArguments_ReturnExpectedString(
+        public void GetStringTest_InputLengthAndDictionary_ReturnExpectedString(
             int stubLength,
             int stubIndex,
             string stubDictionary,

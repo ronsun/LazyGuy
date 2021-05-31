@@ -1,6 +1,5 @@
 ﻿using System;
 using FluentAssertions;
-using LazyGuy.Tests.Constants;
 using NUnit.Framework;
 
 namespace LazyGuy.Utils.Tests
@@ -22,7 +21,7 @@ namespace LazyGuy.Utils.Tests
             Action act = () => { target.GetInt(stubMin, stubMax); };
 
             // Assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentOutOfRange);
+            act.Should().Throw<ArgumentOutOfRangeException>();
         }
 
         #endregion
@@ -42,7 +41,7 @@ namespace LazyGuy.Utils.Tests
             Action act = () => { target.GetString(stubLength, stubDictionary); };
 
             // Assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentNullOrEmpty);
+            act.Should().Throw<ArgumentOutOfRangeException>();
         }
 
         #endregion

@@ -3,22 +3,32 @@ using System.ComponentModel;
 
 namespace LazyGuy.Utils
 {
-    // TODO: migrate to extension methods.
+    /// <summary>
+    /// Enum utils.
+    /// </summary>
     public static class EnumUtils
     {
+        /// <summary>
+        /// Parse from description of <see cref="DescriptionAttribute"/> to enum.
+        /// </summary>
+        /// <typeparam name="T">Enum type.</typeparam>
+        /// <param name="description">Description.</param>
+        /// <returns>Parsed enum type.</returns>
         public static T ParseDescription<T>(string description)
             where T : Enum
         {
-            Argument.NotNull(description, nameof(description));
-
             string enumFieldName = FindFieldName<T>(description);
-            Argument.NotNull(enumFieldName, nameof(enumFieldName));
-
             T result = (T)Enum.Parse(typeof(T), enumFieldName);
             return result;
         }
 
-        // Add additional restrict 'struct' for T so that can use Enum.TryParse()
+        /// <summary>
+        /// Try from parse from description of <see cref="DescriptionAttribute"/> to enum.
+        /// </summary>
+        /// <typeparam name="T">Enum type.</typeparam>
+        /// <param name="description">Description.</param>
+        /// <param name="result">Parsed result.</param>
+        /// <returns>Whether parsed successfully.</returns>
         public static bool TryParseDescription<T>(string description, out T result)
             where T : struct, Enum
         {
@@ -41,6 +51,8 @@ namespace LazyGuy.Utils
 
         private static string FindFieldName<T>(string description)
         {
+            Argument.NotNull(description, nameof(description));
+
             var allFields = typeof(T).GetFields();
             foreach (var field in allFields)
             {

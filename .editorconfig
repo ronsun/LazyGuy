@@ -20,3 +20,9 @@ dotnet_diagnostic.CA1062.severity = silent
 
 # SA1208: System using directives should be placed before other using directives
 dotnet_diagnostic.SA1208.severity = none
+
+# CA1054: URI-like parameters should not be strings
+dotnet_diagnostic.CA1054.severity = silent
+
+# SA1625: Element documentation should not be copied and pasted
+dotnet_diagnostic.SA1625.severity = silent

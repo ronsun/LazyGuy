@@ -7,8 +7,6 @@ namespace LazyGuy.Utils
     {
         public static void Execute(Action action, Action<long> report = null)
         {
-            Argument.NotNull(action, nameof(action));
-
             var stopwatch = Stopwatch.StartNew();
 
             action();

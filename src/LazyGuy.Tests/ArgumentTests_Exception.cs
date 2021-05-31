@@ -1,6 +1,5 @@
 ﻿using System;
 using FluentAssertions;
-using LazyGuy.Tests.Constants;
 using NUnit.Framework;
 
 namespace LazyGuy.Tests
@@ -20,38 +19,7 @@ namespace LazyGuy.Tests
             Action act = () => { Argument.NotNull(stubArg, nameof(stubArg)); };
 
             // assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
-        }
-
-        #endregion
-
-        #region NotNullOrEmpty
-
-        [Test()]
-        [TestCase(null)]
-        [TestCase("")]
-        public void NotNullOrEmptyTest_InputNullOrEmptyString_ThorwArgumentOutOfRangeExceptionWithMessage(string stubArg)
-        {
-            // arrange
-
-            // act
-            Action act = () => { Argument.NotNullOrEmpty(stubArg, nameof(stubArg)); };
-
-            // assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentNullOrEmpty);
-        }
-
-        [Test()]
-        public void NotNullOrEmptyTest_InputEmptyArray_ThorwArgumentOutOfRangeExceptionWithMessage()
-        {
-            // arrange
-            string[] stubArg = new string[0];
-
-            // act
-            Action act = () => { Argument.NotNullOrEmpty(stubArg, nameof(stubArg)); };
-
-            // assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentNullOrEmpty);
+            act.Should().Throw<ArgumentNullException>();
         }
 
         #endregion
@@ -73,7 +41,7 @@ namespace LazyGuy.Tests
             Action act = () => { Argument.EnumDefined(stubEnum, nameof(stubEnum)); };
 
             // assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ValueNotInEnum);
+            act.Should().Throw<ArgumentOutOfRangeException>();
         }
 
         #endregion
@@ -91,23 +59,9 @@ namespace LazyGuy.Tests
             Action act = () => { Argument.InRange(stubFunc, stubArgName); };
 
             // assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(MessageTemplates.ArgumentOutOfRange);
+            act.Should().Throw<ArgumentOutOfRangeException>();
         }
 
-        [Test()]
-        public void InRangeTest_InputFuncThatReturnFalseAndCustomizeMessage_ThorwArgumentOutOfRangeExceptionWithMessage()
-        {
-            // arrange
-            var stubArgName = "a";
-            var stubMessage = "m";
-            Func<bool> stubFunc = () => false;
-
-            // act
-            Action act = () => { Argument.InRange(stubFunc, stubArgName, stubMessage); };
-
-            // assert
-            act.Should().Throw<ArgumentOutOfRangeException>().WithMessage(stubMessage);
-        }
         #endregion
     }
 }

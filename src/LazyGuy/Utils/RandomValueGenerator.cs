@@ -7,17 +7,40 @@ namespace LazyGuy.Utils
     {
         private RandomNumberGenerator _rng;
 
-        public RandomValueGenerator(RandomNumberGenerator rng = null)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RandomValueGenerator"/> class.
+        /// </summary>
+        public RandomValueGenerator()
+            : this(new RNGCryptoServiceProvider())
         {
-            if (rng == null)
-            {
-                rng = new RNGCryptoServiceProvider();
-            }
+        }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RandomValueGenerator"/> class.
+        /// </summary>
+        /// <param name="rng">Dependent <see cref="RandomValueGenerator"/>. </param>
+        public RandomValueGenerator(RandomNumberGenerator rng)
+        {
             _rng = rng;
         }
 
-        public virtual string GetString(int length, string dictionary = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+        /// <summary>
+        /// Get random string, the characters in random string should in "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".
+        /// </summary>
+        /// <param name="length">String length.</param>
+        /// <returns>Random string.</returns>
+        public virtual string GetString(int length)
+        {
+            return GetString(length, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
+        }
+
+        /// <summary>
+        /// Get random string.
+        /// </summary>
+        /// <param name="length">String length.</param>
+        /// <param name="dictionary">Characters for random, ex: if be "abc", then the all characters in random string should be 'a' or 'b' or 'c'.</param>
+        /// <returns>Random string.</returns>
+        public virtual string GetString(int length, string dictionary)
         {
             Argument.NotNullOrEmpty(dictionary, nameof(dictionary));
 
@@ -32,15 +55,21 @@ namespace LazyGuy.Utils
         }
 
         /// <summary>
-        /// Get random int in range, include min but exclude max.
-        /// Get a random int as N by RandomNumberGenerator, 0 <= N < (max - min),
-        /// reutrn min + N if N is positive number or 0 ;
-        /// reutrn max + N if N is negative number
+        /// Get random int between <see cref="int.MinValue"/> and <see cref="int.MaxValue"/>.
         /// </summary>
-        /// <param name="min">Minimum value of range, default: 0</param>
-        /// <param name="max">Maximun valud of range, defalut: int.MaxValue </param>
-        /// <returns></returns>
-        public virtual int GetInt(int min = 0, int max = int.MaxValue)
+        /// <returns>Random int.</returns>
+        public virtual int GetInt()
+        {
+            return GetInt(int.MinValue, int.MaxValue);
+        }
+
+        /// <summary>
+        /// Get random int in range, include min but exclude max.
+        /// </summary>
+        /// <param name="min">Minimum value of range, default: 0.</param>
+        /// <param name="max">Maximun valud of range, defalut: int.MaxValue. </param>
+        /// <returns>Random int.</returns>
+        public virtual int GetInt(int min, int max)
         {
             Argument.InRange(() => max >= min, nameof(max));
 
@@ -49,14 +78,14 @@ namespace LazyGuy.Utils
                 return min;
             }
 
-            //use Int32 (4 bytes) bacause keyword 'int' is default as Int32
+            // use Int32 (4 bytes) bacause keyword 'int' is default as Int32
             var nextBytes = new byte[4];
             _rng.GetBytes(nextBytes);
 
             var range = (long)max - min;
             var shift = BitConverter.ToInt32(nextBytes, 0) % range;
 
-            //shift always between int.MinValue and int.MaxValue, so it's safe convert to int directly
+            // shift always between int.MinValue and int.MaxValue, so it's safe convert to int directly
             if (shift < 0)
             {
                 return max + (int)shift;

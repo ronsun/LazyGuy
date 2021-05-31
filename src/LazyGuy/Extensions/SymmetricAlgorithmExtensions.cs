@@ -22,17 +22,27 @@ namespace LazyGuy.Extensions
         /// <exception cref="ArgumentOutOfRangeException">
         ///     <paramref name="plaintext"/> is null or empty.
         /// </exception>
-        public static string Encrypt(this SymmetricAlgorithm symmetric, string plaintext, Encoding encoding = null)
+        public static string Encrypt(this SymmetricAlgorithm symmetric, string plaintext)
         {
-            Argument.NotNull(symmetric, nameof(symmetric));
-            Argument.NotNullOrEmpty(plaintext, nameof(plaintext));
+            return Encrypt(symmetric, plaintext, Encoding.UTF8);
+        }
 
-            if (encoding == null)
-            {
-                encoding = Encoding.UTF8;
-            }
-
-            return Encrypt(symmetric, encoding.GetBytes(plaintext));
+        /// <summary>
+        /// Encrypt.
+        /// </summary>
+        /// <param name="symmetric">The instance of SymmetricAlgorithm. </param>
+        /// <param name="plaintext">The plaintext string. </param>
+        /// <param name="plaintextEncoding">Encoding of plaintext. </param>
+        /// <returns>Ciphertext. </returns>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="symmetric"/> is null.
+        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     <paramref name="plaintext"/> is null or empty.
+        /// </exception>
+        public static string Encrypt(this SymmetricAlgorithm symmetric, string plaintext, Encoding plaintextEncoding)
+        {
+            return Encrypt(symmetric, plaintextEncoding.GetBytes(plaintext));
         }
 
         /// <summary>
@@ -41,17 +51,8 @@ namespace LazyGuy.Extensions
         /// <param name="symmetric">The instance of SymmetricAlgorithm. </param>
         /// <param name="plaintextBytes">The plaintext in byte array. </param>
         /// <returns>Ciphertext. </returns>
-        /// <exception cref="ArgumentNullException">
-        ///     <paramref name="symmetric"/> is null.
-        /// </exception>
-        /// <exception cref="ArgumentOutOfRangeException">
-        ///     <paramref name="plaintextBytes"/> is null or empty.
-        /// </exception>
         public static string Encrypt(this SymmetricAlgorithm symmetric, byte[] plaintextBytes)
         {
-            Argument.NotNull(symmetric, nameof(symmetric));
-            Argument.NotNullOrEmpty(plaintextBytes, nameof(plaintextBytes));
-
             string ciphertext = string.Empty;
 
             MemoryStream ms = new MemoryStream();
@@ -70,7 +71,6 @@ namespace LazyGuy.Extensions
         /// </summary>
         /// <param name="symmetric">The instance of SymmetricAlgorithm. </param>
         /// <param name="ciphertext">The ciphertext string. </param>
-        /// <param name="plaintextEncoding">Encoding of plaintext. </param>
         /// <returns>Plaintext. </returns>
         /// <exception cref="ArgumentNullException">
         ///     <paramref name="symmetric"/> is null.
@@ -78,11 +78,20 @@ namespace LazyGuy.Extensions
         /// <exception cref="ArgumentOutOfRangeException">
         ///     <paramref name="ciphertext"/> is null or empty.
         /// </exception>
-        public static string Decrypt(this SymmetricAlgorithm symmetric, string ciphertext, Encoding plaintextEncoding = null)
+        public static string Decrypt(this SymmetricAlgorithm symmetric, string ciphertext)
         {
-            Argument.NotNull(symmetric, nameof(symmetric));
-            Argument.NotNullOrEmpty(ciphertext, nameof(ciphertext));
+            return Decrypt(symmetric, ciphertext, Encoding.UTF8);
+        }
 
+        /// <summary>
+        /// Decrypt.
+        /// </summary>
+        /// <param name="symmetric">The instance of SymmetricAlgorithm. </param>
+        /// <param name="ciphertext">The ciphertext string. </param>
+        /// <param name="plaintextEncoding">Encoding of plaintext. </param>
+        /// <returns>Plaintext. </returns>
+        public static string Decrypt(this SymmetricAlgorithm symmetric, string ciphertext, Encoding plaintextEncoding)
+        {
             if (plaintextEncoding == null)
             {
                 plaintextEncoding = Encoding.UTF8;

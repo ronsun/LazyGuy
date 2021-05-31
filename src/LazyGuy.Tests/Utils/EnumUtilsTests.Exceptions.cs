@@ -1,6 +1,5 @@
 ﻿using System;
 using FluentAssertions;
-using LazyGuy.Tests.Constants;
 using NUnit.Framework;
 
 namespace LazyGuy.Utils.Tests
@@ -31,7 +30,7 @@ namespace LazyGuy.Utils.Tests
             Action act = () => { EnumUtils.ParseDescription<FakeEnum_ParseDesciption>(stubDescrioption); };
 
             // Assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
+            act.Should().Throw<ArgumentNullException>();
         }
 
         [Test()]
@@ -44,7 +43,7 @@ namespace LazyGuy.Utils.Tests
             Action act = () => { EnumUtils.ParseDescription<FakeEnum_ParseDesciption_Empty>(stubDescrioption); };
 
             // Assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
+            act.Should().Throw<ArgumentNullException>();
         }
 
         [Test()]
@@ -57,7 +56,7 @@ namespace LazyGuy.Utils.Tests
             Action act = () => { EnumUtils.ParseDescription<FakeEnum_ParseDesciption>(stubDescrioption); };
 
             // Assert
-            act.Should().Throw<ArgumentNullException>().WithMessage(MessageTemplates.ArgumentNull);
+            act.Should().Throw<ArgumentNullException>();
         }
 
         #endregion
