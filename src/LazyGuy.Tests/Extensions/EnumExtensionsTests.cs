@@ -1,5 +1,4 @@
-﻿using LazyGuy.Extensions;
-using FluentAssertions;
+﻿using FluentAssertions;
 using NUnit.Framework;
 
 namespace LazyGuy.Extensions.Tests
